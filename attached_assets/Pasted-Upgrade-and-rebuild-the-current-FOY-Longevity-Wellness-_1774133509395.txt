@@ -1,0 +1,249 @@
+Upgrade and rebuild the current FOY Longevity & Wellness Clinic website into a fully immersive, cinematic, high-end futuristic experience.
+
+This must NOT look like a normal clinic website.
+It must feel like a luxury brand + AI lab + wellness experience.
+
+The goal is to create a visually addictive journey that keeps the user engaged from the first second until booking.
+
+---
+
+🎯 CORE USER JOURNEY (VERY IMPORTANT):
+
+The website must follow this emotional flow:
+
+1. Hook (instant visual wow)
+2. Problem (user relates emotionally)
+3. Deep emotion (pain, insecurity, aging, stress)
+4. Transformation (hope and curiosity)
+5. Solution (FOY system: science + nature + AI)
+6. Trust (results + testimonials)
+7. Action (booking)
+
+Do NOT build random sections. Build a STORY.
+
+---
+
+🎬 HERO SECTION (FULL SCREEN - CINEMATIC):
+
+* Full viewport height (100vh)
+* Animated DNA helix slowly rotating and morphing into a glowing tree
+* Soft floating particles (light dots moving slowly)
+* Dynamic gradient background (teal → green → soft gold glow)
+
+Text:
+Headline (animated with fade + slide + glow):
+“Redefine Your Age. Elevate Your Life.”
+
+Subheadline:
+“Experience the future of beauty, health, and longevity powered by science, AI, and inner balance.”
+
+CTA Button:
+“Start Your Transformation”
+
+Hero Interactions:
+
+* Mouse movement creates subtle parallax effect
+* Background elements move slightly with cursor
+* CTA button glows and scales on hover
+* Add soft ambient glow around key elements
+
+---
+
+🌑 PROBLEM SECTION (EMOTIONAL):
+
+* Slightly darker background tone
+* Text like:
+  “Tired skin? Low energy? Stress? Signs of aging?”
+* Smooth fade-in animation
+* Minimal visuals, focus on emotion
+
+---
+
+🌅 TRANSFORMATION SECTION:
+
+* Transition from dark to light
+
+* Add soft glowing gradient
+
+* Text:
+  “What if you could reverse this… naturally and intelligently?”
+
+* Floating elements appear slowly
+
+---
+
+🧠 FOY SYSTEM (SOLUTION):
+
+* Show 3 pillars with animated icons:
+
+  1. Science (DNA visuals)
+  2. Nature (tree/leaf visuals)
+  3. AI (futuristic brain or interface)
+
+* Cards must:
+
+  * Have glassmorphism (blur + transparency)
+  * Glow softly on hover
+  * Lift slightly when hovered
+
+---
+
+💎 SERVICES SECTION (INTERACTIVE):
+
+Services:
+
+* Skin & Aesthetic Treatments
+* Laser & Advanced Procedures
+* Hair & Anti-Aging Solutions
+* AI Health Analysis
+
+Each card must:
+
+* Animate on scroll (fade + slide up)
+* Lift + glow on hover
+* Include modern icons
+* Have short, clean descriptions
+
+---
+
+🤖 AI ASSISTANT SECTION (HIGH IMPACT):
+
+This must feel like a real futuristic AI system.
+
+Include:
+
+* Input field: “Describe your concern...”
+* When user types, simulate typing response
+* Response appears letter by letter
+* UI must have glowing borders, glass effect, and futuristic design
+
+Example output style:
+“Based on your input, we recommend a personalized skin and lifestyle plan…”
+
+Add subtle animations:
+
+* Cursor blinking
+* Loading dots
+* Glow pulses
+
+---
+
+📊 BEFORE & AFTER SECTION:
+
+* Interactive slider comparison
+* Smooth drag interaction
+* Images transition cleanly
+* Add subtle zoom or fade effect
+
+---
+
+🌿 LIFESTYLE & WELLNESS SECTION:
+
+* Floating cards layout
+
+* Topics:
+
+  * Nutrition
+  * Sleep
+  * Mental clarity
+  * Anti-aging habits
+
+* Cards animate in softly
+
+* Calm and clean visuals
+
+---
+
+💬 TESTIMONIALS:
+
+* Auto-sliding carousel
+* Smooth transitions
+* Glass-style cards
+* Slight glow and shadow
+
+---
+
+📅 BOOKING SECTION (HIGH CONVERSION):
+
+* Minimal, clean form
+* Fields: name, phone, service
+* Add trust text:
+  “Personalized care”
+  “Expert team”
+  “Proven results”
+
+CTA:
+“Begin Your Journey Now”
+
+* Button must glow and animate
+
+---
+
+❓ FAQ SECTION:
+
+* Accordion style
+* Smooth open/close animation
+* Clean UI
+
+---
+
+🖱️ GLOBAL INTERACTIONS (VERY IMPORTANT):
+
+* Smooth scrolling across entire website
+
+* All sections fade-in + slide-up on scroll
+
+* Buttons:
+
+  * Glow on hover
+  * Slight scale
+  * Ripple effect
+
+* Cards:
+
+  * Lift on hover
+  * Shadow increases
+  * Glow border appears
+
+* Mouse effects:
+
+  * Subtle parallax movement
+  * Light follow effect (very soft)
+
+---
+
+🌊 DEPTH & PARALLAX:
+
+* Background moves slower than foreground
+* Elements move at different speeds
+* Create depth feeling
+
+---
+
+🎨 DESIGN STYLE:
+
+* Glassmorphism (liquid glass effect)
+* Soft shadows
+* Glowing edges
+* Clean modern typography
+* Premium spacing and layout
+
+---
+
+⚡ PERFORMANCE:
+
+* Fast loading
+* Smooth animations (no lag)
+* Fully responsive (mobile + desktop)
+
+---
+
+🔥 FINAL EXPERIENCE GOAL:
+
+The website should feel like:
+Apple-level design + futuristic AI lab + luxury wellness brand
+
+The user must feel:
+“This is different… I want this.”
+
+Make it visually stunning, immersive, modern, and unforgettable.

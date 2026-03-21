@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Playfair Display', serif;
+
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  
+  --color-gold: hsl(var(--gold));
+  --color-gold-foreground: hsl(var(--gold-foreground));
+  
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+}
+
+:root {
+  /* Deep Dark Bg: #020B10 */
+  --background: 198 84% 4%;
+  --foreground: 180 100% 96%;
+  
+  /* Primary Teal: #0D9488 */
+  --primary: 174 78% 32%;
+  --primary-foreground: 0 0% 100%;
+  
+  /* Accent Green: #22C55E */
+  --secondary: 142 71% 45%;
+  --secondary-foreground: 0 0% 100%;
+  
+  /* Accent Gold: #D4AF37 */
+  --gold: 46 65% 52%;
+  --gold-foreground: 198 84% 4%;
+  
+  --accent: 174 78% 32%;
+  --accent-foreground: 0 0% 100%;
+  
+  /* Dark Bg Alt: #071820 */
+  --card: 198 71% 8%;
+  --card-foreground: 180 100% 96%;
+  
+  --border: 174 40% 20%;
+  --input: 198 71% 15%;
+  --ring: 174 78% 32%;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground font-sans antialiased selection:bg-primary/30 selection:text-primary-foreground;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight text-foreground;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-card/60 backdrop-blur-xl border border-primary/20 shadow-[0_8px_32px_rgba(0,0,0,0.4)];
+  }
+  
+  .glass-panel-hover {
+    @apply hover:bg-card/80 hover:border-primary/40 hover:shadow-[0_8px_32px_rgba(13,148,136,0.15)] transition-all duration-500;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px rgba(13, 148, 136, 0.5);
+  }
+
+  .text-glow-gold {
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+  }
+}
+
+/* Custom scrollbar for premium feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.3);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.5);
+}

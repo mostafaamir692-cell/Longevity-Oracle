@@ -14,3 +14,33 @@ import * as zod from "zod";
 export const HealthCheckResponse = zod.object({
   status: zod.string(),
 });
+
+/**
+ * Submit a new booking request
+ * @summary Create a booking
+ */
+export const createBookingBodyFullNameMin = 2;
+
+export const createBookingBodyPhoneMin = 7;
+
+export const CreateBookingBody = zod.object({
+  fullName: zod.string().min(createBookingBodyFullNameMin),
+  phone: zod.string().min(createBookingBodyPhoneMin),
+  email: zod.string().email(),
+  service: zod.string(),
+  message: zod.string().optional(),
+});
+
+/**
+ * Returns a list of available services for booking
+ * @summary Get available services
+ */
+export const GetServicesResponse = zod.object({
+  services: zod.array(
+    zod.object({
+      id: zod.string(),
+      name: zod.string(),
+      description: zod.string(),
+    }),
+  ),
+});

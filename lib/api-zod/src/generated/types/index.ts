@@ -6,4 +6,9 @@
  * OpenAPI spec version: 0.1.0
  */
 
+export * from "./bookingResponse";
+export * from "./createBookingRequest";
+export * from "./errorResponse";
 export * from "./healthStatus";
+export * from "./service";
+export * from "./servicesResponse";

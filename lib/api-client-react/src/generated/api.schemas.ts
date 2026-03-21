@@ -8,3 +8,39 @@
 export interface HealthStatus {
   status: string;
 }
+
+export interface CreateBookingRequest {
+  /** @minLength 2 */
+  fullName: string;
+  /** @minLength 7 */
+  phone: string;
+  email: string;
+  service: string;
+  message?: string;
+}
+
+export interface BookingResponse {
+  id: number;
+  fullName: string;
+  phone: string;
+  email: string;
+  service: string;
+  message?: string | null;
+  status: string;
+  createdAt: string;
+}
+
+export interface Service {
+  id: string;
+  name: string;
+  description: string;
+}
+
+export interface ServicesResponse {
+  services: Service[];
+}
+
+export interface ErrorResponse {
+  error: string;
+  details?: string[];
+}

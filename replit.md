@@ -48,6 +48,20 @@ Every package extends `tsconfig.base.json` which sets `composite: true`. The roo
 - `pnpm run build` — runs `typecheck` first, then recursively runs `build` in all packages that define it
 - `pnpm run typecheck` — runs `tsc --build --emitDeclarationOnly` using project references
 
+## Artifacts
+
+### `artifacts/foy-wellness` (`@workspace/foy-wellness`)
+
+Full-screen cinematic wellness website for FOY Longevity & Wellness Clinic. React + Vite frontend with the following sections:
+- Hero (particle canvas, framer-motion animations)
+- Problem / Transformation / FOY System / Services
+- AI Assistant (simulated typewriter response)
+- Before & After slider, Lifestyle, Testimonials carousel
+- Booking form (POST /api/bookings) + FAQ accordion + Footer
+
+Color palette: teal (#0D9488), green (#22C55E), gold (#D4AF37), deep dark (#020B10).
+Fonts: Playfair Display (headings) + Inter (body). Glassmorphism design throughout.
+
 ## Packages
 
 ### `artifacts/api-server` (`@workspace/api-server`)
