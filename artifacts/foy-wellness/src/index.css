@@ -127,6 +127,11 @@
   100% { transform: translateX(100%); opacity: 0; }
 }
 
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
 /* Custom scrollbar for premium feel */
 ::-webkit-scrollbar {
   width: 8px;
