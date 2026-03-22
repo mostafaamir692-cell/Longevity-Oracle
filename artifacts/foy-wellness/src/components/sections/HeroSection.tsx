@@ -18,15 +18,10 @@ export function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image / Overlay */}
-      <div 
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat transition-transform duration-75"
-        style={{ 
-          backgroundImage: `url(${import.meta.env.BASE_URL}images/hero-bg.png)`,
-          transform: `translate(${parallaxOffset.x}px, ${parallaxOffset.y}px) scale(1.05)`
-        }}
-      />
-      <div className="absolute inset-0 z-0 bg-gradient-to-b from-background/40 via-background/80 to-background" />
+      {/* Deep background gradient — no photo needed, canvas handles the visuals */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-background via-background to-background" />
+      {/* Radial ambient glow */}
+      <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_20%,rgba(13,148,136,0.12)_0%,transparent_70%)] pointer-events-none" />
       
       {/* Animated Canvases */}
       <div 

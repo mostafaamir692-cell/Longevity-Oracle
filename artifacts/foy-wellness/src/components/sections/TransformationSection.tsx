@@ -86,7 +86,7 @@ export function TransformationSection() {
           <div className="relative rounded-xl overflow-hidden w-full aspect-video md:aspect-[21/9] bg-black">
             <div 
               className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-80 mix-blend-screen hover:scale-105 transition-transform duration-1000"
-              style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/transformation.png)` }}
+              style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/transformation.jpg?v=4)` }}
             />
             {/* Soft gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
