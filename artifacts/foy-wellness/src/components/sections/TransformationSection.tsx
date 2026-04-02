@@ -1,6 +1,6 @@
 import { FadeIn } from "../animations/FadeIn";
 import { useEffect, useState, useRef } from "react";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Dna, Brain, Zap } from "lucide-react";
 
 function Counter({ end, suffix = "", duration = 2000 }: { end: number; suffix?: string; duration?: number }) {
   const [count, setCount] = useState(0);
@@ -30,6 +30,12 @@ function Counter({ end, suffix = "", duration = 2000 }: { end: number; suffix?: 
 
   return <span ref={ref}>{count}{suffix}</span>;
 }
+
+const pillars = [
+  { icon: <Dna className="w-5 h-5" />, title: "Longevity Diagnostics", desc: "Biological age, biomarker panels, metabolic assessment" },
+  { icon: <Brain className="w-5 h-5" />, title: "Cognitive Optimization", desc: "Hormonal balance, sleep quality, cognitive clarity" },
+  { icon: <Zap className="w-5 h-5" />, title: "Metabolic Performance", desc: "Insulin sensitivity, body composition, energy regulation" },
+];
 
 export function TransformationSection() {
   return (
@@ -82,19 +88,37 @@ export function TransformationSection() {
             </FadeIn>
           </div>
 
-          {/* Right – large image */}
+          {/* Right – dark feature panel */}
           <FadeIn delay={0.2} className="lg:col-span-3 h-full">
-            <div className="h-full min-h-[400px] rounded-3xl overflow-hidden relative border border-border shadow-[0_20px_60px_rgba(0,0,0,0.6)]">
-              <div
-                className="absolute inset-0 bg-cover bg-center hover:scale-105 transition-transform duration-[1500ms]"
-                style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/transformation.jpg?v=4)` }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6">
-                <p className="text-foreground/60 text-sm font-light italic font-display">
-                  "A new approach to preventive medicine, metabolic optimization, and regenerative science."
+            <div className="h-full min-h-[400px] rounded-3xl border border-border bg-[#040b14] relative overflow-hidden flex flex-col justify-between p-10">
+              <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
+              <div className="absolute -bottom-24 -right-24 w-72 h-72 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute top-10 right-10 w-40 h-40 bg-gold/5 rounded-full blur-3xl pointer-events-none" />
+
+              <div className="relative z-10">
+                <span className="text-[10px] font-semibold tracking-[0.2em] uppercase text-primary/60 block mb-8">What We Address</span>
+                <div className="space-y-6">
+                  {pillars.map((p, i) => (
+                    <FadeIn key={i} delay={0.3 + i * 0.1}>
+                      <div className="flex items-start gap-5 group">
+                        <div className="w-10 h-10 rounded-2xl bg-primary/8 border border-primary/20 flex items-center justify-center text-primary shrink-0 group-hover:bg-primary group-hover:border-primary group-hover:shadow-[0_0_16px_rgba(16,185,171,0.4)] group-hover:text-white transition-all duration-300">
+                          {p.icon}
+                        </div>
+                        <div>
+                          <h4 className="font-bold text-sm text-foreground/85 mb-1">{p.title}</h4>
+                          <p className="text-xs text-muted-foreground leading-relaxed">{p.desc}</p>
+                        </div>
+                      </div>
+                    </FadeIn>
+                  ))}
+                </div>
+              </div>
+
+              <div className="relative z-10 mt-10 pt-8 border-t border-white/8">
+                <p className="text-sm font-display italic text-foreground/40 leading-relaxed">
+                  "A new approach to preventive medicine, metabolic optimization, and regenerative science — built around your unique biology."
                 </p>
-                <p className="text-primary text-xs font-medium mt-2 text-glow">— Dr. Ahmed Amer, Founder</p>
+                <p className="text-xs text-primary mt-3 font-medium text-glow">— Dr. Ahmed Amer, Founder · FOY Clinic</p>
               </div>
             </div>
           </FadeIn>
