@@ -1,5 +1,6 @@
 import { FadeIn } from "../animations/FadeIn";
 import { useEffect, useState, useRef } from "react";
+import { ArrowUpRight } from "lucide-react";
 
 function Counter({ end, suffix = "", duration = 2000 }: { end: number; suffix?: string; duration?: number }) {
   const [count, setCount] = useState(0);
@@ -32,55 +33,75 @@ function Counter({ end, suffix = "", duration = 2000 }: { end: number; suffix?: 
 
 export function TransformationSection() {
   return (
-    <section className="relative py-28 overflow-hidden bg-foreground">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_80%_at_50%_50%,rgba(13,148,136,0.12)_0%,transparent_70%)] pointer-events-none" />
+    <section className="py-24 bg-muted/40 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 md:px-8">
 
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-        <FadeIn className="mb-6">
-          <span className="text-primary font-semibold tracking-widest uppercase text-xs mb-5 block">The FOY Standard</span>
-          <h2 className="text-4xl md:text-6xl font-display font-bold leading-tight text-white">
-            Medicine Designed<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-teal-300 to-gold italic">
-              Around You.
-            </span>
-          </h2>
-        </FadeIn>
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-5">
 
-        <FadeIn delay={0.2} className="max-w-2xl mx-auto mb-16">
-          <p className="text-lg text-white/50 font-light leading-relaxed">
-            We combine longevity diagnostics, metabolic science, and regenerative medicine into a single, physician-guided program — built entirely around your individual biology.
-          </p>
-        </FadeIn>
+          {/* Left – headline + stats bento */}
+          <div className="lg:col-span-2 flex flex-col gap-5">
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 w-full max-w-3xl mx-auto mb-20">
-          {[
-            { end: 97, suffix: "%", label: "Patient Satisfaction" },
-            { end: 10000, suffix: "+", label: "Patients Treated" },
-            { end: 15, suffix: "+", label: "Years of Excellence" },
-          ].map(({ end, suffix, label }) => (
-            <FadeIn key={label} delay={0.3} className="flex flex-col items-center">
-              <div className="text-4xl md:text-5xl font-display font-bold text-primary mb-2">
-                <Counter end={end} suffix={suffix} />
+            {/* Headline card */}
+            <FadeIn className="flex-1">
+              <div className="h-full rounded-3xl bg-foreground p-10 relative overflow-hidden flex flex-col justify-between">
+                <div className="absolute -top-12 -right-12 w-48 h-48 bg-primary/20 rounded-full blur-3xl" />
+                <div className="relative z-10">
+                  <span className="text-[10px] font-semibold tracking-[0.2em] uppercase text-primary block mb-5">The FOY Standard</span>
+                  <h2 className="text-3xl md:text-4xl font-display font-bold text-white leading-tight">
+                    Medicine Designed<br />
+                    <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-primary to-teal-300">
+                      Around You.
+                    </span>
+                  </h2>
+                  <p className="text-white/40 text-sm font-light mt-4 leading-relaxed">
+                    We combine longevity diagnostics, metabolic science, and regenerative medicine into a single physician-guided program.
+                  </p>
+                </div>
+                <button
+                  onClick={() => document.querySelector("#booking")?.scrollIntoView({ behavior: "smooth" })}
+                  className="relative z-10 mt-8 self-start flex items-center gap-2 text-xs font-semibold text-primary hover:text-teal-300 transition-colors group"
+                >
+                  Book a Consultation
+                  <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </button>
               </div>
-              <div className="text-xs uppercase tracking-widest text-white/40 font-medium">{label}</div>
             </FadeIn>
-          ))}
-        </div>
 
-        <FadeIn delay={0.5} className="relative w-full max-w-4xl mx-auto rounded-2xl overflow-hidden border border-white/8 shadow-[0_30px_80px_rgba(0,0,0,0.5)]">
-          <div className="relative aspect-video md:aspect-[21/9] bg-black">
-            <div
-              className="absolute inset-0 bg-cover bg-center opacity-70 hover:scale-105 transition-transform duration-[1500ms]"
-              style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/transformation.jpg?v=4)` }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
-            <div className="absolute bottom-6 left-6 right-6 text-left">
-              <p className="text-white/80 text-sm font-light italic">
-                "A new approach to preventive medicine, metabolic optimization, and regenerative science."
-              </p>
-            </div>
+            {/* Stats row */}
+            <FadeIn delay={0.1} className="grid grid-cols-3 gap-3">
+              {[
+                { end: 97, suffix: "%", label: "Satisfaction" },
+                { end: 10000, suffix: "+", label: "Patients" },
+                { end: 15, suffix: "+", label: "Years" },
+              ].map(({ end, suffix, label }) => (
+                <div key={label} className="rounded-2xl bg-card border border-border p-5 text-center">
+                  <div className="text-xl font-display font-bold text-primary leading-none mb-1">
+                    <Counter end={end} suffix={suffix} />
+                  </div>
+                  <div className="text-[10px] uppercase tracking-widest text-muted-foreground font-medium">{label}</div>
+                </div>
+              ))}
+            </FadeIn>
           </div>
-        </FadeIn>
+
+          {/* Right – large image card */}
+          <FadeIn delay={0.2} className="lg:col-span-3 h-full">
+            <div className="h-full min-h-[400px] rounded-3xl overflow-hidden relative shadow-xl border border-border">
+              <div
+                className="absolute inset-0 bg-cover bg-center hover:scale-105 transition-transform duration-[1500ms]"
+                style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/transformation.jpg?v=4)` }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+              <div className="absolute bottom-6 left-6 right-6">
+                <p className="text-white/70 text-sm font-light italic font-display">
+                  "A new approach to preventive medicine, metabolic optimization, and regenerative science."
+                </p>
+                <p className="text-primary text-xs font-medium mt-2">— Dr. Ahmed Amer, Founder</p>
+              </div>
+            </div>
+          </FadeIn>
+
+        </div>
       </div>
     </section>
   );

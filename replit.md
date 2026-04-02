@@ -1,3 +1,16 @@
+# FOY Longevity & Wellness Clinic
+
+## Site Overview
+Premium longevity & regenerative medicine clinic website for Dr. Ahmed Amer, Cairo Egypt.
+- **Design**: Light mode with dark hero/footer contrast sections. Teal (#0D9488) + gold palette.
+- **Style**: Modern bento grid layouts, pill badge labels, glassmorphism cards, infinite marquee testimonials.
+- **Sections**: Hero → What is FOY (bento) → Transformation (bento) → Our Approach (grid) → Programs (bento) → AI Advisor → Before/After → Why Programs → Testimonials → Booking → FAQ → Footer
+- **Do NOT modify**: `BookingSection.tsx`, `FaqSection.tsx`, `App.tsx` routing, `hooks/use-bookings.ts`
+- **AiAssistantSection**: Intentionally dark terminal UI (`bg-[#030e14]`) — keep as-is
+- **Hero + Footer**: Intentionally dark (`bg-foreground`) for contrast against light body sections
+
+---
+
 # Workspace
 
 ## Overview
