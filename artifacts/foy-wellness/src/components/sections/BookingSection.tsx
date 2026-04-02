@@ -80,7 +80,7 @@ export function BookingSection() {
                 rel="noopener noreferrer"
                 className="text-sm text-muted-foreground hover:text-primary transition-colors block"
               >
-                FOY Longevity &amp; Regenerative Medicine Center<br />New Cairo Medical District, Cairo, Egypt
+                30 El-Mohandes Mohammed Hasan Helmy<br />El Mohandseen, Cairo, Egypt
               </a>
               <a
                 href="https://wa.me/201200022406"

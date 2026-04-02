@@ -90,7 +90,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="text-foreground/35 hover:text-primary transition-colors"
                 >
-                  Cairo, Egypt<br />New Cairo Medical District
+                  30 El-Mohandes Mohammed Hasan Helmy<br />El Mohandseen, Cairo, Egypt
                 </a>
               </li>
               <li className="flex items-center gap-3 text-sm text-foreground/35 font-light">
