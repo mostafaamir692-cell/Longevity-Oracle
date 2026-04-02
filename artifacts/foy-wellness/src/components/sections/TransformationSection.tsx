@@ -87,7 +87,7 @@ export function TransformationSection() {
             <div className="h-full min-h-[400px] rounded-3xl overflow-hidden relative border border-border shadow-[0_20px_60px_rgba(0,0,0,0.6)]">
               <div
                 className="absolute inset-0 bg-cover bg-center hover:scale-105 transition-transform duration-[1500ms]"
-                style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/transformation.jpg?v=4)` }}
+                style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/transformation.png?v=4)` }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">

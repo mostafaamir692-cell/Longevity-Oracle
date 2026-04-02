@@ -1,0 +1,26 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "4kSqU23WZc1ab-U1ayqMZ"
+uri = "file://artifacts/foy-wellness/public/images/transformation.png"
+type = "image"
+title = "clinic interior transformation"
+
+[[generated]]
+id = "VN2YpGEGo6MY9OsU-utIc"
+uri = "file://artifacts/foy-wellness/public/images/skin.png"
+type = "image"
+title = "skin health close up"
+
+[[generated]]
+id = "MPnLGoKtesmNyUvVmTt5j"
+uri = "file://artifacts/foy-wellness/public/images/hair.png"
+type = "image"
+title = "hair health clinical"
+
+[[generated]]
+id = "IkXnFFr345AU928tzpQdc"
+uri = "file://artifacts/foy-wellness/public/images/aging.png"
+type = "image"
+title = "anti aging portrait"
