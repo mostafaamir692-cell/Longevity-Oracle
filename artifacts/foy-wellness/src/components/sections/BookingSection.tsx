@@ -74,7 +74,14 @@ export function BookingSection() {
 
             <div className="p-6 bg-card border border-border rounded-2xl space-y-3">
               <h4 className="font-semibold text-sm text-foreground/80">Location &amp; Contact</h4>
-              <p className="text-sm text-muted-foreground">FOY Longevity &amp; Regenerative Medicine Center<br />New Cairo Medical District, Cairo, Egypt</p>
+              <a
+                href="https://maps.app.goo.gl/eNogzYsjbfpKWsnC7"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-muted-foreground hover:text-primary transition-colors block"
+              >
+                FOY Longevity &amp; Regenerative Medicine Center<br />New Cairo Medical District, Cairo, Egypt
+              </a>
               <a
                 href="https://wa.me/201200022406"
                 target="_blank"

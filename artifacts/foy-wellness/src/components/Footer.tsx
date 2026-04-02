@@ -78,9 +78,16 @@ export function Footer() {
           <div>
             <h4 className="font-semibold text-xs text-foreground/50 mb-6 tracking-[0.2em] uppercase">Contact</h4>
             <ul className="space-y-4">
-              <li className="flex items-start gap-3 text-sm text-foreground/35 font-light">
+              <li className="flex items-start gap-3 text-sm font-light">
                 <MapPin className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                <span>Cairo, Egypt<br />New Cairo Medical District</span>
+                <a
+                  href="https://maps.app.goo.gl/eNogzYsjbfpKWsnC7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-foreground/35 hover:text-primary transition-colors"
+                >
+                  Cairo, Egypt<br />New Cairo Medical District
+                </a>
               </li>
               <li className="flex items-center gap-3 text-sm text-foreground/35 font-light">
                 <Phone className="w-4 h-4 text-primary shrink-0" />
