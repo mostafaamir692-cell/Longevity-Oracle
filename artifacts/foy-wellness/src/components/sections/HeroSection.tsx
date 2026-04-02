@@ -53,7 +53,7 @@ export function HeroSection() {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[150%] bg-primary/15 blur-[100px] rounded-full pointer-events-none" />
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold leading-tight max-w-4xl relative z-10 text-white">
             Healing. Thriving.{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-teal-300 to-gold">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-teal-300 to-gold" style={{ filter: "drop-shadow(0 0 18px rgba(16,185,171,0.35)) drop-shadow(0 0 6px rgba(212,170,40,0.2))" }}>
               Living Beautifully.
             </span>
           </h1>
