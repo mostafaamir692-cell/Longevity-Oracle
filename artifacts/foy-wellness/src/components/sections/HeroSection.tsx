@@ -17,7 +17,7 @@ export function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-foreground">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#040b14]">
       {/* Radial ambient glow */}
       <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_30%,rgba(13,148,136,0.18)_0%,transparent_70%)] pointer-events-none" />
       

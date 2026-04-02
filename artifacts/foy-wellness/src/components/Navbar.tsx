@@ -31,19 +31,15 @@ export function Navbar() {
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-500 border-b",
         scrolled
-          ? "bg-white/90 backdrop-blur-xl border-border/60 py-3 shadow-sm"
+          ? "bg-background/90 backdrop-blur-xl border-border/60 py-3 shadow-[0_4px_24px_rgba(0,0,0,0.4)]"
           : "bg-transparent border-transparent py-6"
       )}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-8 flex items-center justify-between">
         <Link
           href="/"
-          className={cn(
-            "text-xl font-display font-bold tracking-[0.15em] relative z-50 transition-colors",
-            scrolled
-              ? "text-transparent bg-clip-text bg-gradient-to-r from-primary to-teal-600"
-              : "text-transparent bg-clip-text bg-gradient-to-r from-primary to-gold"
-          )}
+          className="text-xl font-display font-bold tracking-[0.15em] relative z-50 text-transparent bg-clip-text bg-gradient-to-r from-primary to-gold"
+          style={{ filter: "drop-shadow(0 0 8px rgba(16,185,171,0.5))" }}
         >
           FOY CLINIC
         </Link>
@@ -55,10 +51,7 @@ export function Navbar() {
               <li key={link.name}>
                 <button
                   onClick={() => scrollTo(link.href)}
-                  className={cn(
-                    "text-xs font-semibold tracking-widest uppercase transition-colors duration-300",
-                    scrolled ? "text-foreground/70 hover:text-primary" : "text-white/70 hover:text-white"
-                  )}
+                  className="text-xs font-semibold tracking-widest uppercase text-foreground/50 hover:text-primary transition-colors duration-300"
                 >
                   {link.name}
                 </button>
@@ -72,7 +65,7 @@ export function Navbar() {
 
         {/* Mobile Toggle */}
         <button
-          className={cn("md:hidden z-50 p-2 transition-colors", scrolled ? "text-foreground" : "text-white")}
+          className="md:hidden z-50 p-2 text-foreground/70"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
@@ -81,7 +74,7 @@ export function Navbar() {
         {/* Mobile Menu */}
         <div
           className={cn(
-            "fixed inset-0 bg-background/97 backdrop-blur-2xl flex flex-col items-center justify-center space-y-8 transition-all duration-500 md:hidden",
+            "fixed inset-0 bg-background/98 backdrop-blur-2xl flex flex-col items-center justify-center space-y-8 transition-all duration-500 md:hidden",
             mobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
           )}
         >
@@ -89,7 +82,7 @@ export function Navbar() {
             <button
               key={link.name}
               onClick={() => scrollTo(link.href)}
-              className="text-xl font-display tracking-widest text-foreground hover:text-primary transition-colors"
+              className="text-xl font-display tracking-widest text-foreground/60 hover:text-primary transition-colors"
             >
               {link.name}
             </button>

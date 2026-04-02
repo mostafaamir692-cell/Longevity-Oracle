@@ -59,19 +59,19 @@ const ROW_B = [
 
 function TestimonialCard({ name, location, text }: { name: string; location: string; text: string }) {
   return (
-    <div className="flex-shrink-0 w-[380px] mx-3 bg-white rounded-2xl border border-border p-7 shadow-sm hover:shadow-md hover:border-primary/20 transition-all duration-300 group">
+    <div className="flex-shrink-0 w-[380px] mx-3 bg-card rounded-2xl border border-border p-7 hover:border-primary/25 hover:shadow-[0_8px_32px_rgba(0,0,0,0.5),0_0_20px_rgba(16,185,171,0.05)] transition-all duration-300 group">
       <div className="flex gap-0.5 mb-4">
         {[...Array(5)].map((_, i) => (
-          <Star key={i} className="w-3.5 h-3.5 fill-gold text-gold" />
+          <Star key={i} className="w-3.5 h-3.5 fill-gold text-gold" style={{ filter: "drop-shadow(0 0 4px rgba(212,170,40,0.5))" }} />
         ))}
       </div>
-      <p className="text-foreground/80 text-sm leading-relaxed mb-5 font-light">"{text}"</p>
+      <p className="text-foreground/55 text-sm leading-relaxed mb-5 font-light">"{text}"</p>
       <div className="flex items-center justify-between">
         <div>
-          <p className="font-semibold text-sm text-foreground">{name}</p>
+          <p className="font-semibold text-sm text-foreground/90">{name}</p>
           <p className="text-xs text-muted-foreground mt-0.5">{location}</p>
         </div>
-        <div className="flex items-center gap-1 text-[10px] text-primary font-medium bg-primary/8 px-2.5 py-1 rounded-full border border-primary/15">
+        <div className="flex items-center gap-1 text-[10px] text-primary font-medium bg-primary/8 px-2.5 py-1 rounded-full border border-primary/20">
           <BadgeCheck className="w-3 h-3" />
           Verified
         </div>
@@ -98,11 +98,13 @@ function MarqueeRow({ items, reverse = false }: { items: typeof ROW_A; reverse?:
 
 export function TestimonialsSection() {
   return (
-    <section className="py-24 bg-muted/40 relative z-10 overflow-hidden">
+    <section className="py-24 bg-muted/30 relative z-10 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-8 mb-14">
         <FadeIn className="text-center">
-          <span className="text-primary font-semibold tracking-widest uppercase text-xs mb-4 block">Patient Outcomes</span>
-          <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">What Our Patients Say</h2>
+          <span className="inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.2em] uppercase text-primary border border-primary/25 bg-primary/8 px-3 py-1.5 rounded-full mb-5">
+            Patient Outcomes
+          </span>
+          <h2 className="text-3xl md:text-5xl font-display font-bold mb-4 text-glow-white">What Our Patients Say</h2>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto font-light">
             Outcomes that speak for themselves — from patients across Egypt, the Gulf, and beyond.
           </p>
@@ -123,7 +125,7 @@ export function TestimonialsSection() {
             { num: "40+", label: "Countries Represented" },
           ].map(stat => (
             <div key={stat.label}>
-              <div className="text-3xl font-display font-bold text-primary mb-1">{stat.num}</div>
+              <div className="text-3xl font-display font-bold text-primary mb-1 text-glow">{stat.num}</div>
               <div className="text-xs text-muted-foreground uppercase tracking-widest">{stat.label}</div>
             </div>
           ))}

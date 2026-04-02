@@ -37,8 +37,10 @@ export function FaqSection() {
     <section className="py-24 bg-background relative z-10">
       <div className="max-w-3xl mx-auto px-6 md:px-8">
         <FadeIn className="text-center mb-14">
-          <span className="text-primary font-semibold tracking-widest uppercase text-xs mb-4 block">Common Questions</span>
-          <h2 className="text-3xl md:text-4xl font-display font-bold">Frequently Asked Questions</h2>
+          <span className="inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.2em] uppercase text-primary border border-primary/25 bg-primary/8 px-3 py-1.5 rounded-full mb-5">
+            Common Questions
+          </span>
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-glow-white">Frequently Asked Questions</h2>
         </FadeIn>
 
         <div className="space-y-3">
@@ -50,7 +52,7 @@ export function FaqSection() {
                   className={cn(
                     "border rounded-2xl overflow-hidden transition-all duration-300",
                     isOpen
-                      ? "bg-card border-primary/30 shadow-sm"
+                      ? "bg-card border-primary/30 shadow-[0_4px_24px_rgba(0,0,0,0.3),0_0_16px_rgba(16,185,171,0.06)]"
                       : "bg-card border-border hover:border-primary/20"
                   )}
                 >
@@ -58,7 +60,7 @@ export function FaqSection() {
                     className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none"
                     onClick={() => setOpenIdx(isOpen ? null : idx)}
                   >
-                    <span className="font-semibold text-base pr-8 text-foreground">{faq.q}</span>
+                    <span className="font-semibold text-base pr-8 text-foreground/85">{faq.q}</span>
                     <span className={cn("shrink-0 transition-colors", isOpen ? "text-primary" : "text-muted-foreground")}>
                       {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
                     </span>
