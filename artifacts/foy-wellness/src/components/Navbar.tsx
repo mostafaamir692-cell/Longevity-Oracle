@@ -10,7 +10,7 @@ export function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 60);
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -27,37 +27,32 @@ export function Navbar() {
   };
 
   return (
-    <nav
-      className={cn(
-        "fixed top-0 w-full z-50 transition-all duration-500 border-b",
-        scrolled
-          ? "bg-white/90 backdrop-blur-xl border-border/60 py-3 shadow-sm"
-          : "bg-transparent border-transparent py-6"
-      )}
-    >
+    <nav className={cn(
+      "fixed top-0 w-full z-50 transition-all duration-400",
+      scrolled
+        ? "bg-white/95 backdrop-blur-xl border-b border-border shadow-[0_1px_16px_rgba(0,0,0,0.06)] py-3"
+        : "bg-transparent border-b border-transparent py-5"
+    )}>
       <div className="max-w-7xl mx-auto px-6 md:px-8 flex items-center justify-between">
-        <Link
-          href="/"
-          className={cn(
-            "text-xl font-display font-bold tracking-[0.15em] relative z-50 transition-colors",
-            scrolled
-              ? "text-transparent bg-clip-text bg-gradient-to-r from-primary to-teal-600"
-              : "text-transparent bg-clip-text bg-gradient-to-r from-primary to-gold"
-          )}
-        >
+
+        {/* Wordmark */}
+        <Link href="/" className={cn(
+          "text-lg font-display font-bold tracking-[0.18em] relative z-50 transition-colors",
+          scrolled ? "text-foreground" : "text-white"
+        )}>
           FOY CLINIC
         </Link>
 
-        {/* Desktop Nav */}
-        <div className="hidden md:flex items-center space-x-8">
-          <ul className="flex items-center space-x-7">
-            {navLinks.map((link) => (
+        {/* Desktop links */}
+        <div className="hidden md:flex items-center gap-8">
+          <ul className="flex items-center gap-7">
+            {navLinks.map(link => (
               <li key={link.name}>
                 <button
                   onClick={() => scrollTo(link.href)}
                   className={cn(
-                    "text-xs font-semibold tracking-widest uppercase transition-colors duration-300",
-                    scrolled ? "text-foreground/70 hover:text-primary" : "text-white/70 hover:text-white"
+                    "text-[11px] font-semibold tracking-[0.18em] uppercase transition-colors duration-300",
+                    scrolled ? "text-foreground/60 hover:text-primary" : "text-white/60 hover:text-white"
                   )}
                 >
                   {link.name}
@@ -70,26 +65,24 @@ export function Navbar() {
           </PremiumButton>
         </div>
 
-        {/* Mobile Toggle */}
+        {/* Mobile toggle */}
         <button
-          className={cn("md:hidden z-50 p-2 transition-colors", scrolled ? "text-foreground" : "text-white")}
+          className={cn("md:hidden z-50 p-2", scrolled ? "text-foreground" : "text-white")}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
-          {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+          {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
 
-        {/* Mobile Menu */}
-        <div
-          className={cn(
-            "fixed inset-0 bg-background/97 backdrop-blur-2xl flex flex-col items-center justify-center space-y-8 transition-all duration-500 md:hidden",
-            mobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-          )}
-        >
-          {navLinks.map((link) => (
+        {/* Mobile overlay */}
+        <div className={cn(
+          "fixed inset-0 bg-white flex flex-col items-center justify-center gap-8 transition-all duration-400 md:hidden",
+          mobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        )}>
+          {navLinks.map(link => (
             <button
               key={link.name}
               onClick={() => scrollTo(link.href)}
-              className="text-xl font-display tracking-widest text-foreground hover:text-primary transition-colors"
+              className="text-2xl font-display font-bold text-foreground hover:text-primary transition-colors tracking-wide"
             >
               {link.name}
             </button>
