@@ -31,7 +31,7 @@ export function Footer() {
             </p>
             <div className="flex gap-3">
               {[
-                { Icon: Instagram, href: "#" },
+                { Icon: Instagram, href: "https://www.instagram.com/foycliniceg" },
                 { Icon: Twitter, href: "#" },
                 { Icon: Linkedin, href: "https://www.linkedin.com/in/foycliniceg" },
               ].map(({ Icon, href }, i) => (
