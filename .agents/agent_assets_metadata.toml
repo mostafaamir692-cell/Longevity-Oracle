@@ -1,5 +1,4 @@
 uploads = []
-outputs = []
 
 [[generated]]
 id = "4kSqU23WZc1ab-U1ayqMZ"
@@ -24,3 +23,15 @@ id = "IkXnFFr345AU928tzpQdc"
 uri = "file://artifacts/foy-wellness/public/images/aging.png"
 type = "image"
 title = "anti aging portrait"
+
+[[outputs]]
+id = "vOuUhlJtAhOQ4KqJGKvqX"
+uri = "file://attached_assets/stock_images/skin.jpg"
+type = "image"
+title = "woman face skin rejuvenation before after treatment glowing healthy skin close up portrait"
+
+[[outputs]]
+id = "Rxfi5kn3hKARtDa_e_-eO"
+uri = "file://attached_assets/stock_images/transformation.jpg"
+type = "image"
+title = "luxury modern medical clinic interior wellness center premium"

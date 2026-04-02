@@ -16,21 +16,21 @@ const content: Record<TabKey, {
   description: string;
 }> = {
   skin: {
-    img: `${BASE}images/skin.png${V}`,
+    img: `${BASE}images/skin.jpg${V}`,
     beforeLabel: "Dull · Uneven · Fatigued",
     afterLabel: "Radiant · Even · Luminous",
     title: "Skin Rejuvenation",
     description: "HydraFacial + PRP + Exosome Therapy — 8 weeks"
   },
   hair: {
-    img: `${BASE}images/hair.png${V}`,
+    img: `${BASE}images/hair.jpg${V}`,
     beforeLabel: "Thinning · Sparse · Fragile",
     afterLabel: "Full · Dense · Restored",
     title: "Hair Restoration",
     description: "PRP + Exosome Hair Therapy — 12 weeks"
   },
   aging: {
-    img: `${BASE}images/aging.png${V}`,
+    img: `${BASE}images/aging.jpg${V}`,
     beforeLabel: "Fine Lines · Sagging · Tired",
     afterLabel: "Lifted · Firm · Youthful",
     title: "Anti-Aging Protocol",
