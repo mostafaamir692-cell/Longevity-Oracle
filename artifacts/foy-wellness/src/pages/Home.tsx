@@ -13,6 +13,14 @@ import { BookingSection } from "@/components/sections/BookingSection";
 import { FaqSection } from "@/components/sections/FaqSection";
 import { Footer } from "@/components/Footer";
 
+function SectionSeparator() {
+  return (
+    <div className="w-full flex flex-col items-center justify-center py-8 bg-transparent relative z-10 pointer-events-none">
+      <div className="w-full max-w-2xl h-[1px] bg-gradient-to-r from-transparent via-border to-transparent" />
+    </div>
+  );
+}
+
 export default function Home() {
   useEffect(() => {
     if ("scrollRestoration" in history) {
@@ -26,14 +34,21 @@ export default function Home() {
       <Navbar />
       <main>
         <HeroSection />
+        <SectionSeparator />
+        
         <ProblemSection />
         <TransformationSection />
         <FoySystemSection />
+        <SectionSeparator />
+        
         <ServicesSection />
+        <SectionSeparator />
+        
         <AiAssistantSection />
         <BeforeAfterSection />
         <LifestyleSection />
         <TestimonialsSection />
+        
         <BookingSection />
         <FaqSection />
       </main>

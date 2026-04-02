@@ -59,22 +59,22 @@ const ROW_B = [
 
 function TestimonialCard({ name, location, text }: { name: string; location: string; text: string }) {
   return (
-    <div className="flex-shrink-0 w-[360px] mx-3 bg-white rounded-2xl border border-border p-6 shadow-[0_2px_16px_rgba(0,0,0,0.05)] hover:shadow-[0_6px_30px_rgba(0,0,0,0.09)] hover:border-primary/20 transition-all duration-300 group">
+    <div className="flex-shrink-0 w-[380px] mx-3 bg-white rounded-2xl border border-border p-7 shadow-sm hover:shadow-md hover:border-primary/20 transition-all duration-300 group">
       <div className="flex gap-0.5 mb-4">
         {[...Array(5)].map((_, i) => (
-          <Star key={i} className="w-3 h-3 fill-gold text-gold" />
+          <Star key={i} className="w-3.5 h-3.5 fill-gold text-gold" />
         ))}
       </div>
-      <p className="text-foreground/75 text-sm leading-relaxed mb-5 font-light">"{text}"</p>
-      <div className="flex items-center justify-between pt-4 border-t border-border">
+      <p className="text-foreground/80 text-sm leading-relaxed mb-5 font-light">"{text}"</p>
+      <div className="flex items-center justify-between">
         <div>
           <p className="font-semibold text-sm text-foreground">{name}</p>
-          <p className="text-[11px] text-muted-foreground mt-0.5">{location}</p>
+          <p className="text-xs text-muted-foreground mt-0.5">{location}</p>
         </div>
-        <span className="flex items-center gap-1 text-[10px] text-primary font-medium bg-primary/6 px-2 py-1 rounded-full border border-primary/12">
+        <div className="flex items-center gap-1 text-[10px] text-primary font-medium bg-primary/8 px-2.5 py-1 rounded-full border border-primary/15">
           <BadgeCheck className="w-3 h-3" />
           Verified
-        </span>
+        </div>
       </div>
     </div>
   );
@@ -83,7 +83,7 @@ function TestimonialCard({ name, location, text }: { name: string; location: str
 function MarqueeRow({ items, reverse = false }: { items: typeof ROW_A; reverse?: boolean }) {
   const doubled = [...items, ...items];
   return (
-    <div className="flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
+    <div className="flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
       <div
         className={`flex ${reverse ? "animate-marquee-reverse" : "animate-marquee"} hover:[animation-play-state:paused]`}
         style={{ width: "max-content" }}
@@ -98,38 +98,36 @@ function MarqueeRow({ items, reverse = false }: { items: typeof ROW_A; reverse?:
 
 export function TestimonialsSection() {
   return (
-    <section className="py-24 bg-muted/50 overflow-hidden">
+    <section className="py-24 bg-muted/40 relative z-10 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-8 mb-14">
-        <FadeIn className="flex flex-col lg:flex-row gap-10 lg:gap-20 items-start lg:items-end">
-          <div className="lg:w-5/12">
-            <span className="section-label">Patient Outcomes</span>
-            <h2 className="text-4xl md:text-5xl font-display font-bold leading-[1.1]">
-              What Our<br />Patients Say
-            </h2>
-          </div>
-          <div className="lg:w-7/12">
-            <p className="text-muted-foreground text-lg font-light leading-relaxed">
-              Outcomes that speak for themselves — from patients across Egypt, the Gulf, and beyond.
-            </p>
-            <div className="flex flex-wrap gap-8 mt-6">
-              {[
-                { num: "10,000+", label: "Patients Treated" },
-                { num: "97%", label: "Satisfaction Rate" },
-                { num: "40+", label: "Countries" },
-              ].map(s => (
-                <div key={s.label}>
-                  <div className="text-2xl font-display font-bold text-primary">{s.num}</div>
-                  <div className="text-[10px] uppercase tracking-widest text-muted-foreground mt-0.5">{s.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
+        <FadeIn className="text-center">
+          <span className="text-primary font-semibold tracking-widest uppercase text-xs mb-4 block">Patient Outcomes</span>
+          <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">What Our Patients Say</h2>
+          <p className="text-muted-foreground text-lg max-w-xl mx-auto font-light">
+            Outcomes that speak for themselves — from patients across Egypt, the Gulf, and beyond.
+          </p>
         </FadeIn>
       </div>
 
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-5">
         <MarqueeRow items={ROW_A} />
         <MarqueeRow items={ROW_B} reverse />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 md:px-8 mt-14">
+        <FadeIn className="flex flex-wrap justify-center gap-10 text-center">
+          {[
+            { num: "10,000+", label: "Patients Treated" },
+            { num: "97%", label: "Satisfaction Rate" },
+            { num: "15+", label: "Years of Excellence" },
+            { num: "40+", label: "Countries Represented" },
+          ].map(stat => (
+            <div key={stat.label}>
+              <div className="text-3xl font-display font-bold text-primary mb-1">{stat.num}</div>
+              <div className="text-xs text-muted-foreground uppercase tracking-widest">{stat.label}</div>
+            </div>
+          ))}
+        </FadeIn>
       </div>
     </section>
   );

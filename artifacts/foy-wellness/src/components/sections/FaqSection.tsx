@@ -34,41 +34,42 @@ export function FaqSection() {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
 
   return (
-    <section className="py-24 bg-muted/30">
+    <section className="py-24 bg-background relative z-10">
       <div className="max-w-3xl mx-auto px-6 md:px-8">
-        <FadeIn className="mb-14">
-          <span className="section-label">Common Questions</span>
+        <FadeIn className="text-center mb-14">
+          <span className="text-primary font-semibold tracking-widest uppercase text-xs mb-4 block">Common Questions</span>
           <h2 className="text-3xl md:text-4xl font-display font-bold">Frequently Asked Questions</h2>
         </FadeIn>
 
-        <div className="space-y-0">
+        <div className="space-y-3">
           {faqs.map((faq, idx) => {
             const isOpen = openIdx === idx;
             return (
-              <FadeIn key={idx} delay={idx * 0.04}>
-                <div className={cn("border-b border-border transition-colors", isOpen ? "border-primary/20" : "")}>
+              <FadeIn key={idx} delay={idx * 0.05}>
+                <div
+                  className={cn(
+                    "border rounded-2xl overflow-hidden transition-all duration-300",
+                    isOpen
+                      ? "bg-card border-primary/30 shadow-sm"
+                      : "bg-card border-border hover:border-primary/20"
+                  )}
+                >
                   <button
-                    className="w-full py-5 flex items-center justify-between text-left focus:outline-none group"
+                    className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none"
                     onClick={() => setOpenIdx(isOpen ? null : idx)}
                   >
-                    <span className={cn(
-                      "font-medium text-base pr-8 transition-colors",
-                      isOpen ? "text-primary" : "text-foreground group-hover:text-primary"
-                    )}>
-                      {faq.q}
-                    </span>
-                    <span className={cn("shrink-0 transition-all", isOpen ? "text-primary rotate-0" : "text-muted-foreground")}>
-                      {isOpen
-                        ? <Minus className="w-4 h-4" />
-                        : <Plus className="w-4 h-4" />
-                      }
+                    <span className="font-semibold text-base pr-8 text-foreground">{faq.q}</span>
+                    <span className={cn("shrink-0 transition-colors", isOpen ? "text-primary" : "text-muted-foreground")}>
+                      {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
                     </span>
                   </button>
-                  <div className={cn(
-                    "overflow-hidden transition-all duration-300 ease-in-out",
-                    isOpen ? "max-h-48 pb-5 opacity-100" : "max-h-0 opacity-0"
-                  )}>
-                    <p className="text-muted-foreground leading-relaxed text-sm font-light">{faq.a}</p>
+                  <div
+                    className={cn(
+                      "px-6 overflow-hidden transition-all duration-300 ease-in-out",
+                      isOpen ? "max-h-60 pb-6 opacity-100" : "max-h-0 opacity-0"
+                    )}
+                  >
+                    <p className="text-muted-foreground leading-relaxed text-sm">{faq.a}</p>
                   </div>
                 </div>
               </FadeIn>
