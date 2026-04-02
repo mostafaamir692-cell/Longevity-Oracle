@@ -30,8 +30,12 @@ export function Footer() {
               Healing. Thriving. Living Beautifully.
             </p>
             <div className="flex gap-3">
-              {[Instagram, Twitter, Linkedin].map((Icon, i) => (
-                <a key={i} href="#" className="w-9 h-9 rounded-full bg-white/4 border border-border flex items-center justify-center text-foreground/30 hover:bg-primary hover:text-white hover:border-primary hover:shadow-[0_0_12px_rgba(16,185,171,0.4)] transition-all duration-300">
+              {[
+                { Icon: Instagram, href: "#" },
+                { Icon: Twitter, href: "#" },
+                { Icon: Linkedin, href: "https://www.linkedin.com/in/foycliniceg" },
+              ].map(({ Icon, href }, i) => (
+                <a key={i} href={href} target={href !== "#" ? "_blank" : undefined} rel={href !== "#" ? "noopener noreferrer" : undefined} className="w-9 h-9 rounded-full bg-white/4 border border-border flex items-center justify-center text-foreground/30 hover:bg-primary hover:text-white hover:border-primary hover:shadow-[0_0_12px_rgba(16,185,171,0.4)] transition-all duration-300">
                   <Icon className="w-4 h-4" />
                 </a>
               ))}
