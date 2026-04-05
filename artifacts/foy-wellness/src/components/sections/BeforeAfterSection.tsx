@@ -88,7 +88,7 @@ function RadialStat({ value, label, color = "#0DB5A6" }: { value: number; label:
 
 export function BeforeAfterSection() {
   return (
-    <section id="results" className="py-24 bg-background relative z-10 overflow-hidden">
+    <section id="results" className="py-24 bg-data-lines relative z-10 overflow-hidden">
       {/* Background orbs */}
       <div className="absolute top-20 left-10 w-96 h-96 bg-primary/5 rounded-full blur-[100px] pointer-events-none animate-float-orb" />
       <div className="absolute bottom-20 right-10 w-72 h-72 bg-gold/4 rounded-full blur-[80px] pointer-events-none" style={{ animationDelay: "3s" }} />

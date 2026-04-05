@@ -84,7 +84,7 @@ export function FoySystemSection() {
   const inView = useInView(ref, { once: true });
 
   return (
-    <section id="system" className="py-24 bg-muted/30 relative z-10 overflow-hidden">
+    <section id="system" className="py-24 bg-mesh-diagonal relative z-10 overflow-hidden">
       {/* Ambient background */}
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/3 rounded-full blur-[120px] pointer-events-none" />
 

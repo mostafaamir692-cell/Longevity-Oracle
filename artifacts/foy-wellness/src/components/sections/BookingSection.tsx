@@ -47,7 +47,7 @@ export function BookingSection() {
   ];
 
   return (
-    <section id="booking" className="py-24 bg-muted/30 relative z-10 border-t border-border">
+    <section id="booking" className="py-24 bg-aurora relative z-10 border-t border-border">
       <div className="max-w-6xl mx-auto px-6 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <FadeIn>

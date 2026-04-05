@@ -98,7 +98,7 @@ function MarqueeRow({ items, reverse = false }: { items: typeof ROW_A; reverse?:
 
 export function TestimonialsSection() {
   return (
-    <section className="py-24 bg-muted/30 relative z-10 overflow-hidden">
+    <section className="py-24 bg-mesh-diagonal relative z-10 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-8 mb-14">
         <FadeIn className="text-center">
           <span className="inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.2em] uppercase text-primary border border-primary/25 bg-primary/8 px-3 py-1.5 rounded-full mb-5">

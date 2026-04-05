@@ -34,7 +34,7 @@ export function FaqSection() {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
 
   return (
-    <section className="py-24 bg-background relative z-10">
+    <section className="py-24 bg-section-alt relative z-10">
       <div className="max-w-3xl mx-auto px-6 md:px-8">
         <FadeIn className="text-center mb-14">
           <span className="inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.2em] uppercase text-primary border border-primary/25 bg-primary/8 px-3 py-1.5 rounded-full mb-5">

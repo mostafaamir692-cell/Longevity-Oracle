@@ -23,7 +23,7 @@ export function FounderSection() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section className="py-24 bg-background relative z-10 overflow-hidden">
+    <section className="py-24 bg-glow-radial relative z-10 overflow-hidden">
       {/* Ambient orbs */}
       <motion.div
         className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/4 rounded-full blur-[120px] pointer-events-none"
