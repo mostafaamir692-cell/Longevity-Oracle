@@ -3,6 +3,8 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { ArrowUpRight, Award, GraduationCap, Microscope, Globe } from "lucide-react";
 
+const BASE = import.meta.env.BASE_URL;
+
 const credentials = [
   { icon: <GraduationCap className="w-4 h-4" />, text: "Medical Doctor — Cairo University" },
   { icon: <Microscope className="w-4 h-4" />, text: "Specialist in Regenerative & Longevity Medicine" },
@@ -41,43 +43,53 @@ export function FounderSection() {
           </h2>
         </FadeIn>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-5" ref={ref}>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5" ref={ref}>
 
-          {/* Main bio card – 3 cols */}
+          {/* Photo card – 3 cols */}
           <motion.div
-            className="lg:col-span-3 rounded-3xl bg-[#040b14] border border-border overflow-hidden relative"
+            className="lg:col-span-3 rounded-3xl overflow-hidden relative group"
+            initial={{ opacity: 0, x: -40 }}
+            animate={inView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          >
+            {/* Glowing border animation */}
+            <motion.div
+              className="absolute inset-0 rounded-3xl border-2 border-primary/0 z-20 pointer-events-none"
+              animate={{ borderColor: ["rgba(16,185,171,0)", "rgba(16,185,171,0.3)", "rgba(16,185,171,0)"] }}
+              transition={{ duration: 4, repeat: Infinity }}
+            />
+            <div className="relative h-full min-h-[480px] bg-card border border-border overflow-hidden rounded-3xl">
+              <img
+                src={`${BASE}images/dr-ahmed-amer.jpg`}
+                alt="Dr. Ahmed Amer — Founder of FOY Clinic"
+                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                style={{ minHeight: 480 }}
+              />
+              {/* Bottom overlay with name */}
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent px-6 pt-16 pb-6">
+                <p className="text-white font-display font-bold text-lg leading-tight">Dr. Ahmed Amer</p>
+                <p className="text-primary text-xs font-medium tracking-wide mt-1 text-glow">Founder & Medical Director</p>
+                <p className="text-white/40 text-[10px] mt-1">FOY Clinic · Cairo, Egypt</p>
+              </div>
+              {/* Top teal accent line */}
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent" />
+            </div>
+          </motion.div>
+
+          {/* Bio card – 5 cols */}
+          <motion.div
+            className="lg:col-span-5 rounded-3xl bg-[#040b14] border border-border overflow-hidden relative flex flex-col"
             initial={{ opacity: 0, y: 40 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           >
             <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
             <div className="absolute -top-16 -right-16 w-64 h-64 bg-primary/8 rounded-full blur-3xl pointer-events-none" />
 
-            {/* Name banner */}
-            <div className="bg-gradient-to-r from-primary/10 to-transparent border-b border-border px-10 py-7 relative">
-              <div className="flex items-start gap-5">
-                {/* Monogram / avatar */}
-                <div className="relative shrink-0">
-                  <div className="w-16 h-16 rounded-2xl bg-primary/15 border border-primary/30 flex items-center justify-center shadow-[0_0_24px_rgba(16,185,171,0.2)]">
-                    <span className="text-2xl font-display font-bold text-primary text-glow">AA</span>
-                  </div>
-                  <motion.div
-                    className="absolute -inset-1 rounded-2xl border border-primary/20"
-                    animate={{ opacity: [0.3, 0.8, 0.3] }}
-                    transition={{ duration: 3, repeat: Infinity }}
-                  />
-                </div>
-                <div>
-                  <h3 className="text-xl font-display font-bold text-foreground/90 mb-1">Dr. Ahmed Amer</h3>
-                  <p className="text-xs text-primary font-medium text-glow tracking-wide">Founder & Medical Director, FOY Clinic</p>
-                  <p className="text-xs text-muted-foreground mt-1">El Mohandseen, Cairo, Egypt</p>
-                </div>
-              </div>
-            </div>
+            <div className="p-8 lg:p-10 flex flex-col flex-1 relative z-10">
+              <p className="text-[10px] font-semibold text-primary/60 uppercase tracking-[0.2em] mb-6">His Mission</p>
 
-            {/* Bio */}
-            <div className="p-10 relative z-10">
-              <p className="text-foreground/55 text-base font-light leading-relaxed mb-5">
+              <p className="text-foreground/60 text-base font-light leading-relaxed mb-5">
                 Dr. Ahmed Amer founded FOY Clinic to introduce a fundamentally different model of healthcare — one that does not wait for illness to develop, but focuses on preserving vitality, optimizing metabolic function, and extending healthspan through science, personalization, and precision medicine.
               </p>
               <p className="text-foreground/40 text-sm font-light leading-relaxed mb-8">
@@ -85,32 +97,38 @@ export function FounderSection() {
               </p>
 
               {/* Quote */}
-              <div className="border-l-2 border-primary/40 pl-5 mb-8">
+              <div className="border-l-2 border-primary/40 pl-5 mb-8 flex-1">
                 <p className="text-sm font-display italic text-foreground/50 leading-relaxed">
                   "FOY is more than a clinic. It is the beginning of a new approach to modern healthcare — one that treats the person, not just the condition."
                 </p>
-                <p className="text-xs text-primary mt-2 font-medium text-glow">— Dr. Ahmed Amer</p>
+                <motion.p
+                  className="text-xs text-primary mt-2 font-medium text-glow"
+                  animate={{ opacity: [0.6, 1, 0.6] }}
+                  transition={{ duration: 3, repeat: Infinity }}
+                >
+                  — Dr. Ahmed Amer, Founder
+                </motion.p>
               </div>
 
               <button
                 onClick={() => document.querySelector("#booking")?.scrollIntoView({ behavior: "smooth" })}
-                className="flex items-center gap-2 px-6 py-3 rounded-2xl bg-primary/12 border border-primary/25 text-primary text-sm font-semibold hover:bg-primary hover:text-white transition-all duration-300 group"
+                className="self-start flex items-center gap-2 px-6 py-3 rounded-2xl bg-primary/12 border border-primary/25 text-primary text-sm font-semibold hover:bg-primary hover:text-white transition-all duration-300 group"
               >
-                Book a Consultation with Dr. Amer
+                Book with Dr. Amer
                 <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </button>
             </div>
           </motion.div>
 
-          {/* Right column – 2 cols */}
-          <div className="lg:col-span-2 flex flex-col gap-5">
+          {/* Right column – 4 cols */}
+          <div className="lg:col-span-4 flex flex-col gap-5">
 
             {/* Credentials */}
             <motion.div
               className="rounded-3xl bg-card border border-border overflow-hidden"
               initial={{ opacity: 0, x: 30 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             >
               <div className="bg-[#040b14] px-7 py-4 border-b border-border relative">
                 <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
@@ -123,7 +141,7 @@ export function FounderSection() {
                     className="flex items-center gap-4 px-7 py-4 hover:bg-primary/3 transition-colors group"
                     initial={{ opacity: 0, x: 20 }}
                     animate={inView ? { opacity: 1, x: 0 } : {}}
-                    transition={{ duration: 0.5, delay: 0.25 + i * 0.08 }}
+                    transition={{ duration: 0.5, delay: 0.3 + i * 0.08 }}
                   >
                     <span className="text-primary shrink-0 group-hover:scale-110 transition-transform duration-200">{c.icon}</span>
                     <span className="text-xs text-foreground/65 font-medium leading-snug">{c.text}</span>
@@ -137,22 +155,21 @@ export function FounderSection() {
               className="flex-1 rounded-3xl bg-primary/5 border border-primary/20 p-7 relative overflow-hidden"
               initial={{ opacity: 0, x: 30 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.7, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
             >
               <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-primary/10 rounded-full blur-2xl pointer-events-none" />
               <p className="text-[10px] font-semibold text-primary/60 uppercase tracking-[0.2em] mb-5">Clinical Focus</p>
-              <div className="space-y-4 relative z-10">
+              <div className="space-y-5 relative z-10">
                 {pillars.map((p, i) => (
                   <motion.div
                     key={i}
-                    className="group"
                     initial={{ opacity: 0, y: 10 }}
                     animate={inView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.5, delay: 0.4 + i * 0.1 }}
+                    transition={{ duration: 0.5, delay: 0.45 + i * 0.1 }}
                   >
                     <div className="flex items-center gap-2 mb-1">
                       <motion.div
-                        className="w-1.5 h-1.5 rounded-full bg-primary"
+                        className="w-1.5 h-1.5 rounded-full bg-primary shrink-0"
                         animate={{ scale: [1, 1.4, 1], opacity: [0.6, 1, 0.6] }}
                         transition={{ duration: 2.5, repeat: Infinity, delay: i * 0.8 }}
                         style={{ boxShadow: "0 0 6px rgba(16,185,171,0.8)" }}
@@ -164,7 +181,6 @@ export function FounderSection() {
                 ))}
               </div>
 
-              {/* Animated border pulse */}
               <motion.div
                 className="absolute inset-0 rounded-3xl border border-primary/0 pointer-events-none"
                 animate={{ borderColor: ["rgba(16,185,171,0)", "rgba(16,185,171,0.15)", "rgba(16,185,171,0)"] }}
