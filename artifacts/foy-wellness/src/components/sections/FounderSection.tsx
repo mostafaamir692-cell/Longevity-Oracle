@@ -24,13 +24,9 @@ export function FounderSection() {
 
   return (
     <section className="py-24 bg-glow-radial relative z-10 overflow-hidden">
-      {/* Ambient orbs */}
-      <motion.div
-        className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/4 rounded-full blur-[120px] pointer-events-none"
-        animate={{ scale: [1, 1.1, 1], opacity: [0.4, 0.7, 0.4] }}
-        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-gold/4 rounded-full blur-[80px] pointer-events-none" />
+      {/* Ambient orbs — static, no animated blur (prevents repaint) */}
+      <div className="absolute top-0 left-1/4 w-80 h-80 bg-primary/5 rounded-full blur-[60px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-60 h-60 bg-gold/4 rounded-full blur-[50px] pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8">
 

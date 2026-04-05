@@ -90,8 +90,8 @@ export function BeforeAfterSection() {
   return (
     <section id="results" className="py-24 bg-data-lines relative z-10 overflow-hidden">
       {/* Background orbs */}
-      <div className="absolute top-20 left-10 w-96 h-96 bg-primary/5 rounded-full blur-[100px] pointer-events-none animate-float-orb" />
-      <div className="absolute bottom-20 right-10 w-72 h-72 bg-gold/4 rounded-full blur-[80px] pointer-events-none" style={{ animationDelay: "3s" }} />
+      <div className="absolute top-20 left-10 w-64 h-64 bg-primary/5 rounded-full blur-[50px] pointer-events-none animate-float-orb" />
+      <div className="absolute bottom-20 right-10 w-52 h-52 bg-gold/4 rounded-full blur-[40px] pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8">
         <FadeIn className="mb-14">

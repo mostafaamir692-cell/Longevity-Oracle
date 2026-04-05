@@ -79,7 +79,7 @@ export function ProblemSection() {
 
   return (
     <section id="problem" className="py-24 bg-rings relative z-10 overflow-hidden">
-      <div className="absolute top-40 right-20 w-80 h-80 bg-gold/4 rounded-full blur-[100px] pointer-events-none animate-float-orb" />
+      <div className="absolute top-40 right-20 w-56 h-56 bg-gold/4 rounded-full blur-[50px] pointer-events-none animate-float-orb" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         <FadeIn className="mb-10">

@@ -72,7 +72,7 @@
     radial-gradient(ellipse 80% 60% at 20% 40%, rgba(16,185,171,0.12) 0%, transparent 60%),
     radial-gradient(ellipse 60% 50% at 80% 60%, rgba(201,162,39,0.07) 0%, transparent 55%),
     radial-gradient(ellipse 50% 40% at 50% 0%, rgba(16,185,171,0.08) 0%, transparent 50%);
-  animation: aurora-shift 14s ease-in-out infinite alternate;
+  /* animation removed — background-position animation forces full repaints */
 }
 
 /* Gold-teal diagonal mesh */
@@ -151,7 +151,7 @@
     radial-gradient(circle 420px at 50% 50%, rgba(16,185,171,0.09) 0%, transparent 60%),
     radial-gradient(ellipse 120% 70% at 15% 80%, rgba(201,162,39,0.06) 0%, transparent 50%),
     radial-gradient(ellipse 80% 50% at 85% 10%, rgba(16,185,171,0.07) 0%, transparent 50%);
-  animation: rings-breathe 10s ease-in-out infinite alternate;
+  /* animation removed — background-position animation forces full repaints */
 }
 
 /* Deep nebula — rich layered star-field feel */
@@ -169,7 +169,7 @@
       rgba(16,185,171,0.018) 80px,
       rgba(16,185,171,0.018) 81px
     );
-  animation: nebula-drift 18s ease-in-out infinite alternate;
+  /* animation removed — background-position animation forces full repaints */
 }
 
 /* Glassmorphism panel backgrounds */
@@ -221,9 +221,9 @@
 
   .animate-border-glow { animation: border-glow 3s ease-in-out infinite; }
   .animate-gradient-shift { background-size: 200% 200%; animation: gradient-shift 8s ease infinite; }
-  .animate-float-orb { animation: float-orb 8s ease-in-out infinite; }
-  .animate-marquee { animation: marquee 32s linear infinite; }
-  .animate-marquee-reverse { animation: marquee-reverse 32s linear infinite; }
+  .animate-float-orb { animation: float-orb 8s ease-in-out infinite; will-change: transform; }
+  .animate-marquee { animation: marquee 32s linear infinite; will-change: transform; }
+  .animate-marquee-reverse { animation: marquee-reverse 32s linear infinite; will-change: transform; }
   .animate-aurora { animation: aurora-shift 14s ease-in-out infinite alternate; }
 
   .glow-card { transition: all 0.4s ease; }

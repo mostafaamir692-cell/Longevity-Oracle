@@ -63,26 +63,30 @@ export function ParticleCanvas() {
         ctx.fillStyle = `rgba(${this.color}, ${this.alpha})`;
         ctx.fill();
         
-        // Subtle glow
-        ctx.shadowBlur = 10;
-        ctx.shadowColor = `rgba(${this.color}, ${this.alpha})`;
+        // shadowBlur removed — forces software rendering path, very expensive
       }
     }
 
     const init = () => {
       particles = [];
-      const particleCount = Math.floor(window.innerWidth / 15);
+      // Reduced from width/15 to width/28 — fewer particles, less work per frame
+      const particleCount = Math.floor(window.innerWidth / 28);
       for (let i = 0; i < particleCount; i++) {
         particles.push(new Particle());
       }
     };
 
+    let frameCount = 0;
     const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      particles.forEach((p) => {
-        p.update();
-        p.draw();
-      });
+      frameCount++;
+      // Cap at ~30fps by skipping every other frame
+      if (frameCount % 2 === 0) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach((p) => {
+          p.update();
+          p.draw();
+        });
+      }
       animationFrameId = requestAnimationFrame(animate);
     };
 

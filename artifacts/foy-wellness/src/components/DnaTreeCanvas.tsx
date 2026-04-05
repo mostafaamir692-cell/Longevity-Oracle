@@ -12,6 +12,7 @@ export function DnaTreeCanvas() {
 
     let animationFrameId: number;
     let time = 0;
+    let frameCount = 0;
 
     const resize = () => {
       canvas.width = window.innerWidth;
@@ -22,46 +23,51 @@ export function DnaTreeCanvas() {
     resize();
 
     const draw = () => {
+      frameCount++;
+      // Throttle to ~30fps by skipping every other frame
+      if (frameCount % 2 !== 0) {
+        animationFrameId = requestAnimationFrame(draw);
+        return;
+      }
+
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       const centerX = canvas.width / 2;
-      
-      const numPoints = 80;
+
+      // Reduced from 80 to 40 points — halves the draw calls per frame
+      const numPoints = 40;
       const spacing = canvas.height / numPoints;
-      
-      time += 0.02;
+
+      time += 0.015;
+
+      // Disable shadow before loop — shadowBlur forces software rendering
+      ctx.shadowBlur = 0;
 
       for (let i = 0; i < numPoints; i++) {
         const y = i * spacing;
-        // Calculate x offset for two strands
         const offset = Math.sin(i * 0.15 + time) * 60;
-        
         const x1 = centerX + offset;
         const x2 = centerX - offset;
 
-        // Draw connecting rung
+        // Connecting rung (every 3rd)
         if (i % 3 === 0) {
           ctx.beginPath();
           ctx.moveTo(x1, y);
           ctx.lineTo(x2, y);
-          ctx.strokeStyle = "rgba(255, 255, 255, 0.1)";
+          ctx.strokeStyle = "rgba(255, 255, 255, 0.08)";
           ctx.lineWidth = 1;
           ctx.stroke();
         }
 
-        // Draw strand 1 (Teal)
+        // Strand 1 (Teal) — no shadowBlur
         ctx.beginPath();
         ctx.arc(x1, y, 3, 0, Math.PI * 2);
-        ctx.fillStyle = "#0D9488";
-        ctx.shadowBlur = 10;
-        ctx.shadowColor = "#0D9488";
+        ctx.fillStyle = "rgba(13, 148, 136, 0.75)";
         ctx.fill();
 
-        // Draw strand 2 (Gold)
+        // Strand 2 (Gold) — no shadowBlur
         ctx.beginPath();
         ctx.arc(x2, y, 3, 0, Math.PI * 2);
-        ctx.fillStyle = "#D4AF37";
-        ctx.shadowBlur = 10;
-        ctx.shadowColor = "#D4AF37";
+        ctx.fillStyle = "rgba(212, 175, 55, 0.65)";
         ctx.fill();
       }
 
