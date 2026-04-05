@@ -4,7 +4,6 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
-import { MusicPlayer } from "@/components/MusicPlayer";
 
 const queryClient = new QueryClient();
 
@@ -42,7 +41,6 @@ function App() {
           <Router />
         </WouterRouter>
         <Toaster />
-        <MusicPlayer />
         <WhatsAppFloat />
       </TooltipProvider>
     </QueryClientProvider>
