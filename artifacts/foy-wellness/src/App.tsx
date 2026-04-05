@@ -4,6 +4,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
+import AiChatWidget from "@/components/AiChatWidget";
 
 const queryClient = new QueryClient();
 
@@ -41,6 +42,7 @@ function App() {
           <Router />
         </WouterRouter>
         <Toaster />
+        <AiChatWidget />
         <WhatsAppFloat />
       </TooltipProvider>
     </QueryClientProvider>

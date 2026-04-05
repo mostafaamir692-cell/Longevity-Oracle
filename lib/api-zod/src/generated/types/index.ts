@@ -8,7 +8,13 @@
 
 export * from "./bookingResponse";
 export * from "./createBookingRequest";
+export * from "./createOpenaiConversationBody";
 export * from "./errorResponse";
 export * from "./healthStatus";
+export * from "./openaiConversation";
+export * from "./openaiConversationWithMessages";
+export * from "./openaiError";
+export * from "./openaiMessage";
+export * from "./sendOpenaiMessageBody";
 export * from "./service";
 export * from "./servicesResponse";
