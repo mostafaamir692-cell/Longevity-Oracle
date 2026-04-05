@@ -9,6 +9,7 @@ import { AiAssistantSection } from "@/components/sections/AiAssistantSection";
 import { BeforeAfterSection } from "@/components/sections/BeforeAfterSection";
 import { LifestyleSection } from "@/components/sections/LifestyleSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
+import { FounderSection } from "@/components/sections/FounderSection";
 import { BookingSection } from "@/components/sections/BookingSection";
 import { FaqSection } from "@/components/sections/FaqSection";
 import { Footer } from "@/components/Footer";
@@ -42,6 +43,9 @@ export default function Home() {
         <SectionSeparator />
         
         <ServicesSection />
+        <SectionSeparator />
+
+        <FounderSection />
         <SectionSeparator />
         
         <AiAssistantSection />
