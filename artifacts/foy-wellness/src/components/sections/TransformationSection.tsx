@@ -39,7 +39,7 @@ const pillars = [
 
 export function TransformationSection() {
   return (
-    <section className="py-24 bg-muted/30 relative z-10">
+    <section className="py-24 bg-nebula relative z-10">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-5">
