@@ -52,19 +52,19 @@ export function DnaTreeCanvas() {
           ctx.beginPath();
           ctx.moveTo(x1, y);
           ctx.lineTo(x2, y);
-          ctx.strokeStyle = "rgba(67, 168, 163, 0.12)";
+          ctx.strokeStyle = "rgba(13, 148, 136, 0.1)";
           ctx.lineWidth = 1;
           ctx.stroke();
         }
 
         ctx.beginPath();
         ctx.arc(x1, y, 3, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(67, 168, 163, 0.55)";
+        ctx.fillStyle = "rgba(13, 148, 136, 0.6)";
         ctx.fill();
 
         ctx.beginPath();
         ctx.arc(x2, y, 3, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(197, 165, 114, 0.45)";
+        ctx.fillStyle = "rgba(212, 175, 55, 0.45)";
         ctx.fill();
       }
 
