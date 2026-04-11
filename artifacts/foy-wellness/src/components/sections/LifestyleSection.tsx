@@ -1,5 +1,6 @@
 import { FadeIn } from "../animations/FadeIn";
 import { Apple, Moon, Waves, Infinity, ArrowUpRight } from "lucide-react";
+import { SectionBg } from "../SectionBg";
 
 const pillars = [
   {
@@ -30,8 +31,9 @@ const pillars = [
 
 export function LifestyleSection() {
   return (
-    <section className="py-24 bg-grid-fine relative z-10">
-      <div className="max-w-7xl mx-auto px-6 md:px-8">
+    <section className="py-24 relative z-10 overflow-hidden">
+      <SectionBg variant="lifestyle" />
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
           <FadeIn>

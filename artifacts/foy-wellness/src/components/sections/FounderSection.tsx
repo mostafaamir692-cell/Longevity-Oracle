@@ -2,6 +2,7 @@ import { FadeIn } from "../animations/FadeIn";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { ArrowUpRight, Award, GraduationCap, Microscope, Globe } from "lucide-react";
+import { SectionBg } from "../SectionBg";
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -23,7 +24,8 @@ export function FounderSection() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section className="py-24 bg-glow-radial relative z-10 overflow-hidden">
+    <section className="py-24 relative z-10 overflow-hidden">
+      <SectionBg variant="founder" />
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8">
 
         <FadeIn className="mb-14">

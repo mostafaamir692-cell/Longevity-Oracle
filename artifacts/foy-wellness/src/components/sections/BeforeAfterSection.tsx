@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { FadeIn } from "../animations/FadeIn";
 import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import { SectionBg } from "../SectionBg";
 
 const metrics = [
   { label: "Fasting Glucose", improvement: 21, unit: "mg/dL", before: "112", after: "88", color: "from-primary to-primary/60" },
@@ -79,7 +80,8 @@ function RadialStat({ value, label, color = "#43A8A3" }: { value: number; label:
 
 export function BeforeAfterSection() {
   return (
-    <section id="results" className="py-24 bg-data-lines relative z-10 overflow-hidden">
+    <section id="results" className="py-24 relative z-10 overflow-hidden">
+      <SectionBg variant="results" />
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8">
         <FadeIn className="mb-14">
           <span className="inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.2em] uppercase text-primary border border-primary/25 bg-primary/8 px-3 py-1.5 rounded-full mb-5">

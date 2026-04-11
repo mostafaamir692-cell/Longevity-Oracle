@@ -2,17 +2,20 @@
 
 ## Site Overview
 Premium longevity & regenerative medicine clinic website for Dr. Ahmed Amer, Cairo Egypt.
-- **Design**: Clean light mode with Apple-meets-luxury-medical-spa aesthetics. Liquid glass cards (backdrop-blur frosted glass), parallax hero, animated custom cursor, dark glass footer.
+- **Design**: Apple-meets-luxury-medical-spa aesthetics. Liquid glass cards (backdrop-blur frosted glass), parallax hero, animated custom cursor, dark glass footer. Every section has a dramatic animated background — no flat white anywhere.
 - **Brand Colors**: Primary teal (`hsl(174, 78%, 40%)`), Gold accent (`hsl(43, 78%, 54%)`), Secondary green (`hsl(142, 60%, 42%)`). `.text-gradient-teal-gold` for branded text.
 - **Glass System**: `.glass` (light frosted), `.glass-strong` (heavy frost), `.glass-card` (with shimmer hover effect), `.glass-dark` (dark mode glass). All cards across the site use glass-card.
 - **Custom Cursor**: `CustomCursor.tsx` — glowing teal dot + ring that expands on interactive elements. Hidden on touch devices via `(pointer: coarse)` media query. Form inputs preserve native text cursor.
-- **Hero**: Parallax scrolling via framer-motion `useScroll`/`useTransform`. FloatingOrbs component for animated gradient orbs. DnaTreeCanvas for DNA helix animation.
+- **Animated Backgrounds**: `SectionBg.tsx` — reusable component with per-section presets (problem, transformation, system, services, founder, results, lifestyle, testimonials, booking, faq). Each preset layers radial/conic gradients, bokeh orbs (framer-motion), dot grids, diagonal lines, and noise textures. Hero uses inline mesh gradient + FloatingOrbs + DnaTreeCanvas.
+- **Services Section**: Dark theme with `.services-dark` CSS class that overrides text colors, glass-card styles, and borders for legibility on dark background. Uses `SectionBg variant="services"` with deep teal/dark background + glowing spotlights.
+- **Hero**: Parallax scrolling via framer-motion `useScroll`/`useTransform`. FloatingOrbs (8 animated gradient orbs), animated mesh gradient, noise texture overlay. DnaTreeCanvas for DNA helix animation.
 - **Navbar**: Liquid glass that progressively frosts on scroll (`.glass-strong` when scrolled). `.nav-underline` CSS hover effect on links.
-- **Footer**: Dark glass with grid texture (`.bg-dark-grid`), social icons with hover glow effects.
-- **CTA Section**: Full-width teal gradient with pulsing button animation (`.animate-pulse-glow`).
+- **Footer**: Dark glass with grid texture + top glow bleeding effect (`.bg-dark-grid`), social icons with hover glow effects.
+- **CTA Section**: Full-width teal gradient with central spotlight orbs, gold accent glow, noise texture, pulsing button animation.
+- **Background Animations**: `.animate-bg-breathe` (12s), `.animate-bg-flow` (18s) CSS keyframe animations. Reduced-motion media query disables all background animations for accessibility.
 - **Sections**: Hero → What is FOY → Transformation → Our Approach → Programs → Founder → AI Advisor → Before/After → Why Programs → Testimonials → CTA → Booking → FAQ → Footer
 - **Do NOT modify**: `BookingSection.tsx` form logic, `FaqSection.tsx` content, `App.tsx` routing, `hooks/use-bookings.ts`
-- **AiAssistantSection**: Chat terminal intentionally kept dark (`bg-[#1a2332]`) — deliberate terminal UI contrast.
+- **AiAssistantSection**: Chat terminal intentionally kept dark (`bg-[#1a2332]`). Outer section has inline radial gradient background.
 - **AiChatWidget**: Floating chat bubble uses light mode (white background, teal accents)
 - **Logo**: `public/images/foy-logo.png` — displayed in Navbar and Footer only (not in Hero)
 - **Image paths**: Use `import.meta.env.BASE_URL` prefix for all public image references

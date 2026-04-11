@@ -26,7 +26,20 @@ export function HeroSection() {
         className="absolute inset-0 z-0"
         style={{ y: bgY }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-white via-[#f0fafa] to-white" />
+        <div className="absolute inset-0" style={{
+          background: `
+            radial-gradient(ellipse 80% 60% at 30% 40%, rgba(16,185,171,0.12) 0%, transparent 55%),
+            radial-gradient(ellipse 60% 50% at 75% 60%, rgba(197,165,114,0.08) 0%, transparent 50%),
+            radial-gradient(ellipse 50% 40% at 50% 20%, rgba(34,197,94,0.05) 0%, transparent 45%),
+            linear-gradient(180deg, hsl(180, 20%, 97%) 0%, hsl(174, 18%, 95%) 40%, hsl(200, 20%, 97%) 100%)
+          `
+        }} />
+        <div className="absolute inset-0 pointer-events-none" style={{
+          opacity: 0.03,
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
+          backgroundRepeat: "repeat",
+          backgroundSize: "128px 128px",
+        }} />
         <FloatingOrbs />
         <DnaTreeCanvas />
       </motion.div>

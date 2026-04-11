@@ -102,7 +102,13 @@ export function AiAssistantSection() {
   const prompts = ["Anti-aging", "Skin concerns", "Low energy", "Hair loss", "Sleep", "Stress", "Peptides", "Consultation"];
 
   return (
-    <section id="ai-advisor" className="py-24 bg-section-alt relative z-10 overflow-hidden">
+    <section id="ai-advisor" className="py-24 relative z-10 overflow-hidden" style={{
+      background: `
+        radial-gradient(ellipse 80% 60% at 50% 50%, rgba(16,185,171,0.06) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 20% 80%, rgba(197,165,114,0.04) 0%, transparent 50%),
+        linear-gradient(180deg, hsl(200, 15%, 96%) 0%, hsl(200, 18%, 97%) 100%)
+      `
+    }}>
       <div className="max-w-5xl mx-auto px-6 md:px-8 relative z-10">
         <FadeIn className="text-center mb-12">
           <h2 className="text-3xl md:text-5xl font-display font-bold flex items-center justify-center gap-3 mb-4 text-foreground text-glow-white">

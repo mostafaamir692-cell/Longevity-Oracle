@@ -131,68 +131,70 @@
     inset 0 1px 0 rgba(255,255,255,0.05);
 }
 
-/* ── Section backgrounds ── */
-.bg-aurora {
-  background-color: hsl(200, 20%, 98%);
-  background-image:
-    radial-gradient(ellipse 80% 60% at 20% 40%, rgba(67,168,163,0.06) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 50% at 80% 60%, rgba(197,165,114,0.04) 0%, transparent 55%);
+/* ── Animated background utilities ── */
+.animate-bg-breathe {
+  animation: bg-breathe 12s ease-in-out infinite;
 }
 
-.bg-mesh-diagonal {
-  background-color: hsl(200, 18%, 97%);
-  background-image:
-    radial-gradient(ellipse 70% 60% at 30% 50%, rgba(67,168,163,0.05) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 40% at 75% 30%, rgba(197,165,114,0.03) 0%, transparent 55%);
+.animate-bg-flow {
+  animation: bg-flow 18s ease-in-out infinite;
 }
 
-.bg-grid-fine {
-  background-color: hsl(200, 18%, 97%);
-  background-image:
-    radial-gradient(ellipse 90% 70% at 50% 50%, rgba(67,168,163,0.04) 0%, transparent 65%);
+@keyframes bg-breathe {
+  0%, 100% { background-position: 0% 50%, 100% 50%, 50% 50%, 0% 0%; }
+  50% { background-position: 50% 80%, 30% 30%, 70% 80%, 0% 0%; }
 }
 
-.bg-glow-radial {
-  background-color: hsl(200, 20%, 98%);
-  background-image:
-    radial-gradient(ellipse 70% 80% at 0% 50%, rgba(67,168,163,0.06) 0%, transparent 55%),
-    radial-gradient(ellipse 50% 50% at 100% 20%, rgba(197,165,114,0.04) 0%, transparent 50%);
-}
-
-.bg-section-alt {
-  background-color: hsl(200, 15%, 96%);
-  background-image:
-    radial-gradient(ellipse 100% 60% at 0% 100%, rgba(67,168,163,0.04) 0%, transparent 55%),
-    radial-gradient(ellipse 80% 60% at 100% 0%, rgba(197,165,114,0.03) 0%, transparent 50%);
-}
-
-.bg-data-lines {
-  background-color: hsl(200, 20%, 98%);
-  background-image:
-    radial-gradient(ellipse 60% 80% at 80% 50%, rgba(67,168,163,0.05) 0%, transparent 60%);
-}
-
-.bg-rings {
-  background-color: hsl(200, 18%, 97%);
-  background-image:
-    radial-gradient(circle 900px at 50% 50%, rgba(67,168,163,0.04) 0%, transparent 60%),
-    radial-gradient(circle 650px at 50% 50%, rgba(67,168,163,0.05) 0%, transparent 60%);
-}
-
-.bg-nebula {
-  background-color: hsl(200, 15%, 96%);
-  background-image:
-    radial-gradient(ellipse 110% 80% at 50% 100%, rgba(67,168,163,0.06) 0%, transparent 55%),
-    radial-gradient(ellipse 90% 60% at 0% 30%, rgba(197,165,114,0.04) 0%, transparent 50%);
+@keyframes bg-flow {
+  0% { background-position: 0% 0%, 100% 100%, 50% 50%, 0% 0%; }
+  33% { background-position: 100% 50%, 0% 50%, 50% 50%, 0% 0%; }
+  66% { background-position: 50% 100%, 50% 0%, 50% 50%, 0% 0%; }
+  100% { background-position: 0% 0%, 100% 100%, 50% 50%, 0% 0%; }
 }
 
 /* ── Dark Footer Grid ── */
 .bg-dark-grid {
   background-color: #0a1420;
   background-image:
+    radial-gradient(ellipse 100% 40% at 50% 0%, rgba(16,185,171,0.08) 0%, transparent 60%),
     linear-gradient(rgba(67,168,163,0.04) 1px, transparent 1px),
     linear-gradient(90deg, rgba(67,168,163,0.04) 1px, transparent 1px);
-  background-size: 60px 60px;
+  background-size: 100% 100%, 60px 60px, 60px 60px;
+}
+
+/* ── Services dark section text overrides ── */
+.services-dark .text-foreground,
+.services-dark h2,
+.services-dark h3 {
+  color: rgba(255, 255, 255, 0.95);
+}
+.services-dark .text-muted-foreground {
+  color: rgba(255, 255, 255, 0.55);
+}
+.services-dark .text-foreground\/70,
+.services-dark .text-foreground\/60,
+.services-dark .text-foreground\/80,
+.services-dark .text-foreground\/50 {
+  color: rgba(255, 255, 255, 0.6);
+}
+.services-dark .glass-card {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 2px 20px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.05);
+}
+.services-dark .glass-card:hover {
+  background: rgba(255, 255, 255, 0.10);
+  border-color: rgba(16,185,171,0.25);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.3), 0 0 20px rgba(16,185,171,0.1);
+}
+.services-dark .bg-primary\/5 {
+  background-color: rgba(16,185,171,0.08);
+}
+.services-dark .border-border {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+.services-dark .bg-muted {
+  background-color: rgba(255, 255, 255, 0.08);
 }
 
 .glass-panel {
@@ -359,4 +361,19 @@
 @media (pointer: coarse) {
   :root { cursor: auto; }
   * { cursor: auto !important; }
+}
+
+/* Reduced motion: disable background animations for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .animate-bg-breathe,
+  .animate-bg-flow,
+  .animate-gradient-shift,
+  .animate-float-orb,
+  .animate-marquee,
+  .animate-marquee-reverse,
+  .animate-aurora,
+  .animate-pulse-glow,
+  .animate-border-glow {
+    animation: none !important;
+  }
 }

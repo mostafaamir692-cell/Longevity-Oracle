@@ -1,5 +1,6 @@
 import { FadeIn } from "../animations/FadeIn";
 import { Star, BadgeCheck } from "lucide-react";
+import { SectionBg } from "../SectionBg";
 
 const ROW_A = [
   {
@@ -98,8 +99,9 @@ function MarqueeRow({ items, reverse = false }: { items: typeof ROW_A; reverse?:
 
 export function TestimonialsSection() {
   return (
-    <section className="py-24 bg-mesh-diagonal relative z-10 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 md:px-8 mb-14">
+    <section className="py-24 relative z-10 overflow-hidden">
+      <SectionBg variant="testimonials" />
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8 mb-14">
         <FadeIn className="text-center">
           <span className="inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.2em] uppercase text-primary border border-primary/25 bg-primary/8 px-3 py-1.5 rounded-full mb-5">
             Patient Outcomes
@@ -111,12 +113,12 @@ export function TestimonialsSection() {
         </FadeIn>
       </div>
 
-      <div className="flex flex-col gap-5">
+      <div className="relative z-10 flex flex-col gap-5">
         <MarqueeRow items={ROW_A} />
         <MarqueeRow items={ROW_B} reverse />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 md:px-8 mt-14">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8 mt-14">
         <FadeIn className="flex flex-wrap justify-center gap-10 text-center">
           {[
             { num: "10,000+", label: "Patients Treated" },

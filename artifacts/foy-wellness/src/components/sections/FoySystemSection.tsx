@@ -1,6 +1,7 @@
 import { FadeIn } from "../animations/FadeIn";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { SectionBg } from "../SectionBg";
 
 const steps = [
   {
@@ -64,7 +65,8 @@ export function FoySystemSection() {
   const inView = useInView(ref, { once: true });
 
   return (
-    <section id="system" className="py-24 bg-mesh-diagonal relative z-10 overflow-hidden">
+    <section id="system" className="py-24 relative z-10 overflow-hidden">
+      <SectionBg variant="system" />
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8">
         <FadeIn className="mb-16 max-w-xl">
           <span className="inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.2em] uppercase text-primary border border-primary/25 bg-primary/8 px-3 py-1.5 rounded-full mb-5">

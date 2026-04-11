@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useCreateBooking, useServices, bookingSchema, type BookingInput } from "@/hooks/use-bookings";
 import { Shield, Award, Stethoscope, Lock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { SectionBg } from "../SectionBg";
 
 const inputClass =
   "w-full bg-white border border-border rounded-xl px-4 py-3 text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/30 transition-all text-sm";
@@ -47,8 +48,9 @@ export function BookingSection() {
   ];
 
   return (
-    <section id="booking" className="py-24 bg-aurora relative z-10 border-t border-border">
-      <div className="max-w-6xl mx-auto px-6 md:px-8">
+    <section id="booking" className="py-24 relative z-10 overflow-hidden border-t border-border">
+      <SectionBg variant="booking" />
+      <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <FadeIn>
             <span className="inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.2em] uppercase text-primary border border-primary/25 bg-primary/8 px-3 py-1.5 rounded-full mb-5">

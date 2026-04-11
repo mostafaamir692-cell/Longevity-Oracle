@@ -16,12 +16,62 @@ export function CtaSection() {
           className="relative rounded-3xl overflow-hidden"
         >
           <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-teal-600" />
-          <div className="absolute inset-0 opacity-30"
+
+          <div className="absolute inset-0"
             style={{
-              backgroundImage: `radial-gradient(ellipse 80% 80% at 20% 80%, rgba(197,165,114,0.3) 0%, transparent 60%),
-                radial-gradient(ellipse 60% 60% at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 50%)`
+              backgroundImage: `
+                radial-gradient(ellipse 60% 60% at 50% 50%, rgba(255,255,255,0.15) 0%, transparent 60%),
+                radial-gradient(ellipse 80% 80% at 20% 80%, rgba(197,165,114,0.3) 0%, transparent 60%),
+                radial-gradient(ellipse 60% 60% at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle 200px at 50% 50%, rgba(255,255,255,0.12) 0%, transparent 50%)
+              `
             }}
           />
+
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <motion.div
+              className="absolute rounded-full"
+              style={{
+                width: 500,
+                height: 500,
+                left: "50%",
+                top: "50%",
+                marginLeft: -250,
+                marginTop: -250,
+                background: "radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 60%)",
+                filter: "blur(40px)",
+              }}
+              animate={{
+                scale: [1, 1.2, 1],
+                opacity: [0.5, 0.8, 0.5],
+              }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+            />
+            <motion.div
+              className="absolute rounded-full"
+              style={{
+                width: 300,
+                height: 300,
+                left: "20%",
+                top: "60%",
+                background: "radial-gradient(circle, rgba(197,165,114,0.12) 0%, transparent 60%)",
+                filter: "blur(30px)",
+              }}
+              animate={{
+                x: [0, 30, 0],
+                y: [0, -20, 0],
+                opacity: [0.4, 0.7, 0.4],
+              }}
+              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+            />
+          </div>
+
+          <div className="absolute inset-0 pointer-events-none" style={{
+            opacity: 0.05,
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
+            backgroundRepeat: "repeat",
+            backgroundSize: "128px 128px",
+          }} />
 
           <div className="relative z-10 px-8 py-20 md:px-16 md:py-24 text-center flex flex-col items-center">
             <motion.span

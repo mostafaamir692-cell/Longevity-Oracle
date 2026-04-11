@@ -1,6 +1,7 @@
 import { FadeIn } from "../animations/FadeIn";
 import { useEffect, useState, useRef } from "react";
 import { ArrowUpRight, Dna, Brain, Zap } from "lucide-react";
+import { SectionBg } from "../SectionBg";
 
 function Counter({ end, suffix = "", duration = 2000 }: { end: number; suffix?: string; duration?: number }) {
   const [count, setCount] = useState(0);
@@ -39,8 +40,9 @@ const pillars = [
 
 export function TransformationSection() {
   return (
-    <section className="py-24 bg-nebula relative z-10">
-      <div className="max-w-7xl mx-auto px-6 md:px-8">
+    <section className="py-24 relative z-10 overflow-hidden">
+      <SectionBg variant="transformation" />
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8">
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-5">
 
