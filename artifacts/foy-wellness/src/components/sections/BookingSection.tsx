@@ -8,7 +8,7 @@ import { Shield, Award, Stethoscope, Lock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const inputClass =
-  "w-full bg-card border border-border rounded-xl px-4 py-3 text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/30 focus:shadow-[0_0_12px_rgba(16,185,171,0.12)] transition-all text-sm";
+  "w-full bg-white border border-border rounded-xl px-4 py-3 text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/30 transition-all text-sm";
 
 export function BookingSection() {
   const { data: services, isLoading: isLoadingServices } = useServices();
@@ -54,7 +54,7 @@ export function BookingSection() {
             <span className="inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.2em] uppercase text-primary border border-primary/25 bg-primary/8 px-3 py-1.5 rounded-full mb-5">
               Book a Consultation
             </span>
-            <h2 className="text-3xl md:text-5xl font-display font-bold mb-5 leading-tight text-glow-white">
+            <h2 className="text-3xl md:text-5xl font-display font-bold mb-5 leading-tight text-foreground">
               Begin Your Healthspan Journey
             </h2>
             <p className="text-muted-foreground text-lg font-light mb-10">
@@ -72,7 +72,7 @@ export function BookingSection() {
               ))}
             </div>
 
-            <div className="p-6 bg-card border border-border rounded-2xl space-y-3">
+            <div className="p-6 bg-muted/50 border border-border rounded-2xl space-y-3">
               <h4 className="font-semibold text-sm text-foreground/80">Location &amp; Contact</h4>
               <a
                 href="https://maps.app.goo.gl/eNogzYsjbfpKWsnC7"
@@ -98,15 +98,15 @@ export function BookingSection() {
           </FadeIn>
 
           <FadeIn delay={0.2} direction="left">
-            <div className="bg-card border border-border rounded-3xl p-8 md:p-10 shadow-[0_8px_40px_rgba(0,0,0,0.4)]">
+            <div className="bg-white border border-border rounded-2xl p-8 md:p-10 shadow-lg">
               {submitted ? (
                 <div className="h-full flex flex-col items-center justify-center text-center py-16">
-                  <div className="w-16 h-16 bg-primary/12 text-primary rounded-full flex items-center justify-center mb-6 shadow-[0_0_24px_rgba(16,185,171,0.3)]">
+                  <div className="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mb-6">
                     <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-display font-bold mb-3 text-glow-white">Request Submitted</h3>
+                  <h3 className="text-2xl font-display font-bold mb-3 text-foreground">Request Submitted</h3>
                   <p className="text-muted-foreground mb-8 font-light">Our medical concierge will contact you within 24 hours to confirm your appointment.</p>
                   <PremiumButton onClick={() => setSubmitted(false)} variant="outline">
                     Submit Another Request
@@ -135,13 +135,13 @@ export function BookingSection() {
 
                   <div>
                     <label className="block text-xs font-semibold text-foreground/40 uppercase tracking-wider mb-2">Program of Interest</label>
-                    <select {...register("serviceId")} className={inputClass + " appearance-none bg-card"}>
-                      <option value="" className="bg-card">Select a program...</option>
+                    <select {...register("serviceId")} className={inputClass + " appearance-none bg-white"}>
+                      <option value="">Select a program...</option>
                       {isLoadingServices ? (
                         <option disabled>Loading...</option>
                       ) : (
                         services?.map(s => (
-                          <option key={s.id} value={s.id} className="bg-card">{s.name}</option>
+                          <option key={s.id} value={s.id}>{s.name}</option>
                         ))
                       )}
                     </select>

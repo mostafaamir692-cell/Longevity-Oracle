@@ -40,7 +40,7 @@ export function FaqSection() {
           <span className="inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.2em] uppercase text-primary border border-primary/25 bg-primary/8 px-3 py-1.5 rounded-full mb-5">
             Common Questions
           </span>
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-glow-white">Frequently Asked Questions</h2>
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground">Frequently Asked Questions</h2>
         </FadeIn>
 
         <div className="space-y-3">
@@ -52,8 +52,8 @@ export function FaqSection() {
                   className={cn(
                     "border rounded-2xl overflow-hidden transition-all duration-300",
                     isOpen
-                      ? "bg-card border-primary/30 shadow-[0_4px_24px_rgba(0,0,0,0.3),0_0_16px_rgba(16,185,171,0.06)]"
-                      : "bg-card border-border hover:border-primary/20"
+                      ? "bg-white border-primary/25 shadow-md"
+                      : "bg-white border-border hover:border-primary/20"
                   )}
                 >
                   <button

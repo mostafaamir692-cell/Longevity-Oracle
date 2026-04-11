@@ -47,7 +47,7 @@ export function ServicesSection() {
             <span className="inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.2em] uppercase text-primary border border-primary/25 bg-primary/8 px-3 py-1.5 rounded-full mb-5">
               Signature Programs
             </span>
-            <h2 className="text-3xl md:text-5xl font-display font-bold leading-tight text-glow-white">
+            <h2 className="text-3xl md:text-5xl font-display font-bold leading-tight text-foreground">
               A Different Approach<br className="hidden md:block" /> to Care
             </h2>
           </div>
@@ -56,50 +56,44 @@ export function ServicesSection() {
           </p>
         </FadeIn>
 
-        {/* Featured program */}
         <FadeIn className="mb-5">
-          <div className="relative rounded-3xl overflow-hidden border border-border bg-card hover:border-primary/30 hover:shadow-[0_8px_40px_rgba(0,0,0,0.5),0_0_30px_rgba(16,185,171,0.06)] transition-all duration-500 group">
+          <div className="relative rounded-2xl overflow-hidden border border-border bg-white hover:shadow-md hover:border-primary/20 transition-all duration-500 group">
             <div className="grid grid-cols-1 lg:grid-cols-5">
-
-              {/* Left dark panel */}
-              <div className="lg:col-span-2 bg-[#040b14] p-10 relative overflow-hidden flex flex-col justify-between">
-                <div className="absolute -bottom-16 -left-16 w-56 h-56 bg-primary/12 rounded-full blur-3xl" />
-                <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
+              <div className="lg:col-span-2 bg-primary/5 p-10 relative overflow-hidden flex flex-col justify-between border-r border-border">
                 <div>
                   <div className="flex items-center justify-between mb-6">
-                    <span className="text-[10px] font-mono tracking-widest text-primary/50">{featured.num}</span>
-                    <span className="text-[10px] font-semibold uppercase tracking-widest bg-primary/15 text-primary px-3 py-1 rounded-full border border-primary/25">
+                    <span className="text-[10px] font-mono tracking-widest text-primary/60">{featured.num}</span>
+                    <span className="text-[10px] font-semibold uppercase tracking-widest bg-primary/10 text-primary px-3 py-1 rounded-full border border-primary/20">
                       {featured.tag}
                     </span>
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-3 leading-tight text-glow-white">{featured.title}</h3>
-                  <p className="text-foreground/35 text-sm font-light italic leading-relaxed">{featured.subtitle}</p>
+                  <h3 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-3 leading-tight">{featured.title}</h3>
+                  <p className="text-muted-foreground text-sm font-light italic leading-relaxed">{featured.subtitle}</p>
                 </div>
                 <div className="relative z-10 mt-8">
-                  <span className="text-[10px] text-foreground/25 uppercase tracking-widest block mb-1">Duration</span>
-                  <span className="text-sm font-semibold text-foreground/60">{featured.duration}</span>
+                  <span className="text-[10px] text-muted-foreground uppercase tracking-widest block mb-1">Duration</span>
+                  <span className="text-sm font-semibold text-foreground/80">{featured.duration}</span>
                 </div>
               </div>
 
-              {/* Right content panel */}
               <div className="lg:col-span-3 p-10 flex flex-col justify-between">
                 <div>
                   <p className="text-muted-foreground text-sm leading-relaxed mb-7">{featured.who}</p>
-                  <span className="text-[10px] font-semibold uppercase tracking-widest text-foreground/40 mb-4 block">What's Included</span>
+                  <span className="text-[10px] font-semibold uppercase tracking-widest text-foreground/50 mb-4 block">What's Included</span>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5">
                     {featured.includes.map((item, i) => (
                       <div key={i} className="flex items-start gap-2.5">
-                        <div className="w-4 h-4 rounded-full bg-primary/12 flex items-center justify-center shrink-0 mt-0.5">
+                        <div className="w-4 h-4 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
                           <Check className="w-2.5 h-2.5 text-primary" />
                         </div>
-                        <span className="text-sm text-foreground/60">{item}</span>
+                        <span className="text-sm text-foreground/70">{item}</span>
                       </div>
                     ))}
                   </div>
                 </div>
                 <button
                   onClick={() => document.querySelector("#booking")?.scrollIntoView({ behavior: "smooth" })}
-                  className="mt-8 self-start flex items-center gap-2 px-6 py-3 rounded-2xl bg-primary/12 border border-primary/25 text-primary text-sm font-semibold hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 group"
+                  className="mt-8 self-start flex items-center gap-2 px-6 py-3 rounded-xl bg-primary/10 border border-primary/20 text-primary text-sm font-semibold hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 group"
                 >
                   Enquire About This Program
                   <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -109,20 +103,17 @@ export function ServicesSection() {
           </div>
         </FadeIn>
 
-        {/* Secondary programs */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {secondary.map((prog, idx) => (
             <FadeIn key={idx} delay={(idx + 1) * 0.1} className="h-full">
-              <div className="group h-full rounded-3xl border border-border bg-card overflow-hidden hover:border-primary/30 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_20px_rgba(16,185,171,0.05)] hover:-translate-y-1 transition-all duration-300 flex flex-col">
-                <div className="bg-[#040b14] px-8 py-6 relative overflow-hidden">
-                  <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
-                  <div className="absolute -top-8 -right-8 w-32 h-32 bg-primary/8 rounded-full blur-2xl" />
+              <div className="group h-full rounded-2xl border border-border bg-white overflow-hidden hover:border-primary/20 hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col">
+                <div className="bg-primary/5 px-8 py-6 relative overflow-hidden border-b border-border">
                   <div className="flex items-center justify-between relative z-10">
                     <div>
-                      <span className="text-[10px] font-mono tracking-widest text-primary/40 block mb-1">{prog.num}</span>
+                      <span className="text-[10px] font-mono tracking-widest text-primary/50 block mb-1">{prog.num}</span>
                       <h3 className="text-lg font-bold text-foreground leading-tight">{prog.title}</h3>
                     </div>
-                    <span className="text-[10px] font-semibold uppercase tracking-widest bg-white/4 text-foreground/35 px-3 py-1 rounded-full border border-white/8">
+                    <span className="text-[10px] font-semibold uppercase tracking-widest bg-muted text-muted-foreground px-3 py-1 rounded-full border border-border">
                       {prog.tag}
                     </span>
                   </div>
@@ -132,7 +123,7 @@ export function ServicesSection() {
                   <p className="text-muted-foreground text-sm leading-relaxed mb-5">{prog.who}</p>
                   <ul className="space-y-2 flex-grow mb-6">
                     {prog.includes.map((item, i) => (
-                      <li key={i} className="flex items-start gap-2.5 text-sm text-foreground/50">
+                      <li key={i} className="flex items-start gap-2.5 text-sm text-foreground/60">
                         <span className="mt-2 w-1 h-1 rounded-full bg-primary shrink-0" />
                         {item}
                       </li>
@@ -158,14 +149,14 @@ export function ServicesSection() {
         </div>
 
         <FadeIn delay={0.3} className="mt-5">
-          <div className="rounded-3xl border border-border bg-card px-8 py-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="rounded-2xl border border-border bg-white px-8 py-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
-              <p className="font-semibold text-sm text-foreground/90 mb-1">Not sure which program is right for you?</p>
+              <p className="font-semibold text-sm text-foreground mb-1">Not sure which program is right for you?</p>
               <p className="text-xs text-muted-foreground">Our physician will guide you to the right program during your initial consultation.</p>
             </div>
             <button
               onClick={() => document.querySelector("#booking")?.scrollIntoView({ behavior: "smooth" })}
-              className="shrink-0 px-6 py-3 rounded-2xl bg-primary/12 border border-primary/25 text-primary text-sm font-semibold hover:bg-primary hover:text-white transition-all duration-300"
+              className="shrink-0 px-6 py-3 rounded-xl bg-primary/10 border border-primary/20 text-primary text-sm font-semibold hover:bg-primary hover:text-white transition-all duration-300"
             >
               Book a Consultation
             </button>

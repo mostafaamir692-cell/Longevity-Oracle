@@ -40,28 +40,14 @@ function PillarCard({ pillar }: { pillar: typeof pillars[0] }) {
       initial={{ opacity: 0, y: 30 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay: pillar.delay, ease: [0.22, 1, 0.36, 1] }}
-      className="group h-full rounded-3xl bg-card border border-border p-7 cursor-default overflow-hidden relative"
-      whileHover={{
-        y: -6,
-        borderColor: "rgba(16,185,171,0.35)",
-        boxShadow: "0 20px 50px rgba(0,0,0,0.5), 0 0 24px rgba(16,185,171,0.07)",
-        transition: { duration: 0.35 }
-      }}
+      className="group h-full rounded-2xl bg-white border border-border p-7 cursor-default overflow-hidden relative hover:shadow-md hover:border-primary/25 hover:-translate-y-1 transition-all duration-300"
     >
       <motion.div
-        className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100"
-        transition={{ duration: 0.3 }}
-      />
-      <div className="absolute -bottom-6 -right-6 w-20 h-20 bg-primary/0 group-hover:bg-primary/8 rounded-full blur-xl transition-all duration-500" />
-
-      <motion.div
-        className="w-10 h-10 rounded-2xl bg-primary/8 border border-primary/15 flex items-center justify-center text-primary mb-5"
-        whileHover={{ scale: 1.1, backgroundColor: "rgba(16,185,171,0.2)" }}
-        transition={{ duration: 0.2 }}
+        className="w-10 h-10 rounded-xl bg-primary/8 border border-primary/15 flex items-center justify-center text-primary mb-5"
       >
         {pillar.icon}
       </motion.div>
-      <h3 className="font-bold text-sm text-foreground/90 mb-2 leading-snug group-hover:text-primary transition-colors duration-300">{pillar.title}</h3>
+      <h3 className="font-bold text-sm text-foreground mb-2 leading-snug group-hover:text-primary transition-colors duration-300">{pillar.title}</h3>
       <p className="text-xs text-muted-foreground leading-relaxed">{pillar.desc}</p>
     </motion.div>
   );
@@ -79,8 +65,6 @@ export function ProblemSection() {
 
   return (
     <section id="problem" className="py-24 bg-rings relative z-10 overflow-hidden">
-      <div className="absolute top-40 right-20 w-56 h-56 bg-gold/4 rounded-full blur-[50px] pointer-events-none animate-float-orb" />
-
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         <FadeIn className="mb-10">
           <span className="inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.2em] uppercase text-primary border border-primary/25 bg-primary/8 px-3 py-1.5 rounded-full">
@@ -88,56 +72,40 @@ export function ProblemSection() {
           </span>
         </FadeIn>
 
-        {/* Bento top row */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 mb-5">
-
-          {/* Hero panel */}
           <FadeIn className="lg:col-span-2 h-full">
-            <div className="relative h-full min-h-[340px] rounded-3xl bg-[#040b14] border border-border overflow-hidden p-10 flex flex-col justify-between group">
-              <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
-              <motion.div
-                className="absolute -top-20 -left-20 w-72 h-72 bg-primary/10 rounded-full blur-3xl"
-                animate={{ scale: [1, 1.15, 1], opacity: [0.5, 0.8, 0.5] }}
-                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-              />
-              <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-gold/6 rounded-full blur-3xl pointer-events-none" />
-
+            <div className="relative h-full min-h-[340px] rounded-2xl bg-white border border-border overflow-hidden p-10 flex flex-col justify-between group hover:shadow-md transition-shadow duration-300">
               <div className="relative z-10">
-                <h2 className="text-3xl md:text-5xl font-display font-bold text-foreground leading-tight mb-5 text-glow-white">
+                <h2 className="text-3xl md:text-5xl font-display font-bold text-foreground leading-tight mb-5">
                   A New Standard in<br />
-                  <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-primary to-teal-300 glow-gradient">
+                  <span className="italic text-primary">
                     Preventive Medicine
                   </span>
                 </h2>
-                <p className="text-foreground/40 text-base font-light leading-relaxed max-w-lg">
+                <p className="text-muted-foreground text-base font-light leading-relaxed max-w-lg">
                   FOY was founded to introduce a different model of healthcare — one that focuses on preserving vitality, optimizing function, and extending healthspan long before illness appears.
                 </p>
               </div>
 
-              <div className="relative z-10 mt-8 pt-6 border-t border-white/8">
-                <p className="text-sm font-display italic text-foreground/45">
+              <div className="relative z-10 mt-8 pt-6 border-t border-border">
+                <p className="text-sm font-display italic text-muted-foreground">
                   "FOY is more than a clinic. It is the beginning of a new approach to modern healthcare."
                 </p>
-                <motion.p
-                  className="text-xs text-primary mt-2 font-medium tracking-wide text-glow"
-                  animate={{ opacity: [0.7, 1, 0.7] }}
-                  transition={{ duration: 3, repeat: Infinity }}
-                >
+                <p className="text-xs text-primary mt-2 font-medium tracking-wide">
                   — Dr. Ahmed Amer, Founder
-                </motion.p>
+                </p>
               </div>
             </div>
           </FadeIn>
 
-          {/* Stats panel */}
           <FadeIn delay={0.1} className="h-full">
-            <div ref={statsRef} className="h-full min-h-[340px] rounded-3xl bg-primary/5 border border-primary/20 p-8 flex flex-col justify-between">
+            <div ref={statsRef} className="h-full min-h-[340px] rounded-2xl bg-primary/5 border border-primary/15 p-8 flex flex-col justify-between">
               <div>
-                <span className="text-[10px] font-semibold tracking-[0.2em] uppercase text-primary/60 block mb-6">By the Numbers</span>
+                <span className="text-[10px] font-semibold tracking-[0.2em] uppercase text-primary/70 block mb-6">By the Numbers</span>
                 {stats.map((stat, i) => (
                   <div key={stat.label} className="flex items-baseline justify-between py-4 border-b border-primary/10 last:border-0">
                     <motion.span
-                      className="text-2xl font-display font-bold text-primary text-glow"
+                      className="text-2xl font-display font-bold text-primary"
                       initial={{ opacity: 0, x: -10 }}
                       animate={statsInView ? { opacity: 1, x: 0 } : {}}
                       transition={{ delay: 0.3 + i * 0.1, duration: 0.6 }}
@@ -150,7 +118,7 @@ export function ProblemSection() {
               </div>
               <motion.button
                 onClick={() => document.querySelector("#booking")?.scrollIntoView({ behavior: "smooth" })}
-                className="mt-6 w-full flex items-center justify-between px-5 py-3.5 rounded-2xl bg-primary/15 border border-primary/30 text-primary text-sm font-semibold hover:bg-primary hover:text-white transition-all duration-300 group"
+                className="mt-6 w-full flex items-center justify-between px-5 py-3.5 rounded-xl bg-primary/10 border border-primary/20 text-primary text-sm font-semibold hover:bg-primary hover:text-white transition-all duration-300 group"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -161,7 +129,6 @@ export function ProblemSection() {
           </FadeIn>
         </div>
 
-        {/* Pillars */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {pillars.map((p, idx) => (
             <PillarCard key={idx} pillar={p} />

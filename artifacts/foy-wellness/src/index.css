@@ -13,8 +13,6 @@
   --color-secondary-foreground: hsl(var(--secondary-foreground));
   --color-accent: hsl(var(--accent));
   --color-accent-foreground: hsl(var(--accent-foreground));
-  --color-gold: hsl(var(--gold));
-  --color-gold-foreground: hsl(var(--gold-foreground));
   --color-card: hsl(var(--card));
   --color-card-foreground: hsl(var(--card-foreground));
   --color-border: hsl(var(--border));
@@ -25,33 +23,27 @@
 }
 
 :root {
-  --background: 222 47% 4%;
-  --foreground: 210 25% 93%;
-  --primary: 174 78% 40%;
+  --background: 200 20% 98%;
+  --foreground: 200 25% 15%;
+  --primary: 177 42% 38%;
   --primary-foreground: 0 0% 100%;
-  --secondary: 142 60% 42%;
-  --secondary-foreground: 0 0% 100%;
-  --gold: 43 78% 54%;
-  --gold-foreground: 0 0% 100%;
-  --accent: 174 78% 40%;
-  --accent-foreground: 0 0% 100%;
-  --card: 220 42% 7%;
-  --card-foreground: 210 25% 93%;
-  --muted: 220 38% 10%;
-  --muted-foreground: 215 20% 50%;
-  --border: 220 35% 14%;
-  --input: 220 42% 8%;
-  --ring: 174 78% 40%;
+  --secondary: 34 38% 60%;
+  --secondary-foreground: 34 38% 20%;
+  --accent: 177 30% 96%;
+  --accent-foreground: 177 42% 35%;
+  --card: 0 0% 100%;
+  --card-foreground: 200 25% 15%;
+  --muted: 200 15% 96%;
+  --muted-foreground: 200 10% 45%;
+  --border: 200 15% 90%;
+  --input: 200 15% 96%;
+  --ring: 177 42% 45%;
 }
 
 @layer base {
   body {
-    @apply bg-background text-foreground font-sans antialiased selection:bg-primary/30 selection:text-primary;
+    @apply bg-background text-foreground font-sans antialiased selection:bg-primary/20 selection:text-primary;
     font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
-    /* Global subtle dot grid */
-    background-image:
-      radial-gradient(circle, rgba(16,185,171,0.06) 1px, transparent 1px);
-    background-size: 40px 40px;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -62,126 +54,68 @@
   p { text-wrap: pretty; }
 }
 
-/* ─── Section background presets ─── */
-
-/* Teal aurora mesh */
 .bg-aurora {
-  position: relative;
-  background-color: hsl(222, 47%, 4%);
+  background-color: hsl(200, 20%, 98%);
   background-image:
-    radial-gradient(ellipse 80% 60% at 20% 40%, rgba(16,185,171,0.12) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 50% at 80% 60%, rgba(201,162,39,0.07) 0%, transparent 55%),
-    radial-gradient(ellipse 50% 40% at 50% 0%, rgba(16,185,171,0.08) 0%, transparent 50%);
-  /* animation removed — background-position animation forces full repaints */
+    radial-gradient(ellipse 80% 60% at 20% 40%, rgba(67,168,163,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 60%, rgba(197,165,114,0.04) 0%, transparent 55%);
 }
 
-/* Gold-teal diagonal mesh */
 .bg-mesh-diagonal {
-  background-color: hsl(220, 42%, 5%);
+  background-color: hsl(200, 18%, 97%);
   background-image:
-    repeating-linear-gradient(
-      -45deg,
-      transparent,
-      transparent 60px,
-      rgba(16,185,171,0.025) 60px,
-      rgba(16,185,171,0.025) 61px
-    ),
-    repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 60px,
-      rgba(201,162,39,0.02) 60px,
-      rgba(201,162,39,0.02) 61px
-    ),
-    radial-gradient(ellipse 70% 60% at 30% 50%, rgba(16,185,171,0.09) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 40% at 75% 30%, rgba(201,162,39,0.06) 0%, transparent 55%);
+    radial-gradient(ellipse 70% 60% at 30% 50%, rgba(67,168,163,0.05) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 75% 30%, rgba(197,165,114,0.03) 0%, transparent 55%);
 }
 
-/* Circuit / fine grid */
 .bg-grid-fine {
-  background-color: hsl(222, 47%, 4%);
+  background-color: hsl(200, 18%, 97%);
   background-image:
-    linear-gradient(rgba(16,185,171,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(16,185,171,0.04) 1px, transparent 1px),
-    radial-gradient(ellipse 90% 70% at 50% 50%, rgba(16,185,171,0.07) 0%, transparent 65%);
-  background-size: 48px 48px, 48px 48px, 100% 100%;
+    radial-gradient(ellipse 90% 70% at 50% 50%, rgba(67,168,163,0.04) 0%, transparent 65%);
 }
 
-/* Deep glow radial - for dark hero panels */
 .bg-glow-radial {
-  background:
-    radial-gradient(ellipse 70% 80% at 0% 50%, rgba(16,185,171,0.14) 0%, transparent 55%),
-    radial-gradient(ellipse 50% 50% at 100% 20%, rgba(201,162,39,0.08) 0%, transparent 50%),
-    radial-gradient(ellipse 80% 100% at 50% 100%, rgba(16,185,171,0.06) 0%, transparent 60%),
-    hsl(222, 52%, 4%);
+  background-color: hsl(200, 20%, 98%);
+  background-image:
+    radial-gradient(ellipse 70% 80% at 0% 50%, rgba(67,168,163,0.06) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 50% at 100% 20%, rgba(197,165,114,0.04) 0%, transparent 50%);
 }
 
-/* Subtle noise + aurora for alternating sections */
 .bg-section-alt {
-  background-color: hsl(220, 42%, 5%);
+  background-color: hsl(200, 15%, 96%);
   background-image:
-    radial-gradient(ellipse 100% 60% at 0% 100%, rgba(16,185,171,0.08) 0%, transparent 55%),
-    radial-gradient(ellipse 80% 60% at 100% 0%, rgba(201,162,39,0.05) 0%, transparent 50%),
-    linear-gradient(rgba(16,185,171,0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(16,185,171,0.025) 1px, transparent 1px);
-  background-size: 100% 100%, 100% 100%, 60px 60px, 60px 60px;
+    radial-gradient(ellipse 100% 60% at 0% 100%, rgba(67,168,163,0.04) 0%, transparent 55%),
+    radial-gradient(ellipse 80% 60% at 100% 0%, rgba(197,165,114,0.03) 0%, transparent 50%);
 }
 
-/* Scan / data feel */
 .bg-data-lines {
-  background-color: hsl(222, 47%, 4%);
+  background-color: hsl(200, 20%, 98%);
   background-image:
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 28px,
-      rgba(16,185,171,0.03) 28px,
-      rgba(16,185,171,0.03) 29px
-    ),
-    radial-gradient(ellipse 60% 80% at 80% 50%, rgba(16,185,171,0.1) 0%, transparent 60%),
-    radial-gradient(ellipse 40% 40% at 10% 20%, rgba(201,162,39,0.07) 0%, transparent 50%);
+    radial-gradient(ellipse 60% 80% at 80% 50%, rgba(67,168,163,0.05) 0%, transparent 60%);
 }
 
-/* Concentric glowing rings — for problem/urgency sections */
 .bg-rings {
-  background-color: hsl(222, 52%, 3%);
+  background-color: hsl(200, 18%, 97%);
   background-image:
-    radial-gradient(circle 900px at 50% 50%, rgba(16,185,171,0.055) 0%, transparent 60%),
-    radial-gradient(circle 650px at 50% 50%, rgba(16,185,171,0.07) 0%, transparent 60%),
-    radial-gradient(circle 420px at 50% 50%, rgba(16,185,171,0.09) 0%, transparent 60%),
-    radial-gradient(ellipse 120% 70% at 15% 80%, rgba(201,162,39,0.06) 0%, transparent 50%),
-    radial-gradient(ellipse 80% 50% at 85% 10%, rgba(16,185,171,0.07) 0%, transparent 50%);
-  /* animation removed — background-position animation forces full repaints */
+    radial-gradient(circle 900px at 50% 50%, rgba(67,168,163,0.04) 0%, transparent 60%),
+    radial-gradient(circle 650px at 50% 50%, rgba(67,168,163,0.05) 0%, transparent 60%);
 }
 
-/* Deep nebula — rich layered star-field feel */
 .bg-nebula {
-  background-color: hsl(224, 55%, 3%);
+  background-color: hsl(200, 15%, 96%);
   background-image:
-    radial-gradient(ellipse 110% 80% at 50% 100%, rgba(16,185,171,0.13) 0%, transparent 55%),
-    radial-gradient(ellipse 90% 60% at 0%   30%, rgba(201,162,39,0.09) 0%, transparent 50%),
-    radial-gradient(ellipse 70% 50% at 100% 60%, rgba(16,185,171,0.10) 0%, transparent 55%),
-    radial-gradient(ellipse 50% 40% at 60%  10%, rgba(201,162,39,0.06) 0%, transparent 45%),
-    repeating-linear-gradient(
-      135deg,
-      transparent,
-      transparent 80px,
-      rgba(16,185,171,0.018) 80px,
-      rgba(16,185,171,0.018) 81px
-    );
-  /* animation removed — background-position animation forces full repaints */
+    radial-gradient(ellipse 110% 80% at 50% 100%, rgba(67,168,163,0.06) 0%, transparent 55%),
+    radial-gradient(ellipse 90% 60% at 0% 30%, rgba(197,165,114,0.04) 0%, transparent 50%);
 }
 
-/* Glassmorphism panel backgrounds */
 .glass-panel {
-  @apply bg-card/60 backdrop-blur-xl border border-border shadow-[0_8px_32px_rgba(0,0,0,0.4)];
+  @apply bg-card border border-border shadow-sm;
 }
 
 .glass-panel-hover {
-  @apply hover:bg-card/80 hover:border-primary/30 hover:shadow-[0_8px_32px_rgba(13,148,136,0.15)] transition-all duration-500;
+  @apply hover:shadow-md hover:border-primary/25 transition-all duration-500;
 }
 
-/* Animated gradient card border */
 .card-aurora-border {
   position: relative;
 }
@@ -191,7 +125,7 @@
   inset: 0;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(135deg, rgba(16,185,171,0.3), rgba(201,162,39,0.15), rgba(16,185,171,0.05), rgba(16,185,171,0.3));
+  background: linear-gradient(135deg, rgba(67,168,163,0.25), rgba(197,165,114,0.12), rgba(67,168,163,0.05), rgba(67,168,163,0.25));
   background-size: 300% 300%;
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -202,21 +136,20 @@
 }
 
 @layer utilities {
-  /* Glow text utilities */
   .text-glow {
-    text-shadow: 0 0 20px rgba(16, 185, 171, 0.6), 0 0 40px rgba(16, 185, 171, 0.3);
+    text-shadow: none;
   }
-  .text-glow-gold {
-    text-shadow: 0 0 20px rgba(212, 170, 40, 0.6), 0 0 40px rgba(212, 170, 40, 0.3);
+  .text-glow-bronze {
+    text-shadow: none;
   }
   .text-glow-white {
-    text-shadow: 0 0 30px rgba(230, 238, 245, 0.25), 0 0 60px rgba(16, 185, 171, 0.12);
+    text-shadow: none;
   }
   .glow-gradient {
-    filter: drop-shadow(0 0 12px rgba(16, 185, 171, 0.7));
+    filter: none;
   }
-  .glow-gradient-gold {
-    filter: drop-shadow(0 0 12px rgba(212, 170, 40, 0.7));
+  .glow-gradient-bronze {
+    filter: none;
   }
 
   .animate-border-glow { animation: border-glow 3s ease-in-out infinite; }
@@ -228,15 +161,13 @@
 
   .glow-card { transition: all 0.4s ease; }
   .glow-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 0 1px rgba(16,185,171,0.25), 0 0 30px rgba(16,185,171,0.08);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.08), 0 0 0 1px rgba(67,168,163,0.15);
   }
 
-  .gold-glow { box-shadow: 0 0 20px rgba(212,170,40,0.15); }
-  .gold-glow:hover { box-shadow: 0 0 40px rgba(212,170,40,0.3); }
+  .bronze-glow { box-shadow: none; }
+  .bronze-glow:hover { box-shadow: 0 4px 16px rgba(197,165,114,0.12); }
 }
-
-/* ─── Keyframes ─── */
 
 @keyframes aurora-shift {
   0%   { background-position: 0% 50%, 100% 50%, 50% 0%; }
@@ -245,8 +176,8 @@
 }
 
 @keyframes border-glow {
-  0%, 100% { border-color: rgba(16,185,171,0.2); box-shadow: 0 0 15px rgba(16,185,171,0.05); }
-  50%       { border-color: rgba(16,185,171,0.5); box-shadow: 0 0 30px rgba(16,185,171,0.15); }
+  0%, 100% { border-color: rgba(67,168,163,0.15); box-shadow: 0 0 8px rgba(67,168,163,0.04); }
+  50%       { border-color: rgba(67,168,163,0.35); box-shadow: 0 0 16px rgba(67,168,163,0.08); }
 }
 
 @keyframes gradient-shift {
@@ -288,25 +219,12 @@
   100% { transform: translateX(0); }
 }
 
-@keyframes rings-breathe {
-  0%   { background-position: 50% 50%, 50% 50%, 50% 50%, 15% 80%, 85% 10%; }
-  50%  { background-position: 48% 52%, 52% 48%, 50% 50%, 18% 75%, 82% 15%; }
-  100% { background-position: 52% 48%, 48% 52%, 50% 50%, 12% 85%, 88%  5%; }
-}
-
-@keyframes nebula-drift {
-  0%   { background-position: 50% 100%, 0% 30%, 100% 60%, 60% 10%, 0% 0%; }
-  50%  { background-position: 45% 90%,  5% 40%, 95% 55%, 55% 5%,  0% 0%; }
-  100% { background-position: 55% 95%, 10% 25%, 90% 65%, 65% 15%, 0% 0%; }
-}
-
 @keyframes shimmer-slide {
   0%   { transform: translateX(-100%) skewX(-12deg); }
   100% { transform: translateX(200%) skewX(-12deg); }
 }
 
-/* Scrollbar */
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: hsl(var(--background)); }
-::-webkit-scrollbar-thumb { background: hsl(var(--primary) / 0.4); border-radius: 2px; }
-::-webkit-scrollbar-thumb:hover { background: hsl(var(--primary) / 0.7); }
+::-webkit-scrollbar-thumb { background: hsl(var(--primary) / 0.3); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: hsl(var(--primary) / 0.5); }

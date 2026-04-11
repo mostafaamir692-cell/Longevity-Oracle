@@ -11,10 +11,10 @@ export const PremiumButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = "primary", size = "md", isLoading, children, ...props }, ref) => {
     
     const variants = {
-      primary: "bg-primary text-primary-foreground shadow-[0_0_20px_rgba(13,148,136,0.4)] hover:shadow-[0_0_30px_rgba(13,148,136,0.6)] hover:bg-primary/90 border border-primary/50",
-      secondary: "bg-card text-foreground shadow-lg hover:shadow-xl hover:bg-card/80 border border-border/50 hover:border-primary/50",
-      outline: "bg-transparent text-primary border border-primary hover:bg-primary/10 shadow-[0_0_15px_rgba(13,148,136,0.1)] hover:shadow-[0_0_20px_rgba(13,148,136,0.3)]",
-      ghost: "bg-transparent text-foreground hover:bg-white/5 border border-transparent",
+      primary: "bg-primary text-primary-foreground shadow-md hover:shadow-lg hover:bg-primary/90 border border-primary/80",
+      secondary: "bg-white text-foreground shadow-sm hover:shadow-md border border-border hover:border-primary/30",
+      outline: "bg-transparent text-primary border border-primary/60 hover:bg-primary/5 hover:border-primary",
+      ghost: "bg-transparent text-foreground hover:bg-primary/5 border border-transparent",
     };
     
     const sizes = {
@@ -35,7 +35,6 @@ export const PremiumButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
         )}
         {...props}
       >
-        {/* Button Hover Glow Effect */}
         <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]" />
         
         <span className="relative flex items-center justify-center gap-2">

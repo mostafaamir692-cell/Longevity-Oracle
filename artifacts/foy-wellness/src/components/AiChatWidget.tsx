@@ -31,7 +31,6 @@ export default function AiChatWidget() {
     }
   }, [open]);
 
-  // Pulsing attention animation when closed
   useEffect(() => {
     if (!open) {
       const interval = setInterval(() => {
@@ -186,22 +185,19 @@ export default function AiChatWidget() {
 
   return (
     <>
-      {/* Floating button — left side */}
       <div
         className="fixed left-5 bottom-6 z-[9999]"
-        style={{ filter: "drop-shadow(0 0 18px rgba(45,212,191,0.35))" }}
       >
         <button
           onClick={() => setOpen((o) => !o)}
           aria-label="Open AI Health Advisor"
           className={`
             relative flex items-center justify-center w-14 h-14 rounded-full
-            bg-gradient-to-br from-teal-500 via-teal-400 to-cyan-400
-            border border-teal-300/40
-            text-[#030e14] font-bold shadow-xl
+            bg-primary border border-primary/60
+            text-white font-bold shadow-lg
             transition-all duration-300
-            hover:scale-110 hover:from-teal-400 hover:to-cyan-300
-            focus:outline-none focus:ring-2 focus:ring-teal-400/60
+            hover:scale-110 hover:shadow-xl
+            focus:outline-none focus:ring-2 focus:ring-primary/40
             ${open ? "rotate-90 scale-105" : ""}
           `}
         >
@@ -211,82 +207,57 @@ export default function AiChatWidget() {
             <>
               <Bot className="w-6 h-6" />
               {pulsing && (
-                <span className="absolute inset-0 rounded-full animate-ping bg-teal-400/30 pointer-events-none" />
+                <span className="absolute inset-0 rounded-full animate-ping bg-primary/20 pointer-events-none" />
               )}
             </>
           )}
         </button>
-
-        {/* Tooltip label */}
-        {!open && (
-          <div
-            className="
-              absolute left-16 bottom-1/2 translate-y-1/2
-              whitespace-nowrap px-3 py-1.5 rounded-lg
-              bg-[#0a1628]/90 border border-teal-500/30
-              text-teal-300 text-xs font-medium
-              pointer-events-none
-              opacity-0 group-hover:opacity-100
-              transition-opacity duration-200
-            "
-            style={{ backdropFilter: "blur(8px)" }}
-          >
-            AI Health Advisor
-          </div>
-        )}
       </div>
 
-      {/* Chat panel */}
       <div
         className={`
           fixed left-5 z-[9998]
           flex flex-col
           w-[340px] sm:w-[380px]
           rounded-2xl overflow-hidden
-          border border-teal-500/20
-          shadow-2xl
+          border border-border
+          shadow-xl
           transition-all duration-500 ease-out
           ${open
             ? "bottom-24 opacity-100 translate-y-0 pointer-events-auto"
             : "bottom-16 opacity-0 translate-y-8 pointer-events-none"}
         `}
         style={{
-          background: "linear-gradient(160deg, #030e14 0%, #061525 60%, #0a1a2e 100%)",
-          boxShadow: "0 0 40px rgba(45,212,191,0.12), 0 20px 60px rgba(0,0,0,0.5)",
+          background: "#fff",
           maxHeight: "min(500px, calc(100vh - 120px))",
         }}
       >
-        {/* Header */}
         <div
-          className="flex items-center justify-between px-4 py-3 border-b border-teal-500/20"
-          style={{ background: "rgba(13,25,42,0.9)", backdropFilter: "blur(12px)" }}
+          className="flex items-center justify-between px-4 py-3 border-b border-border"
+          style={{ background: "hsl(200, 20%, 98%)" }}
         >
           <div className="flex items-center gap-2.5">
-            <div className="flex items-center justify-center w-8 h-8 rounded-full bg-teal-500/15 border border-teal-500/30">
-              <Sparkles className="w-4 h-4 text-teal-400" />
+            <div className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 border border-primary/20">
+              <Sparkles className="w-4 h-4 text-primary" />
             </div>
             <div>
-              <p className="text-sm font-semibold text-teal-300 leading-none">FOY AI Advisor</p>
-              <p className="text-[10px] text-teal-500/70 mt-0.5">Longevity & Wellness</p>
+              <p className="text-sm font-semibold text-foreground leading-none">FOY AI Advisor</p>
+              <p className="text-[10px] text-muted-foreground mt-0.5">Longevity & Wellness</p>
             </div>
           </div>
           <button
             onClick={() => setOpen(false)}
-            className="p-1.5 rounded-lg text-slate-400 hover:text-teal-300 hover:bg-teal-500/10 transition-colors"
+            className="p-1.5 rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/5 transition-colors"
           >
             <X className="w-4 h-4" />
           </button>
         </div>
 
-        {/* Messages area */}
         <div className="flex-1 overflow-y-auto p-4 space-y-3" style={{ minHeight: 0 }}>
           {welcomeMessage && (
             <div className="space-y-3">
-              <div
-                className="p-3.5 rounded-xl rounded-tl-sm text-sm text-slate-200 leading-relaxed"
-                style={{ background: "rgba(45,212,191,0.07)", border: "1px solid rgba(45,212,191,0.12)" }}
-              >
-                <p className="font-medium text-teal-300 mb-1.5">Welcome to FOY Clinic</p>
+              <div className="p-3.5 rounded-xl rounded-tl-sm text-sm text-foreground/80 leading-relaxed bg-primary/5 border border-primary/10">
+                <p className="font-medium text-primary mb-1.5">Welcome to FOY Clinic</p>
                 <p>I'm your AI health advisor. Ask me about longevity medicine, our programs, or how to begin your transformation with Dr. Ahmed Amer.</p>
               </div>
               <div className="flex flex-wrap gap-1.5">
@@ -294,7 +265,7 @@ export default function AiChatWidget() {
                   <button
                     key={q}
                     onClick={() => sendQuick(q)}
-                    className="text-[11px] px-2.5 py-1.5 rounded-lg border border-teal-500/25 text-teal-400/80 hover:text-teal-300 hover:border-teal-400/40 hover:bg-teal-500/10 transition-all"
+                    className="text-[11px] px-2.5 py-1.5 rounded-lg border border-border text-muted-foreground hover:text-primary hover:border-primary/30 hover:bg-primary/5 transition-all"
                   >
                     {q}
                   </button>
@@ -312,52 +283,36 @@ export default function AiChatWidget() {
                 className={`
                   max-w-[85%] px-3.5 py-2.5 rounded-xl text-sm leading-relaxed
                   ${msg.role === "user"
-                    ? "rounded-tr-sm bg-teal-600/25 border border-teal-500/25 text-teal-100"
-                    : "rounded-tl-sm text-slate-200"
+                    ? "rounded-tr-sm bg-primary text-white"
+                    : "rounded-tl-sm bg-muted text-foreground/80 border border-border"
                   }
                 `}
-                style={
-                  msg.role === "assistant"
-                    ? { background: "rgba(45,212,191,0.06)", border: "1px solid rgba(45,212,191,0.1)" }
-                    : {}
-                }
               >
                 {msg.content}
               </div>
             </div>
           ))}
 
-          {/* Streaming response */}
           {streamingText && (
             <div className="flex justify-start">
-              <div
-                className="max-w-[85%] px-3.5 py-2.5 rounded-xl rounded-tl-sm text-sm leading-relaxed text-slate-200"
-                style={{ background: "rgba(45,212,191,0.06)", border: "1px solid rgba(45,212,191,0.1)" }}
-              >
+              <div className="max-w-[85%] px-3.5 py-2.5 rounded-xl rounded-tl-sm text-sm leading-relaxed bg-muted text-foreground/80 border border-border">
                 {streamingText}
-                <span className="inline-block w-1.5 h-4 ml-0.5 bg-teal-400 animate-pulse rounded-sm align-text-bottom" />
+                <span className="inline-block w-1.5 h-4 ml-0.5 bg-primary animate-pulse rounded-sm align-text-bottom" />
               </div>
             </div>
           )}
 
           {loading && !streamingText && (
             <div className="flex justify-start">
-              <div
-                className="px-3.5 py-2.5 rounded-xl rounded-tl-sm"
-                style={{ background: "rgba(45,212,191,0.06)", border: "1px solid rgba(45,212,191,0.1)" }}
-              >
-                <Loader2 className="w-4 h-4 text-teal-400 animate-spin" />
+              <div className="px-3.5 py-2.5 rounded-xl rounded-tl-sm bg-muted border border-border">
+                <Loader2 className="w-4 h-4 text-primary animate-spin" />
               </div>
             </div>
           )}
           <div ref={messagesEndRef} />
         </div>
 
-        {/* Input area */}
-        <div
-          className="p-3 border-t border-teal-500/15"
-          style={{ background: "rgba(8,18,32,0.8)", backdropFilter: "blur(8px)" }}
-        >
+        <div className="p-3 border-t border-border bg-muted/30">
           <div className="flex items-end gap-2">
             <textarea
               ref={inputRef}
@@ -365,16 +320,15 @@ export default function AiChatWidget() {
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKey}
               rows={1}
-              placeholder="Ask about longevity, programs, or Dr. Amer…"
+              placeholder="Ask about longevity, programs, or Dr. Amer..."
               disabled={loading}
               className="
-                flex-1 resize-none bg-transparent rounded-xl
-                px-3.5 py-2.5 text-sm text-slate-200
-                placeholder:text-slate-500
-                border border-teal-500/20 focus:border-teal-500/40
-                focus:outline-none focus:ring-1 focus:ring-teal-500/20
+                flex-1 resize-none bg-white rounded-xl
+                px-3.5 py-2.5 text-sm text-foreground
+                placeholder:text-muted-foreground
+                border border-border focus:border-primary
+                focus:outline-none focus:ring-1 focus:ring-primary/20
                 transition-colors disabled:opacity-50
-                scrollbar-thin
               "
               style={{ minHeight: "40px", maxHeight: "100px" }}
             />
@@ -383,16 +337,16 @@ export default function AiChatWidget() {
               disabled={!input.trim() || loading}
               className="
                 flex-shrink-0 p-2.5 rounded-xl
-                bg-teal-500 hover:bg-teal-400
-                disabled:bg-teal-500/30 disabled:cursor-not-allowed
-                text-[#030e14] transition-all duration-200
+                bg-primary hover:bg-primary/90
+                disabled:bg-primary/30 disabled:cursor-not-allowed
+                text-white transition-all duration-200
                 hover:scale-105 active:scale-95
               "
             >
               <Send className="w-4 h-4" />
             </button>
           </div>
-          <p className="text-[10px] text-slate-600 text-center mt-2">
+          <p className="text-[10px] text-muted-foreground/60 text-center mt-2">
             AI advisor · Not medical advice · Always consult Dr. Amer
           </p>
         </div>

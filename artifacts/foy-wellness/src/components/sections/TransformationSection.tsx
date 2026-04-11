@@ -44,27 +44,24 @@ export function TransformationSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-5">
 
-          {/* Left – headline + stats */}
           <div className="lg:col-span-2 flex flex-col gap-5">
             <FadeIn className="flex-1">
-              <div className="h-full rounded-3xl bg-[#040b14] border border-border p-10 relative overflow-hidden flex flex-col justify-between">
-                <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
-                <div className="absolute -top-12 -right-12 w-48 h-48 bg-primary/15 rounded-full blur-3xl" />
+              <div className="h-full rounded-2xl bg-white border border-border p-10 relative overflow-hidden flex flex-col justify-between hover:shadow-md transition-shadow duration-300">
                 <div className="relative z-10">
-                  <span className="text-[10px] font-semibold tracking-[0.2em] uppercase text-primary block mb-5 text-glow">The FOY Standard</span>
-                  <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground leading-tight text-glow-white">
+                  <span className="text-[10px] font-semibold tracking-[0.2em] uppercase text-primary block mb-5">The FOY Standard</span>
+                  <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground leading-tight">
                     Medicine Designed<br />
-                    <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-primary to-teal-300 glow-gradient">
+                    <span className="italic text-primary">
                       Around You.
                     </span>
                   </h2>
-                  <p className="text-foreground/35 text-sm font-light mt-4 leading-relaxed">
+                  <p className="text-muted-foreground text-sm font-light mt-4 leading-relaxed">
                     We combine longevity diagnostics, metabolic science, and regenerative medicine into a single physician-guided program.
                   </p>
                 </div>
                 <button
                   onClick={() => document.querySelector("#booking")?.scrollIntoView({ behavior: "smooth" })}
-                  className="relative z-10 mt-8 self-start flex items-center gap-2 text-xs font-semibold text-primary hover:text-teal-300 transition-colors group text-glow"
+                  className="relative z-10 mt-8 self-start flex items-center gap-2 text-xs font-semibold text-primary hover:text-primary/70 transition-colors group"
                 >
                   Book a Consultation
                   <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -78,8 +75,8 @@ export function TransformationSection() {
                 { end: 10000, suffix: "+", label: "Patients" },
                 { end: 15, suffix: "+", label: "Years" },
               ].map(({ end, suffix, label }) => (
-                <div key={label} className="rounded-2xl bg-card border border-border p-5 text-center hover:border-primary/30 transition-colors">
-                  <div className="text-xl font-display font-bold text-primary leading-none mb-1 text-glow">
+                <div key={label} className="rounded-xl bg-white border border-border p-5 text-center hover:border-primary/25 hover:shadow-sm transition-all duration-300">
+                  <div className="text-xl font-display font-bold text-primary leading-none mb-1">
                     <Counter end={end} suffix={suffix} />
                   </div>
                   <div className="text-[10px] uppercase tracking-widest text-muted-foreground font-medium">{label}</div>
@@ -88,24 +85,19 @@ export function TransformationSection() {
             </FadeIn>
           </div>
 
-          {/* Right – dark feature panel */}
           <FadeIn delay={0.2} className="lg:col-span-3 h-full">
-            <div className="h-full min-h-[400px] rounded-3xl border border-border bg-[#040b14] relative overflow-hidden flex flex-col justify-between p-10">
-              <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
-              <div className="absolute -bottom-24 -right-24 w-72 h-72 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
-              <div className="absolute top-10 right-10 w-40 h-40 bg-gold/5 rounded-full blur-3xl pointer-events-none" />
-
+            <div className="h-full min-h-[400px] rounded-2xl border border-border bg-white relative overflow-hidden flex flex-col justify-between p-10 hover:shadow-md transition-shadow duration-300">
               <div className="relative z-10">
-                <span className="text-[10px] font-semibold tracking-[0.2em] uppercase text-primary/60 block mb-8">What We Address</span>
+                <span className="text-[10px] font-semibold tracking-[0.2em] uppercase text-primary/70 block mb-8">What We Address</span>
                 <div className="space-y-6">
                   {pillars.map((p, i) => (
                     <FadeIn key={i} delay={0.3 + i * 0.1}>
                       <div className="flex items-start gap-5 group">
-                        <div className="w-10 h-10 rounded-2xl bg-primary/8 border border-primary/20 flex items-center justify-center text-primary shrink-0 group-hover:bg-primary group-hover:border-primary group-hover:shadow-[0_0_16px_rgba(16,185,171,0.4)] group-hover:text-white transition-all duration-300">
+                        <div className="w-10 h-10 rounded-xl bg-primary/8 border border-primary/15 flex items-center justify-center text-primary shrink-0 group-hover:bg-primary group-hover:border-primary group-hover:text-white transition-all duration-300">
                           {p.icon}
                         </div>
                         <div>
-                          <h4 className="font-bold text-sm text-foreground/85 mb-1">{p.title}</h4>
+                          <h4 className="font-bold text-sm text-foreground mb-1">{p.title}</h4>
                           <p className="text-xs text-muted-foreground leading-relaxed">{p.desc}</p>
                         </div>
                       </div>
@@ -114,11 +106,11 @@ export function TransformationSection() {
                 </div>
               </div>
 
-              <div className="relative z-10 mt-10 pt-8 border-t border-white/8">
-                <p className="text-sm font-display italic text-foreground/40 leading-relaxed">
+              <div className="relative z-10 mt-10 pt-8 border-t border-border">
+                <p className="text-sm font-display italic text-muted-foreground leading-relaxed">
                   "A new approach to preventive medicine, metabolic optimization, and regenerative science — built around your unique biology."
                 </p>
-                <p className="text-xs text-primary mt-3 font-medium text-glow">— Dr. Ahmed Amer, Founder · FOY Clinic</p>
+                <p className="text-xs text-primary mt-3 font-medium">— Dr. Ahmed Amer, Founder · FOY Clinic</p>
               </div>
             </div>
           </FadeIn>

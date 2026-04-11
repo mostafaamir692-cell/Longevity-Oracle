@@ -1,0 +1,50 @@
+Apply the following typography system to this website. Do not change any layouts, colors, images, or functionality — only update text styling.
+
+Fonts: Import from Google Fonts: Inter (weights 300, 400, 500, 600) for body text, and Playfair Display (weights 400–700, including italic 400) for headings. Set font-sans to Inter and font-display to Playfair Display.
+
+Base rules:
+
+All h1–h6: font-display, tracking-tight, text-foreground, text-wrap: balance
+All p: text-wrap: pretty
+Body: font-sans, antialiased, font-feature-settings: "kern" 1, "liga" 1, "calt" 1
+Heading sizes:
+
+Hero h1: text-5xl md:text-7xl lg:text-8xl font-display font-bold leading-tight
+Section h2: text-3xl md:text-5xl font-display font-bold leading-tight
+Card h3 (large): text-2xl md:text-3xl font-display font-bold leading-tight
+Card h3 (small): text-lg font-bold leading-tight
+Section heading pattern — use this exact structure at the top of every section:
+
+A pill badge: text-[11px] font-semibold tracking-[0.2em] uppercase text-primary border border-primary/25 bg-primary/8 px-3 py-1.5 rounded-full
+The h2 below it
+A subtitle paragraph: text-muted-foreground text-base md:text-lg max-w-xl font-light leading-relaxed
+Body text hierarchy:
+
+Primary body: text-foreground text-base leading-relaxed
+Secondary/supporting: text-foreground/60 text-sm leading-relaxed
+Dimmed/subtle: text-foreground/35 text-sm font-light or text-muted-foreground text-sm
+Light descriptive: font-light weight
+Micro-labels (used above data points, durations, categories):
+
+text-[10px] font-semibold uppercase tracking-widest text-foreground/40
+Monospace variant: text-[10px] font-mono tracking-widest text-primary/50
+Accent text colors:
+
+Teal accent: text-primary (teal)
+Gold accent: text-gold
+Muted: text-muted-foreground
+Dimmed foreground: text-foreground/60, text-foreground/35, text-foreground/25
+Text glow utilities — add these CSS classes:
+
+.text-glow → text-shadow: 0 0 20px rgba(16,185,171,0.6), 0 0 40px rgba(16,185,171,0.3) (teal glow for teal text)
+.text-glow-gold → text-shadow: 0 0 20px rgba(212,170,40,0.6), 0 0 40px rgba(212,170,40,0.3) (gold glow)
+.text-glow-white → text-shadow: 0 0 30px rgba(230,238,245,0.25), 0 0 60px rgba(16,185,171,0.12) (soft white glow for large headings)
+Apply text-glow-white to all section h2 headings, text-glow to teal stat numbers, text-glow-gold to gold numbers
+Uppercase tracking labels (nav items, category tags, scroll hints):
+
+text-xs uppercase tracking-widest font-medium text-primary/80
+Tags/badges inside cards: text-[10px] font-semibold uppercase tracking-widest bg-primary/15 text-primary px-3 py-1 rounded-full border border-primary/25
+Quote/testimonial text: text-foreground/55 text-sm leading-relaxed font-light wrapped in "…"
+
+Italic accent lines (subtitles under service titles): text-foreground/35 text-sm font-light italic leading-relaxed
+

@@ -16,8 +16,8 @@ import { Footer } from "@/components/Footer";
 
 function SectionSeparator() {
   return (
-    <div className="w-full flex flex-col items-center justify-center py-8 bg-transparent relative z-10 pointer-events-none">
-      <div className="w-full max-w-2xl h-[1px] bg-gradient-to-r from-transparent via-border to-transparent" />
+    <div className="w-full flex flex-col items-center justify-center py-6 bg-transparent relative z-10 pointer-events-none">
+      <div className="w-full max-w-xl h-[1px] bg-gradient-to-r from-transparent via-border to-transparent" />
     </div>
   );
 }
