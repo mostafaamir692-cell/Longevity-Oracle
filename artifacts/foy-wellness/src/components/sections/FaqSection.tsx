@@ -40,7 +40,7 @@ export function FaqSection() {
           <span className="inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.2em] uppercase text-primary border border-primary/25 bg-primary/8 px-3 py-1.5 rounded-full mb-5">
             Common Questions
           </span>
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground">Frequently Asked Questions</h2>
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground text-glow-white">Frequently Asked Questions</h2>
         </FadeIn>
 
         <div className="space-y-3">

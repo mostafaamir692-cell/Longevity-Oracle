@@ -49,7 +49,7 @@ export function TransformationSection() {
               <div className="h-full rounded-2xl bg-white border border-border p-10 relative overflow-hidden flex flex-col justify-between hover:shadow-md transition-shadow duration-300">
                 <div className="relative z-10">
                   <span className="text-[10px] font-semibold tracking-[0.2em] uppercase text-primary block mb-5">The FOY Standard</span>
-                  <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground leading-tight">
+                  <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground text-glow-white leading-tight">
                     Medicine Designed<br />
                     <span className="italic text-primary">
                       Around You.

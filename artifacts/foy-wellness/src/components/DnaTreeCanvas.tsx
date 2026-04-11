@@ -48,26 +48,23 @@ export function DnaTreeCanvas() {
         const x1 = centerX + offset;
         const x2 = centerX - offset;
 
-        // Connecting rung (every 3rd)
         if (i % 3 === 0) {
           ctx.beginPath();
           ctx.moveTo(x1, y);
           ctx.lineTo(x2, y);
-          ctx.strokeStyle = "rgba(255, 255, 255, 0.08)";
+          ctx.strokeStyle = "rgba(67, 168, 163, 0.12)";
           ctx.lineWidth = 1;
           ctx.stroke();
         }
 
-        // Strand 1 (Teal) — no shadowBlur
         ctx.beginPath();
         ctx.arc(x1, y, 3, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(13, 148, 136, 0.75)";
+        ctx.fillStyle = "rgba(67, 168, 163, 0.55)";
         ctx.fill();
 
-        // Strand 2 (Gold) — no shadowBlur
         ctx.beginPath();
         ctx.arc(x2, y, 3, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(212, 175, 55, 0.65)";
+        ctx.fillStyle = "rgba(197, 165, 114, 0.45)";
         ctx.fill();
       }
 
@@ -85,7 +82,7 @@ export function DnaTreeCanvas() {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 z-0 pointer-events-none opacity-40 mix-blend-screen"
+      className="absolute inset-0 z-0 pointer-events-none opacity-50"
     />
   );
 }

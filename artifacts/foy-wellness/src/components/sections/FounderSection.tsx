@@ -30,7 +30,7 @@ export function FounderSection() {
           <span className="inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.2em] uppercase text-primary border border-primary/25 bg-primary/8 px-3 py-1.5 rounded-full mb-5">
             Meet the Founder
           </span>
-          <h2 className="text-3xl md:text-5xl font-display font-bold leading-tight text-foreground">
+          <h2 className="text-3xl md:text-5xl font-display font-bold leading-tight text-foreground text-glow-white">
             Led by Dr. Ahmed Amer
           </h2>
         </FadeIn>

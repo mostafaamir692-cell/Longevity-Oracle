@@ -76,7 +76,7 @@ export function ProblemSection() {
           <FadeIn className="lg:col-span-2 h-full">
             <div className="relative h-full min-h-[340px] rounded-2xl bg-white border border-border overflow-hidden p-10 flex flex-col justify-between group hover:shadow-md transition-shadow duration-300">
               <div className="relative z-10">
-                <h2 className="text-3xl md:text-5xl font-display font-bold text-foreground leading-tight mb-5">
+                <h2 className="text-3xl md:text-5xl font-display font-bold text-foreground text-glow-white leading-tight mb-5">
                   A New Standard in<br />
                   <span className="italic text-primary">
                     Preventive Medicine
@@ -105,7 +105,7 @@ export function ProblemSection() {
                 {stats.map((stat, i) => (
                   <div key={stat.label} className="flex items-baseline justify-between py-4 border-b border-primary/10 last:border-0">
                     <motion.span
-                      className="text-2xl font-display font-bold text-primary"
+                      className="text-2xl font-display font-bold text-primary text-glow"
                       initial={{ opacity: 0, x: -10 }}
                       animate={statsInView ? { opacity: 1, x: 0 } : {}}
                       transition={{ delay: 0.3 + i * 0.1, duration: 0.6 }}

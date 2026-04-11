@@ -54,7 +54,7 @@ export function BookingSection() {
             <span className="inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.2em] uppercase text-primary border border-primary/25 bg-primary/8 px-3 py-1.5 rounded-full mb-5">
               Book a Consultation
             </span>
-            <h2 className="text-3xl md:text-5xl font-display font-bold mb-5 leading-tight text-foreground">
+            <h2 className="text-3xl md:text-5xl font-display font-bold mb-5 leading-tight text-foreground text-glow-white">
               Begin Your Healthspan Journey
             </h2>
             <p className="text-muted-foreground text-lg font-light mb-10">

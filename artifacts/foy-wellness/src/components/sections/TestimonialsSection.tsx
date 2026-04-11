@@ -104,7 +104,7 @@ export function TestimonialsSection() {
           <span className="inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.2em] uppercase text-primary border border-primary/25 bg-primary/8 px-3 py-1.5 rounded-full mb-5">
             Patient Outcomes
           </span>
-          <h2 className="text-3xl md:text-5xl font-display font-bold mb-4 text-foreground">What Our Patients Say</h2>
+          <h2 className="text-3xl md:text-5xl font-display font-bold mb-4 text-foreground text-glow-white">What Our Patients Say</h2>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto font-light">
             Outcomes that speak for themselves — from patients across Egypt, the Gulf, and beyond.
           </p>

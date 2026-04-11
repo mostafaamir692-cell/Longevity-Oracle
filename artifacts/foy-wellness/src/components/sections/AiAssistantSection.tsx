@@ -105,7 +105,7 @@ export function AiAssistantSection() {
     <section id="ai-advisor" className="py-24 bg-section-alt relative z-10 overflow-hidden">
       <div className="max-w-5xl mx-auto px-6 md:px-8 relative z-10">
         <FadeIn className="text-center mb-12">
-          <h2 className="text-3xl md:text-5xl font-display font-bold flex items-center justify-center gap-3 mb-4 text-foreground">
+          <h2 className="text-3xl md:text-5xl font-display font-bold flex items-center justify-center gap-3 mb-4 text-foreground text-glow-white">
             <Sparkles className="text-primary w-8 h-8" />
             AI Health Advisor
           </h2>

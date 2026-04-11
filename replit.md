@@ -2,14 +2,15 @@
 
 ## Site Overview
 Premium longevity & regenerative medicine clinic website for Dr. Ahmed Amer, Cairo Egypt.
-- **Design**: Clean light mode throughout. White/light backgrounds with soft teal gradients.
+- **Design**: Clean light mode throughout. White/light backgrounds with soft teal gradients. Glowing gradient text on headings.
 - **Brand Colors**: Primary teal (`hsl(177, 42%, 38%)` ~#3B9490), Secondary warm bronze (`hsl(34, 38%, 60%)` ~#C5A572). No gold or off-brand colors.
-- **Style**: Modern bento grid layouts, pill badge labels, white cards with soft borders, subtle hover animations with teal accents.
+- **Style**: Modern bento grid layouts, pill badge labels, white cards with soft borders, subtle hover animations with teal accents, text-glow effects on headings.
 - **Sections**: Hero → What is FOY (bento) → Transformation (bento) → Our Approach (grid) → Programs (bento) → AI Advisor → Before/After → Why Programs → Testimonials → Booking → FAQ → Footer
 - **Do NOT modify**: `BookingSection.tsx` form logic, `FaqSection.tsx` content, `App.tsx` routing, `hooks/use-bookings.ts`
 - **AiAssistantSection**: Chat terminal intentionally kept dark (`bg-[#1a2332]`) — deliberate terminal UI contrast. Only the wrapper/section background is light.
 - **AiChatWidget**: Floating chat bubble uses light mode (white background, teal accents)
-- **Logo**: `public/images/foy-logo.png` — displayed in Navbar, HeroSection, Footer
+- **Hero**: DNA helix canvas animation (teal + bronze dots), no logo on hero — logo only in Navbar and Footer
+- **Logo**: `public/images/foy-logo.png` — displayed in Navbar and Footer
 - **Image paths**: Use `import.meta.env.BASE_URL` prefix for all public image references
 
 ---

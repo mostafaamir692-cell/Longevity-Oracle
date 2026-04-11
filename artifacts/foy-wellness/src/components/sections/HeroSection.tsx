@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
 import { PremiumButton } from "../ui/PremiumButton";
 import { ChevronDown, ShieldCheck } from "lucide-react";
-
-const BASE = import.meta.env.BASE_URL;
+import { DnaTreeCanvas } from "../DnaTreeCanvas";
 
 export function HeroSection() {
   const scrollToServices = () => {
@@ -15,6 +14,8 @@ export function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-white via-[#f0fafa] to-white">
+      <DnaTreeCanvas />
+
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-[100px]" />
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-secondary/5 rounded-full blur-[80px]" />
@@ -25,24 +26,11 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-6"
+          className="mb-8"
         >
           <span className="inline-block py-1.5 px-5 rounded-full border border-primary/25 bg-primary/8 text-primary uppercase tracking-[0.2em] text-xs font-semibold">
             Longevity &amp; Regenerative Medicine
           </span>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="mb-6"
-        >
-          <img
-            src={`${BASE}images/foy-logo.png`}
-            alt="FOY Clinic Logo"
-            className="h-28 md:h-36 w-auto mx-auto"
-          />
         </motion.div>
 
         <motion.div
@@ -51,9 +39,9 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="mb-4"
         >
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold leading-tight max-w-4xl text-foreground">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold leading-tight max-w-4xl text-foreground text-glow-white">
             Healing. Thriving.{" "}
-            <span className="text-primary">
+            <span className="text-primary text-glow">
               Living Beautifully.
             </span>
           </h1>
