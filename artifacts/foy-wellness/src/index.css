@@ -137,13 +137,13 @@
 
 @layer utilities {
   .text-glow {
-    text-shadow: 0 0 20px rgba(67,168,163,0.5), 0 0 40px rgba(67,168,163,0.25);
+    text-shadow: 0 0 20px rgba(16,185,171,0.6), 0 0 40px rgba(16,185,171,0.3);
   }
-  .text-glow-bronze {
-    text-shadow: 0 0 20px rgba(197,165,114,0.5), 0 0 40px rgba(197,165,114,0.25);
+  .text-glow-gold {
+    text-shadow: 0 0 20px rgba(212,170,40,0.6), 0 0 40px rgba(212,170,40,0.3);
   }
   .text-glow-white {
-    text-shadow: 0 0 30px rgba(67,168,163,0.15), 0 0 60px rgba(67,168,163,0.08);
+    text-shadow: 0 0 30px rgba(230,238,245,0.25), 0 0 60px rgba(16,185,171,0.12);
   }
   .glow-gradient {
     filter: drop-shadow(0 0 12px rgba(67,168,163,0.2));
