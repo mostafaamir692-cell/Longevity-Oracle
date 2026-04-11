@@ -140,6 +140,13 @@
 }
 
 @layer utilities {
+  .text-gradient-teal-gold {
+    background: linear-gradient(135deg, hsl(174, 78%, 40%) 0%, hsl(174, 78%, 45%) 60%, hsl(43, 78%, 54%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
   .text-glow {
     text-shadow: 0 0 20px rgba(16,185,171,0.6), 0 0 40px rgba(16,185,171,0.3);
   }

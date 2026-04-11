@@ -41,7 +41,7 @@ export function HeroSection() {
         >
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold leading-tight max-w-4xl text-foreground text-glow-white">
             Healing. Thriving.{" "}
-            <span className="text-primary text-glow">
+            <span className="text-gradient-teal-gold text-glow">
               Living Beautifully.
             </span>
           </h1>

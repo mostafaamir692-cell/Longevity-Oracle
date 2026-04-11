@@ -47,7 +47,7 @@ export function Navbar() {
             alt="FOY Clinic"
             className="h-9 w-auto"
           />
-          <span className="text-xl font-display font-bold tracking-[0.1em] text-primary">
+          <span className="text-xl font-display font-bold tracking-[0.1em] text-gradient-teal-gold">
             FOY CLINIC
           </span>
         </Link>
