@@ -1,9 +1,17 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import { PremiumButton } from "../ui/PremiumButton";
 import { ChevronDown, ShieldCheck } from "lucide-react";
 import { DnaTreeCanvas } from "../DnaTreeCanvas";
+import { FloatingOrbs } from "../FloatingOrbs";
 
 export function HeroSection() {
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
+  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+
   const scrollToServices = () => {
     document.querySelector("#services")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -13,22 +21,27 @@ export function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-white via-[#f0fafa] to-white">
-      <DnaTreeCanvas />
+    <section ref={ref} className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <motion.div
+        className="absolute inset-0 z-0"
+        style={{ y: bgY }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-[#f0fafa] to-white" />
+        <FloatingOrbs />
+        <DnaTreeCanvas />
+      </motion.div>
 
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-[100px]" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-secondary/5 rounded-full blur-[80px]" />
-      </div>
-
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8 text-center flex flex-col items-center pt-24">
+      <motion.div
+        style={{ y: textY, opacity }}
+        className="relative z-10 max-w-7xl mx-auto px-6 md:px-8 text-center flex flex-col items-center pt-24"
+      >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mb-8"
         >
-          <span className="inline-block py-1.5 px-5 rounded-full border border-primary/25 bg-primary/8 text-primary uppercase tracking-[0.2em] text-xs font-semibold">
+          <span className="glass inline-block py-1.5 px-5 rounded-full text-primary uppercase tracking-[0.2em] text-xs font-semibold">
             Longevity &amp; Regenerative Medicine
           </span>
         </motion.div>
@@ -72,7 +85,7 @@ export function HeroSection() {
           className="flex flex-col items-center gap-8 w-full"
         >
           <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-            <PremiumButton onClick={scrollToBooking} size="lg" className="w-full sm:w-auto">
+            <PremiumButton onClick={scrollToBooking} size="lg" className="w-full sm:w-auto animate-pulse-glow">
               Book a Consultation
             </PremiumButton>
             <PremiumButton variant="outline" onClick={scrollToServices} size="lg" className="w-full sm:w-auto">
@@ -81,23 +94,19 @@ export function HeroSection() {
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-3 text-sm text-muted-foreground font-medium">
-            <span className="flex items-center gap-1.5 bg-white/80 backdrop-blur-sm px-3 py-1.5 rounded-full border border-border">
-              <ShieldCheck className="w-4 h-4 text-primary" />
-              Physician-Led Care
-            </span>
-            <span className="hidden sm:inline-block w-1 h-1 bg-primary/30 rounded-full" />
-            <span className="flex items-center gap-1.5 bg-white/80 backdrop-blur-sm px-3 py-1.5 rounded-full border border-border">
-              <ShieldCheck className="w-4 h-4 text-primary" />
-              Evidence-Based Protocols
-            </span>
-            <span className="hidden sm:inline-block w-1 h-1 bg-primary/30 rounded-full" />
-            <span className="flex items-center gap-1.5 bg-white/80 backdrop-blur-sm px-3 py-1.5 rounded-full border border-border">
-              <ShieldCheck className="w-4 h-4 text-secondary" />
-              10,000+ Patients
-            </span>
+            {[
+              { icon: <ShieldCheck className="w-4 h-4 text-primary" />, label: "Physician-Led Care" },
+              { icon: <ShieldCheck className="w-4 h-4 text-primary" />, label: "Evidence-Based Protocols" },
+              { icon: <ShieldCheck className="w-4 h-4 text-secondary" />, label: "10,000+ Patients" },
+            ].map((badge, i) => (
+              <span key={i} className="flex items-center gap-1.5 glass px-3 py-1.5 rounded-full">
+                {badge.icon}
+                {badge.label}
+              </span>
+            ))}
           </div>
         </motion.div>
-      </div>
+      </motion.div>
 
       <motion.div
         initial={{ opacity: 0 }}

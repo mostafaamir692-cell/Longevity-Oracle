@@ -31,10 +31,10 @@ export function Navbar() {
   return (
     <nav
       className={cn(
-        "fixed top-0 w-full z-50 transition-all duration-500 border-b",
+        "fixed top-0 w-full z-50 transition-all duration-700 border-b",
         scrolled
-          ? "bg-white/90 backdrop-blur-xl border-border py-3 shadow-[0_1px_12px_rgba(0,0,0,0.06)]"
-          : "bg-white/60 backdrop-blur-sm border-transparent py-6"
+          ? "glass-strong border-white/30 py-3 shadow-[0_2px_20px_rgba(0,0,0,0.06)]"
+          : "bg-white/30 backdrop-blur-md border-transparent py-6"
       )}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-8 flex items-center justify-between">
@@ -58,7 +58,7 @@ export function Navbar() {
               <li key={link.name}>
                 <button
                   onClick={() => scrollTo(link.href)}
-                  className="text-xs font-semibold tracking-widest uppercase text-foreground/60 hover:text-primary transition-colors duration-300"
+                  className="nav-underline text-xs font-semibold tracking-widest uppercase text-foreground/60 hover:text-primary transition-colors duration-300"
                 >
                   {link.name}
                 </button>
@@ -79,7 +79,7 @@ export function Navbar() {
 
         <div
           className={cn(
-            "fixed inset-0 bg-white/98 backdrop-blur-2xl flex flex-col items-center justify-center space-y-8 transition-all duration-500 md:hidden",
+            "fixed inset-0 glass-strong flex flex-col items-center justify-center space-y-8 transition-all duration-500 md:hidden",
             mobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
           )}
         >

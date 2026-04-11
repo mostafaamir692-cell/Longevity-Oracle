@@ -59,7 +59,7 @@ export function LifestyleSection() {
           <div className="grid grid-cols-2 gap-4">
             {pillars.map((p, i) => (
               <FadeIn key={i} delay={i * 0.1} direction="up" className="h-full">
-                <div className="group h-full rounded-2xl border border-border bg-white p-6 flex flex-col gap-4 hover:-translate-y-1.5 hover:shadow-md hover:border-primary/20 transition-all duration-300">
+                <div className="group h-full rounded-2xl glass-card p-6 flex flex-col gap-4">
                   <div className={`w-10 h-10 rounded-xl border flex items-center justify-center ${p.iconClass}`}>
                     {p.icon}
                   </div>

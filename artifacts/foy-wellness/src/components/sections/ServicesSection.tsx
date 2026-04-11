@@ -57,7 +57,7 @@ export function ServicesSection() {
         </FadeIn>
 
         <FadeIn className="mb-5">
-          <div className="relative rounded-2xl overflow-hidden border border-border bg-white hover:shadow-md hover:border-primary/20 transition-all duration-500 group">
+          <div className="relative rounded-2xl overflow-hidden glass-card group">
             <div className="grid grid-cols-1 lg:grid-cols-5">
               <div className="lg:col-span-2 bg-primary/5 p-10 relative overflow-hidden flex flex-col justify-between border-r border-border">
                 <div>
@@ -106,7 +106,7 @@ export function ServicesSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {secondary.map((prog, idx) => (
             <FadeIn key={idx} delay={(idx + 1) * 0.1} className="h-full">
-              <div className="group h-full rounded-2xl border border-border bg-white overflow-hidden hover:border-primary/20 hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col">
+              <div className="group h-full rounded-2xl glass-card overflow-hidden flex flex-col">
                 <div className="bg-primary/5 px-8 py-6 relative overflow-hidden border-b border-border">
                   <div className="flex items-center justify-between relative z-10">
                     <div>
@@ -149,7 +149,7 @@ export function ServicesSection() {
         </div>
 
         <FadeIn delay={0.3} className="mt-5">
-          <div className="rounded-2xl border border-border bg-white px-8 py-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="rounded-2xl glass-card px-8 py-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
               <p className="font-semibold text-sm text-foreground mb-1">Not sure which program is right for you?</p>
               <p className="text-xs text-muted-foreground">Our physician will guide you to the right program during your initial consultation.</p>

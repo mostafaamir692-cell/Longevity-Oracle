@@ -13,7 +13,7 @@ export function Footer() {
   const scrollTo = (id: string) => document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
 
   return (
-    <footer className="bg-white border-t border-border pt-20 pb-10 relative z-10">
+    <footer className="bg-dark-grid relative z-10 pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="lg:col-span-1">
@@ -30,10 +30,10 @@ export function Footer() {
                 FOY CLINIC
               </span>
             </Link>
-            <p className="text-muted-foreground text-sm leading-relaxed mb-2 font-light">
+            <p className="text-white/50 text-sm leading-relaxed mb-2 font-light">
               Longevity &amp; Regenerative Medicine Center
             </p>
-            <p className="text-muted-foreground/60 text-xs leading-relaxed mb-6">
+            <p className="text-white/30 text-xs leading-relaxed mb-6">
               Healing. Thriving. Living Beautifully.
             </p>
             <div className="flex gap-3">
@@ -42,7 +42,7 @@ export function Footer() {
                 { Icon: Twitter, href: "#" },
                 { Icon: Linkedin, href: "https://www.linkedin.com/in/foycliniceg" },
               ].map(({ Icon, href }, i) => (
-                <a key={i} href={href} target={href !== "#" ? "_blank" : undefined} rel={href !== "#" ? "noopener noreferrer" : undefined} className="w-9 h-9 rounded-full bg-muted border border-border flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-white hover:border-primary transition-all duration-300">
+                <a key={i} href={href} target={href !== "#" ? "_blank" : undefined} rel={href !== "#" ? "noopener noreferrer" : undefined} className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/40 hover:bg-primary hover:text-white hover:border-primary hover:shadow-[0_0_16px_rgba(16,185,171,0.3)] transition-all duration-300">
                   <Icon className="w-4 h-4" />
                 </a>
               ))}
@@ -50,7 +50,7 @@ export function Footer() {
                 href="https://wa.me/201200022406"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full bg-muted border border-border flex items-center justify-center text-muted-foreground hover:bg-[#25D366] hover:text-white hover:border-[#25D366] transition-all duration-300"
+                className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/40 hover:bg-[#25D366] hover:text-white hover:border-[#25D366] hover:shadow-[0_0_16px_rgba(37,211,102,0.3)] transition-all duration-300"
               >
                 <WhatsAppIcon className="w-4 h-4" />
               </a>
@@ -58,7 +58,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold text-xs text-foreground/70 mb-6 tracking-[0.2em] uppercase">Programs</h4>
+            <h4 className="font-semibold text-xs text-white/50 mb-6 tracking-[0.2em] uppercase">Programs</h4>
             <ul className="space-y-3">
               {[
                 ["Metabolic Reset", "#services"],
@@ -67,7 +67,7 @@ export function Footer() {
                 ["AI Health Advisor", "#ai-advisor"],
               ].map(([label, id]) => (
                 <li key={label}>
-                  <button onClick={() => scrollTo(id)} className="text-muted-foreground hover:text-primary transition-colors text-sm font-light">
+                  <button onClick={() => scrollTo(id)} className="text-white/40 hover:text-primary transition-colors text-sm font-light">
                     {label}
                   </button>
                 </li>
@@ -76,18 +76,18 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold text-xs text-foreground/70 mb-6 tracking-[0.2em] uppercase">Information</h4>
+            <h4 className="font-semibold text-xs text-white/50 mb-6 tracking-[0.2em] uppercase">Information</h4>
             <ul className="space-y-3">
               {["Privacy Policy", "Terms of Service", "Patient Consent", "Medical Disclaimer"].map(label => (
                 <li key={label}>
-                  <a href="#" className="text-muted-foreground hover:text-primary transition-colors text-sm font-light">{label}</a>
+                  <a href="#" className="text-white/40 hover:text-primary transition-colors text-sm font-light">{label}</a>
                 </li>
               ))}
             </ul>
           </div>
 
           <div>
-            <h4 className="font-semibold text-xs text-foreground/70 mb-6 tracking-[0.2em] uppercase">Contact</h4>
+            <h4 className="font-semibold text-xs text-white/50 mb-6 tracking-[0.2em] uppercase">Contact</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-sm font-light">
                 <MapPin className="w-4 h-4 text-primary shrink-0 mt-0.5" />
@@ -95,12 +95,12 @@ export function Footer() {
                   href="https://maps.app.goo.gl/eNogzYsjbfpKWsnC7"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-primary transition-colors"
+                  className="text-white/40 hover:text-primary transition-colors"
                 >
                   30 El-Mohandes Mohammed Hasan Helmy<br />El Mohandseen, Cairo, Egypt
                 </a>
               </li>
-              <li className="flex items-center gap-3 text-sm text-muted-foreground font-light">
+              <li className="flex items-center gap-3 text-sm text-white/40 font-light">
                 <Phone className="w-4 h-4 text-primary shrink-0" />
                 <span>012 0002 2406</span>
               </li>
@@ -109,13 +109,13 @@ export function Footer() {
                   href="https://wa.me/201200022406"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-sm text-muted-foreground hover:text-[#25D366] transition-colors font-light group"
+                  className="flex items-center gap-3 text-sm text-white/40 hover:text-[#25D366] transition-colors font-light group"
                 >
                   <WhatsAppIcon className="w-4 h-4 text-[#25D366]/60 group-hover:text-[#25D366] shrink-0 transition-colors" />
                   <span>WhatsApp: 012 0002 2406</span>
                 </a>
               </li>
-              <li className="flex items-center gap-3 text-sm text-muted-foreground font-light">
+              <li className="flex items-center gap-3 text-sm text-white/40 font-light">
                 <Mail className="w-4 h-4 text-primary shrink-0" />
                 <span>clinic@foyclinic.com</span>
               </li>
@@ -123,7 +123,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-muted-foreground/60">
+        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/30">
           <p>&copy; {new Date().getFullYear()} FOY Longevity &amp; Regenerative Medicine Center. All rights reserved.</p>
           <p>Led by Dr. Ahmed Amer · Cairo, Egypt</p>
         </div>

@@ -97,7 +97,7 @@ export function BeforeAfterSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-5 mb-5">
           <FadeIn className="lg:col-span-3 h-full">
-            <div className="h-full rounded-2xl bg-white border border-border overflow-hidden">
+            <div className="h-full rounded-2xl glass-card overflow-hidden">
               <div className="bg-muted/50 px-8 py-5 border-b border-border">
                 <p className="text-xs font-semibold text-foreground/60 uppercase tracking-[0.2em]">Avg. Biomarker Improvements · 12-Week Protocol</p>
               </div>
@@ -130,7 +130,7 @@ export function BeforeAfterSection() {
 
           <div className="lg:col-span-2 flex flex-col gap-5">
             <FadeIn delay={0.2} className="flex-1">
-              <div className="h-full rounded-2xl bg-white border border-border p-8 relative overflow-hidden flex flex-col items-center justify-center gap-8">
+              <div className="h-full rounded-2xl glass-card p-8 flex flex-col items-center justify-center gap-8">
                 <div className="grid grid-cols-2 gap-6 relative z-10 w-full">
                   <RadialStat value={97} label="Patient Satisfaction" />
                   <RadialStat value={86} label="Biomarker Improvement" color="#C5A572" />
@@ -146,7 +146,7 @@ export function BeforeAfterSection() {
                   { num: 10, suffix: "K+", label: "Patients Treated" },
                   { num: 15, suffix: "+", label: "Years of Excellence" },
                 ].map(({ num, suffix, label }) => (
-                  <div key={label} className="rounded-xl bg-white border border-border p-5 text-center hover:border-primary/25 hover:shadow-sm transition-all duration-300">
+                  <div key={label} className="rounded-xl glass-card p-5 text-center">
                     <div className="text-2xl font-display font-bold text-primary mb-1">
                       <AnimatedNumber value={num} suffix={suffix} />
                     </div>

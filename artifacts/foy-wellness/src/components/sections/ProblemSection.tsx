@@ -40,7 +40,7 @@ function PillarCard({ pillar }: { pillar: typeof pillars[0] }) {
       initial={{ opacity: 0, y: 30 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay: pillar.delay, ease: [0.22, 1, 0.36, 1] }}
-      className="group h-full rounded-2xl bg-white border border-border p-7 cursor-default overflow-hidden relative hover:shadow-md hover:border-primary/25 hover:-translate-y-1 transition-all duration-300"
+      className="group h-full rounded-2xl glass-card p-7 cursor-default"
     >
       <motion.div
         className="w-10 h-10 rounded-xl bg-primary/8 border border-primary/15 flex items-center justify-center text-primary mb-5"
@@ -74,7 +74,7 @@ export function ProblemSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 mb-5">
           <FadeIn className="lg:col-span-2 h-full">
-            <div className="relative h-full min-h-[340px] rounded-2xl bg-white border border-border overflow-hidden p-10 flex flex-col justify-between group hover:shadow-md transition-shadow duration-300">
+            <div className="relative h-full min-h-[340px] rounded-2xl glass-card p-10 flex flex-col justify-between group">
               <div className="relative z-10">
                 <h2 className="text-3xl md:text-5xl font-display font-bold text-foreground text-glow-white leading-tight mb-5">
                   A New Standard in<br />
@@ -99,7 +99,7 @@ export function ProblemSection() {
           </FadeIn>
 
           <FadeIn delay={0.1} className="h-full">
-            <div ref={statsRef} className="h-full min-h-[340px] rounded-2xl bg-primary/5 border border-primary/15 p-8 flex flex-col justify-between">
+            <div ref={statsRef} className="h-full min-h-[340px] rounded-2xl glass-card bg-primary/5 p-8 flex flex-col justify-between">
               <div>
                 <span className="text-[10px] font-semibold tracking-[0.2em] uppercase text-primary/70 block mb-6">By the Numbers</span>
                 {stats.map((stat, i) => (

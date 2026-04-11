@@ -72,7 +72,7 @@ export function BookingSection() {
               ))}
             </div>
 
-            <div className="p-6 bg-muted/50 border border-border rounded-2xl space-y-3">
+            <div className="p-6 glass-card rounded-2xl space-y-3">
               <h4 className="font-semibold text-sm text-foreground/80">Location &amp; Contact</h4>
               <a
                 href="https://maps.app.goo.gl/eNogzYsjbfpKWsnC7"
@@ -98,7 +98,7 @@ export function BookingSection() {
           </FadeIn>
 
           <FadeIn delay={0.2} direction="left">
-            <div className="bg-white border border-border rounded-2xl p-8 md:p-10 shadow-lg">
+            <div className="glass-card rounded-2xl p-8 md:p-10 shadow-lg">
               {submitted ? (
                 <div className="h-full flex flex-col items-center justify-center text-center py-16">
                   <div className="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mb-6">

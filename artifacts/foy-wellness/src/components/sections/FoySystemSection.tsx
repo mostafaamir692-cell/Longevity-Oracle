@@ -39,7 +39,7 @@ function StepCard({ step, index }: { step: typeof steps[0]; index: number }) {
       initial={{ opacity: 0, y: 40 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.7, delay: index * 0.12, ease: [0.22, 1, 0.36, 1] }}
-      className="group relative bg-white border border-border rounded-2xl p-8 hover:border-primary/25 hover:shadow-md hover:-translate-y-1 transition-all duration-300 overflow-hidden cursor-default"
+      className="group relative glass-card rounded-2xl p-8 cursor-default"
     >
       <span className="absolute right-5 bottom-3 text-7xl font-display font-bold text-primary/5 select-none pointer-events-none leading-none group-hover:text-primary/10 transition-colors duration-500">
         {step.num}
@@ -85,7 +85,7 @@ export function FoySystemSection() {
         </div>
 
         <FadeIn delay={0.6}>
-          <div className="relative rounded-xl bg-white border border-border px-8 py-5 overflow-hidden">
+          <div className="relative rounded-xl glass-card px-8 py-5">
             <div className="flex items-center gap-4 mb-3">
               {steps.map((s, i) => (
                 <div key={i} className="flex items-center gap-2 flex-1">
@@ -123,7 +123,7 @@ export function FoySystemSection() {
         </FadeIn>
 
         <FadeIn delay={0.7} className="mt-5">
-          <div className="flex items-center gap-3 px-6 py-4 rounded-xl bg-white border border-border w-fit">
+          <div className="flex items-center gap-3 px-6 py-4 rounded-xl glass-card w-fit">
             <motion.div
               className="w-2 h-2 rounded-full bg-primary"
               animate={{ scale: [1, 1.5, 1], opacity: [0.4, 1, 0.4] }}

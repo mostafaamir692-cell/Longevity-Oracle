@@ -46,7 +46,7 @@ export function TransformationSection() {
 
           <div className="lg:col-span-2 flex flex-col gap-5">
             <FadeIn className="flex-1">
-              <div className="h-full rounded-2xl bg-white border border-border p-10 relative overflow-hidden flex flex-col justify-between hover:shadow-md transition-shadow duration-300">
+              <div className="h-full rounded-2xl glass-card p-10 flex flex-col justify-between">
                 <div className="relative z-10">
                   <span className="text-[10px] font-semibold tracking-[0.2em] uppercase text-primary block mb-5">The FOY Standard</span>
                   <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground text-glow-white leading-tight">
@@ -75,7 +75,7 @@ export function TransformationSection() {
                 { end: 10000, suffix: "+", label: "Patients" },
                 { end: 15, suffix: "+", label: "Years" },
               ].map(({ end, suffix, label }) => (
-                <div key={label} className="rounded-xl bg-white border border-border p-5 text-center hover:border-primary/25 hover:shadow-sm transition-all duration-300">
+                <div key={label} className="rounded-xl glass-card p-5 text-center">
                   <div className="text-xl font-display font-bold text-primary leading-none mb-1">
                     <Counter end={end} suffix={suffix} />
                   </div>
@@ -86,7 +86,7 @@ export function TransformationSection() {
           </div>
 
           <FadeIn delay={0.2} className="lg:col-span-3 h-full">
-            <div className="h-full min-h-[400px] rounded-2xl border border-border bg-white relative overflow-hidden flex flex-col justify-between p-10 hover:shadow-md transition-shadow duration-300">
+            <div className="h-full min-h-[400px] rounded-2xl glass-card flex flex-col justify-between p-10">
               <div className="relative z-10">
                 <span className="text-[10px] font-semibold tracking-[0.2em] uppercase text-primary/70 block mb-8">What We Address</span>
                 <div className="space-y-6">

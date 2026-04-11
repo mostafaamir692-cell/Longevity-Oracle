@@ -10,6 +10,7 @@ import { BeforeAfterSection } from "@/components/sections/BeforeAfterSection";
 import { LifestyleSection } from "@/components/sections/LifestyleSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { FounderSection } from "@/components/sections/FounderSection";
+import { CtaSection } from "@/components/sections/CtaSection";
 import { BookingSection } from "@/components/sections/BookingSection";
 import { FaqSection } from "@/components/sections/FaqSection";
 import { Footer } from "@/components/Footer";
@@ -53,6 +54,7 @@ export default function Home() {
         <LifestyleSection />
         <TestimonialsSection />
         
+        <CtaSection />
         <BookingSection />
         <FaqSection />
       </main>

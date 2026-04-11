@@ -52,8 +52,8 @@ export function FaqSection() {
                   className={cn(
                     "border rounded-2xl overflow-hidden transition-all duration-300",
                     isOpen
-                      ? "bg-white border-primary/25 shadow-md"
-                      : "bg-white border-border hover:border-primary/20"
+                      ? "glass-strong border-primary/25 shadow-md"
+                      : "glass-card"
                   )}
                 >
                   <button

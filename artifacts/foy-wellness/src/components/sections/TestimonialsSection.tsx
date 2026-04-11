@@ -59,7 +59,7 @@ const ROW_B = [
 
 function TestimonialCard({ name, location, text }: { name: string; location: string; text: string }) {
   return (
-    <div className="flex-shrink-0 w-[380px] mx-3 bg-white rounded-2xl border border-border p-7 hover:border-primary/20 hover:shadow-md transition-all duration-300 group">
+    <div className="flex-shrink-0 w-[380px] mx-3 glass-card rounded-2xl p-7">
       <div className="flex gap-0.5 mb-4">
         {[...Array(5)].map((_, i) => (
           <Star key={i} className="w-3.5 h-3.5 fill-secondary text-secondary" />

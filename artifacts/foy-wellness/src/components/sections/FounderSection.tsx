@@ -59,7 +59,7 @@ export function FounderSection() {
           </motion.div>
 
           <motion.div
-            className="lg:col-span-5 rounded-2xl bg-white border border-border overflow-hidden relative flex flex-col hover:shadow-md transition-shadow duration-300"
+            className="lg:col-span-5 rounded-2xl glass-card overflow-hidden relative flex flex-col"
             initial={{ opacity: 0, y: 40 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
@@ -95,7 +95,7 @@ export function FounderSection() {
 
           <div className="lg:col-span-4 flex flex-col gap-5">
             <motion.div
-              className="rounded-2xl bg-white border border-border overflow-hidden hover:shadow-md transition-shadow duration-300"
+              className="rounded-2xl glass-card overflow-hidden"
               initial={{ opacity: 0, x: 30 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
