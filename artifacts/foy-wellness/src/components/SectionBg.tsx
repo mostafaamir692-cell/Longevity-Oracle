@@ -92,19 +92,19 @@ const presets = {
         className="absolute inset-0"
         style={{
           background: `
-            radial-gradient(ellipse 90% 70% at 30% 40%, rgba(16,185,171,0.10) 0%, transparent 60%),
-            radial-gradient(ellipse 70% 60% at 80% 70%, rgba(197,165,114,0.06) 0%, transparent 55%),
-            radial-gradient(circle 500px at 50% 50%, rgba(16,185,171,0.05) 0%, transparent 60%),
-            linear-gradient(180deg, hsl(180, 20%, 97%) 0%, hsl(174, 15%, 95%) 50%, hsl(180, 20%, 97%) 100%)
+            radial-gradient(ellipse 90% 70% at 30% 40%, rgba(16,185,171,0.22) 0%, transparent 60%),
+            radial-gradient(ellipse 70% 60% at 80% 70%, rgba(197,165,114,0.18) 0%, transparent 55%),
+            radial-gradient(circle 500px at 50% 50%, rgba(16,185,171,0.12) 0%, transparent 60%),
+            linear-gradient(180deg, hsl(174, 38%, 92%) 0%, hsl(178, 30%, 88%) 50%, hsl(43, 32%, 92%) 100%)
           `,
         }}
       />
-      <DotGrid color="rgba(67,168,163,0.05)" size={1} gap={35} />
+      <DotGrid color="rgba(16,185,171,0.10)" size={1} gap={35} />
       <NoiseOverlay opacity={0.025} />
       <BokehLayer dots={[
-        { size: 200, x: "10%", y: "20%", color: "rgba(16,185,171,0.08)", delay: 0, duration: 18 },
-        { size: 150, x: "80%", y: "60%", color: "rgba(197,165,114,0.06)", delay: 3, duration: 20 },
-        { size: 120, x: "50%", y: "80%", color: "rgba(16,185,171,0.05)", delay: 6, duration: 16 },
+        { size: 220, x: "10%", y: "20%", color: "rgba(16,185,171,0.18)", delay: 0, duration: 18 },
+        { size: 180, x: "80%", y: "60%", color: "rgba(197,165,114,0.16)", delay: 3, duration: 20 },
+        { size: 140, x: "50%", y: "80%", color: "rgba(16,185,171,0.14)", delay: 6, duration: 16 },
       ]} />
     </>
   ),
@@ -114,19 +114,19 @@ const presets = {
         className="absolute inset-0 animate-bg-breathe"
         style={{
           background: `
-            radial-gradient(ellipse 100% 80% at 50% 100%, rgba(16,185,171,0.10) 0%, transparent 55%),
-            radial-gradient(ellipse 80% 60% at 0% 30%, rgba(197,165,114,0.07) 0%, transparent 50%),
-            conic-gradient(from 180deg at 60% 40%, rgba(16,185,171,0.03) 0deg, transparent 120deg, rgba(197,165,114,0.02) 240deg, transparent 360deg),
-            linear-gradient(160deg, hsl(200, 15%, 96%) 0%, hsl(174, 12%, 95%) 50%, hsl(200, 15%, 97%) 100%)
+            radial-gradient(ellipse 100% 80% at 50% 100%, rgba(16,185,171,0.22) 0%, transparent 55%),
+            radial-gradient(ellipse 80% 60% at 0% 30%, rgba(197,165,114,0.20) 0%, transparent 50%),
+            conic-gradient(from 180deg at 60% 40%, rgba(16,185,171,0.10) 0deg, transparent 120deg, rgba(197,165,114,0.08) 240deg, transparent 360deg),
+            linear-gradient(160deg, hsl(43, 35%, 93%) 0%, hsl(174, 32%, 90%) 50%, hsl(178, 28%, 92%) 100%)
           `,
           backgroundSize: "100% 100%, 100% 100%, 200% 200%, 100% 100%",
         }}
       />
-      <DiagonalLines color="rgba(67,168,163,0.03)" gap={45} />
+      <DiagonalLines color="rgba(16,185,171,0.08)" gap={45} />
       <NoiseOverlay opacity={0.02} />
       <BokehLayer dots={[
-        { size: 180, x: "85%", y: "15%", color: "rgba(16,185,171,0.06)", delay: 0, duration: 22 },
-        { size: 140, x: "15%", y: "70%", color: "rgba(197,165,114,0.05)", delay: 2, duration: 18 },
+        { size: 200, x: "85%", y: "15%", color: "rgba(16,185,171,0.16)", delay: 0, duration: 22 },
+        { size: 160, x: "15%", y: "70%", color: "rgba(197,165,114,0.16)", delay: 2, duration: 18 },
       ]} />
     </>
   ),
@@ -136,9 +136,9 @@ const presets = {
         className="absolute inset-0"
         style={{
           background: `
-            radial-gradient(ellipse 80% 70% at 20% 50%, rgba(16,185,171,0.08) 0%, transparent 60%),
-            radial-gradient(ellipse 60% 50% at 85% 30%, rgba(197,165,114,0.05) 0%, transparent 50%),
-            linear-gradient(170deg, hsl(180, 18%, 97%) 0%, hsl(200, 15%, 96%) 100%)
+            radial-gradient(ellipse 80% 70% at 20% 50%, rgba(16,185,171,0.22) 0%, transparent 60%),
+            radial-gradient(ellipse 60% 50% at 85% 30%, rgba(197,165,114,0.18) 0%, transparent 50%),
+            linear-gradient(170deg, hsl(174, 35%, 92%) 0%, hsl(190, 30%, 90%) 100%)
           `,
         }}
       />
@@ -146,16 +146,16 @@ const presets = {
         className="absolute inset-0 pointer-events-none"
         style={{
           backgroundImage: `
-            linear-gradient(rgba(67,168,163,0.03) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(67,168,163,0.03) 1px, transparent 1px)
+            linear-gradient(rgba(16,185,171,0.07) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(16,185,171,0.07) 1px, transparent 1px)
           `,
           backgroundSize: "48px 48px",
         }}
       />
       <NoiseOverlay opacity={0.02} />
       <BokehLayer dots={[
-        { size: 160, x: "70%", y: "20%", color: "rgba(16,185,171,0.06)", delay: 1, duration: 20 },
-        { size: 200, x: "20%", y: "75%", color: "rgba(16,185,171,0.05)", delay: 4, duration: 24 },
+        { size: 180, x: "70%", y: "20%", color: "rgba(16,185,171,0.16)", delay: 1, duration: 20 },
+        { size: 220, x: "20%", y: "75%", color: "rgba(16,185,171,0.14)", delay: 4, duration: 24 },
       ]} />
     </>
   ),
@@ -193,18 +193,18 @@ const presets = {
         className="absolute inset-0 animate-bg-breathe"
         style={{
           background: `
-            radial-gradient(ellipse 70% 80% at 0% 50%, rgba(16,185,171,0.09) 0%, transparent 55%),
-            radial-gradient(ellipse 60% 50% at 100% 30%, rgba(197,165,114,0.07) 0%, transparent 50%),
-            radial-gradient(ellipse 50% 40% at 50% 90%, rgba(16,185,171,0.04) 0%, transparent 45%),
-            linear-gradient(165deg, hsl(200, 20%, 98%) 0%, hsl(40, 15%, 96%) 50%, hsl(200, 18%, 97%) 100%)
+            radial-gradient(ellipse 70% 80% at 0% 50%, rgba(16,185,171,0.22) 0%, transparent 55%),
+            radial-gradient(ellipse 60% 50% at 100% 30%, rgba(197,165,114,0.28) 0%, transparent 50%),
+            radial-gradient(ellipse 50% 40% at 50% 90%, rgba(16,185,171,0.14) 0%, transparent 45%),
+            linear-gradient(165deg, hsl(43, 40%, 93%) 0%, hsl(38, 32%, 90%) 50%, hsl(174, 28%, 92%) 100%)
           `,
           backgroundSize: "100% 100%, 100% 100%, 200% 200%, 100% 100%",
         }}
       />
       <NoiseOverlay opacity={0.02} />
       <BokehLayer dots={[
-        { size: 200, x: "90%", y: "20%", color: "rgba(197,165,114,0.06)", delay: 0, duration: 18 },
-        { size: 160, x: "5%", y: "60%", color: "rgba(16,185,171,0.05)", delay: 2, duration: 22 },
+        { size: 240, x: "90%", y: "20%", color: "rgba(197,165,114,0.20)", delay: 0, duration: 18 },
+        { size: 200, x: "5%", y: "60%", color: "rgba(16,185,171,0.16)", delay: 2, duration: 22 },
       ]} />
     </>
   ),
@@ -214,17 +214,17 @@ const presets = {
         className="absolute inset-0"
         style={{
           background: `
-            radial-gradient(ellipse 60% 80% at 80% 50%, rgba(16,185,171,0.10) 0%, transparent 60%),
-            radial-gradient(ellipse 50% 60% at 10% 30%, rgba(197,165,114,0.06) 0%, transparent 50%),
-            linear-gradient(175deg, hsl(200, 20%, 98%) 0%, hsl(174, 15%, 96%) 50%, hsl(200, 18%, 97%) 100%)
+            radial-gradient(ellipse 60% 80% at 80% 50%, rgba(16,185,171,0.22) 0%, transparent 60%),
+            radial-gradient(ellipse 50% 60% at 10% 30%, rgba(197,165,114,0.20) 0%, transparent 50%),
+            linear-gradient(175deg, hsl(174, 32%, 92%) 0%, hsl(178, 28%, 89%) 50%, hsl(43, 30%, 92%) 100%)
           `,
         }}
       />
-      <DiagonalLines color="rgba(67,168,163,0.025)" gap={35} />
+      <DiagonalLines color="rgba(16,185,171,0.07)" gap={35} />
       <NoiseOverlay opacity={0.025} />
       <BokehLayer dots={[
-        { size: 180, x: "75%", y: "30%", color: "rgba(16,185,171,0.07)", delay: 0, duration: 16 },
-        { size: 140, x: "25%", y: "70%", color: "rgba(197,165,114,0.05)", delay: 4, duration: 20 },
+        { size: 200, x: "75%", y: "30%", color: "rgba(16,185,171,0.18)", delay: 0, duration: 16 },
+        { size: 160, x: "25%", y: "70%", color: "rgba(197,165,114,0.16)", delay: 4, duration: 20 },
       ]} />
     </>
   ),
@@ -234,14 +234,19 @@ const presets = {
         className="absolute inset-0"
         style={{
           background: `
-            radial-gradient(ellipse 90% 70% at 50% 50%, rgba(16,185,171,0.08) 0%, transparent 65%),
-            radial-gradient(ellipse 60% 50% at 10% 80%, rgba(34,197,94,0.04) 0%, transparent 50%),
-            linear-gradient(180deg, hsl(200, 18%, 97%) 0%, hsl(160, 12%, 96%) 100%)
+            radial-gradient(ellipse 90% 70% at 50% 50%, rgba(16,185,171,0.20) 0%, transparent 65%),
+            radial-gradient(ellipse 60% 50% at 10% 80%, rgba(197,165,114,0.20) 0%, transparent 50%),
+            radial-gradient(ellipse 50% 50% at 90% 20%, rgba(34,197,94,0.12) 0%, transparent 50%),
+            linear-gradient(180deg, hsl(174, 32%, 92%) 0%, hsl(160, 26%, 90%) 50%, hsl(43, 28%, 93%) 100%)
           `,
         }}
       />
-      <DotGrid color="rgba(67,168,163,0.04)" size={1} gap={32} />
+      <DotGrid color="rgba(16,185,171,0.10)" size={1} gap={32} />
       <NoiseOverlay opacity={0.02} />
+      <BokehLayer dots={[
+        { size: 220, x: "10%", y: "75%", color: "rgba(197,165,114,0.18)", delay: 1, duration: 22 },
+        { size: 180, x: "85%", y: "20%", color: "rgba(16,185,171,0.16)", delay: 3, duration: 18 },
+      ]} />
     </>
   ),
   testimonials: (
@@ -250,19 +255,19 @@ const presets = {
         className="absolute inset-0 animate-bg-flow"
         style={{
           background: `
-            radial-gradient(ellipse 70% 60% at 30% 50%, rgba(16,185,171,0.10) 0%, transparent 60%),
-            radial-gradient(ellipse 60% 50% at 80% 40%, rgba(197,165,114,0.06) 0%, transparent 55%),
-            radial-gradient(ellipse 50% 80% at 50% 100%, rgba(16,185,171,0.05) 0%, transparent 50%),
-            linear-gradient(160deg, hsl(180, 18%, 97%) 0%, hsl(174, 12%, 95%) 40%, hsl(200, 15%, 97%) 100%)
+            radial-gradient(ellipse 70% 60% at 30% 50%, rgba(16,185,171,0.24) 0%, transparent 60%),
+            radial-gradient(ellipse 60% 50% at 80% 40%, rgba(197,165,114,0.22) 0%, transparent 55%),
+            radial-gradient(ellipse 50% 80% at 50% 100%, rgba(16,185,171,0.16) 0%, transparent 50%),
+            linear-gradient(160deg, hsl(174, 32%, 91%) 0%, hsl(178, 28%, 88%) 40%, hsl(43, 30%, 92%) 100%)
           `,
           backgroundSize: "200% 200%, 200% 200%, 100% 100%, 100% 100%",
         }}
       />
       <NoiseOverlay opacity={0.02} />
       <BokehLayer dots={[
-        { size: 250, x: "15%", y: "30%", color: "rgba(16,185,171,0.06)", delay: 0, duration: 24 },
-        { size: 200, x: "75%", y: "60%", color: "rgba(197,165,114,0.05)", delay: 3, duration: 20 },
-        { size: 150, x: "50%", y: "10%", color: "rgba(16,185,171,0.04)", delay: 6, duration: 18 },
+        { size: 280, x: "15%", y: "30%", color: "rgba(16,185,171,0.18)", delay: 0, duration: 24 },
+        { size: 220, x: "75%", y: "60%", color: "rgba(197,165,114,0.18)", delay: 3, duration: 20 },
+        { size: 180, x: "50%", y: "10%", color: "rgba(16,185,171,0.14)", delay: 6, duration: 18 },
       ]} />
     </>
   ),
@@ -272,19 +277,19 @@ const presets = {
         className="absolute inset-0 animate-bg-breathe"
         style={{
           background: `
-            radial-gradient(ellipse 80% 60% at 20% 40%, rgba(16,185,171,0.09) 0%, transparent 60%),
-            radial-gradient(ellipse 60% 50% at 80% 70%, rgba(197,165,114,0.07) 0%, transparent 55%),
-            radial-gradient(ellipse 40% 40% at 50% 20%, rgba(16,185,171,0.04) 0%, transparent 45%),
-            linear-gradient(170deg, hsl(200, 20%, 98%) 0%, hsl(174, 15%, 96%) 100%)
+            radial-gradient(ellipse 80% 60% at 20% 40%, rgba(16,185,171,0.24) 0%, transparent 60%),
+            radial-gradient(ellipse 60% 50% at 80% 70%, rgba(197,165,114,0.22) 0%, transparent 55%),
+            radial-gradient(ellipse 40% 40% at 50% 20%, rgba(16,185,171,0.14) 0%, transparent 45%),
+            linear-gradient(170deg, hsl(174, 35%, 93%) 0%, hsl(178, 30%, 90%) 50%, hsl(43, 32%, 93%) 100%)
           `,
           backgroundSize: "100% 100%, 100% 100%, 200% 200%, 100% 100%",
         }}
       />
-      <DotGrid color="rgba(67,168,163,0.035)" size={1} gap={40} />
+      <DotGrid color="rgba(16,185,171,0.08)" size={1} gap={40} />
       <NoiseOverlay opacity={0.02} />
       <BokehLayer dots={[
-        { size: 180, x: "80%", y: "25%", color: "rgba(16,185,171,0.06)", delay: 0, duration: 20 },
-        { size: 160, x: "10%", y: "65%", color: "rgba(197,165,114,0.05)", delay: 4, duration: 22 },
+        { size: 200, x: "80%", y: "25%", color: "rgba(16,185,171,0.18)", delay: 0, duration: 20 },
+        { size: 180, x: "10%", y: "65%", color: "rgba(197,165,114,0.18)", delay: 4, duration: 22 },
       ]} />
     </>
   ),
@@ -294,9 +299,9 @@ const presets = {
         className="absolute inset-0"
         style={{
           background: `
-            radial-gradient(ellipse 100% 60% at 0% 100%, rgba(16,185,171,0.08) 0%, transparent 55%),
-            radial-gradient(ellipse 80% 60% at 100% 0%, rgba(197,165,114,0.06) 0%, transparent 50%),
-            linear-gradient(180deg, hsl(200, 15%, 96%) 0%, hsl(174, 10%, 95%) 100%)
+            radial-gradient(ellipse 100% 60% at 0% 100%, rgba(16,185,171,0.22) 0%, transparent 55%),
+            radial-gradient(ellipse 80% 60% at 100% 0%, rgba(197,165,114,0.22) 0%, transparent 50%),
+            linear-gradient(180deg, hsl(43, 32%, 93%) 0%, hsl(174, 30%, 90%) 100%)
           `,
         }}
       />
@@ -304,13 +309,17 @@ const presets = {
         className="absolute inset-0 pointer-events-none"
         style={{
           backgroundImage: `
-            linear-gradient(rgba(67,168,163,0.025) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(67,168,163,0.025) 1px, transparent 1px)
+            linear-gradient(rgba(16,185,171,0.06) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(16,185,171,0.06) 1px, transparent 1px)
           `,
           backgroundSize: "50px 50px",
         }}
       />
       <NoiseOverlay opacity={0.02} />
+      <BokehLayer dots={[
+        { size: 200, x: "15%", y: "20%", color: "rgba(197,165,114,0.16)", delay: 0, duration: 22 },
+        { size: 180, x: "85%", y: "80%", color: "rgba(16,185,171,0.16)", delay: 2, duration: 18 },
+      ]} />
     </>
   ),
 };

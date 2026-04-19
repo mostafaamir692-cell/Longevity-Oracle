@@ -105,9 +105,10 @@ export function AiAssistantSection() {
   return (
     <section id="ai-advisor" className="py-24 relative z-10 overflow-hidden" style={{
       background: `
-        radial-gradient(ellipse 80% 60% at 50% 50%, rgba(16,185,171,0.06) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 50% at 20% 80%, rgba(197,165,114,0.04) 0%, transparent 50%),
-        linear-gradient(180deg, hsl(200, 15%, 96%) 0%, hsl(200, 18%, 97%) 100%)
+        radial-gradient(ellipse 80% 60% at 50% 50%, rgba(16,185,171,0.22) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 20% 80%, rgba(197,165,114,0.20) 0%, transparent 50%),
+        radial-gradient(ellipse 50% 50% at 85% 20%, rgba(16,185,171,0.16) 0%, transparent 50%),
+        linear-gradient(170deg, hsl(174, 32%, 91%) 0%, hsl(43, 30%, 92%) 100%)
       `
     }}>
       <PulseRings origins={[
