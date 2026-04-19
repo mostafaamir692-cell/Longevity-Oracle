@@ -1,6 +1,8 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { ArrowRight } from "lucide-react";
+import { ParticleField } from "../ParticleField";
+import { PulseRings } from "../PulseRings";
 
 export function CtaSection() {
   const ref = useRef(null);
@@ -65,6 +67,19 @@ export function CtaSection() {
               transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
             />
           </div>
+
+          <ParticleField
+            density={50}
+            color="rgba(255, 255, 255, 0.7)"
+            lineColor="rgba(255, 255, 255, 0.18)"
+            maxDistance={140}
+            speed={0.25}
+          />
+
+          <PulseRings origins={[
+            { x: "50%", y: "50%", color: "rgba(255,255,255,0.35)", delay: 0, size: 600, count: 4 },
+            { x: "85%", y: "30%", color: "rgba(197,165,114,0.4)", delay: 1.5, size: 350, count: 3 },
+          ]} />
 
           <div className="absolute inset-0 pointer-events-none" style={{
             opacity: 0.05,

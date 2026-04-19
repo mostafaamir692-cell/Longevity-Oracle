@@ -39,6 +39,7 @@ export default function AiChatWidget() {
       }, 5000);
       return () => clearInterval(interval);
     }
+    return undefined;
   }, [open]);
 
   const initConversation = useCallback(async () => {

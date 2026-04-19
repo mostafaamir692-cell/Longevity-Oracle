@@ -4,6 +4,8 @@ import { PremiumButton } from "../ui/PremiumButton";
 import { ChevronDown, ShieldCheck } from "lucide-react";
 import { DnaTreeCanvas } from "../DnaTreeCanvas";
 import { FloatingOrbs } from "../FloatingOrbs";
+import { ParticleField } from "../ParticleField";
+import { LightStreaks } from "../LightStreaks";
 
 export function HeroSection() {
   const ref = useRef<HTMLElement>(null);
@@ -41,6 +43,8 @@ export function HeroSection() {
           backgroundSize: "128px 128px",
         }} />
         <FloatingOrbs />
+        <ParticleField density={50} maxDistance={130} speed={0.25} />
+        <LightStreaks opacity={0.7} />
         <DnaTreeCanvas />
       </motion.div>
 
