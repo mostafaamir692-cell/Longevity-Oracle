@@ -1,6 +1,7 @@
 import { FadeIn } from "../animations/FadeIn";
 import { Apple, Moon, Waves, Infinity, ArrowUpRight } from "lucide-react";
 import { SectionBg } from "../SectionBg";
+import { PulseRings } from "../PulseRings";
 
 const pillars = [
   {
@@ -33,6 +34,11 @@ export function LifestyleSection() {
   return (
     <section className="py-24 relative z-10 overflow-hidden">
       <SectionBg variant="lifestyle" />
+      <PulseRings origins={[
+        { x: "12%", y: "50%", color: "rgba(197, 165, 114, 0.28)", delay: 0, size: 360, count: 3 },
+        { x: "88%", y: "50%", color: "rgba(16, 185, 171, 0.24)", delay: 1.2, size: 360, count: 3 },
+        { x: "50%", y: "20%", color: "rgba(94, 234, 212, 0.18)", delay: 0.6, size: 280, count: 3 },
+      ]} />
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 

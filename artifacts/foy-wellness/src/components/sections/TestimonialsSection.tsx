@@ -2,6 +2,7 @@ import { FadeIn } from "../animations/FadeIn";
 import { Star, BadgeCheck } from "lucide-react";
 import { SectionBg } from "../SectionBg";
 import { LightStreaks } from "../LightStreaks";
+import { PulseRings } from "../PulseRings";
 
 const ROW_A = [
   {
@@ -103,6 +104,11 @@ export function TestimonialsSection() {
     <section className="py-24 relative z-10 overflow-hidden">
       <SectionBg variant="testimonials" />
       <LightStreaks opacity={0.6} />
+      <PulseRings origins={[
+        { x: "50%", y: "50%", color: "rgba(16, 185, 171, 0.22)", delay: 0, size: 600, count: 4 },
+        { x: "20%", y: "20%", color: "rgba(197, 165, 114, 0.2)", delay: 1.4, size: 320, count: 3 },
+        { x: "80%", y: "80%", color: "rgba(94, 234, 212, 0.22)", delay: 0.7, size: 340, count: 3 },
+      ]} />
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8 mb-14">
         <FadeIn className="text-center">
           <span className="inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.2em] uppercase text-primary border border-primary/25 bg-primary/8 px-3 py-1.5 rounded-full mb-5">

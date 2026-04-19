@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { FadeIn } from "../animations/FadeIn";
 import { Activity, Microscope, Leaf, Sparkles, ArrowUpRight } from "lucide-react";
 import { SectionBg } from "../SectionBg";
+import { PulseRings } from "../PulseRings";
 
 const pillars = [
   {
@@ -67,6 +68,11 @@ export function ProblemSection() {
   return (
     <section id="problem" className="py-24 relative z-10 overflow-hidden">
       <SectionBg variant="problem" />
+      <PulseRings origins={[
+        { x: "10%", y: "20%", color: "rgba(239, 68, 68, 0.18)", delay: 0, size: 380, count: 3 },
+        { x: "90%", y: "80%", color: "rgba(16, 185, 171, 0.22)", delay: 1.8, size: 420, count: 3 },
+        { x: "50%", y: "50%", color: "rgba(197, 165, 114, 0.15)", delay: 0.9, size: 600, count: 4 },
+      ]} />
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8">
         <FadeIn className="mb-10">
           <span className="inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.2em] uppercase text-primary border border-primary/25 bg-primary/8 px-3 py-1.5 rounded-full">

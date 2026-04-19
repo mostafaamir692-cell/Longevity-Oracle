@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { FadeIn } from "../animations/FadeIn";
 import { Send, Sparkles } from "lucide-react";
+import { PulseRings } from "../PulseRings";
 import { cn } from "@/lib/utils";
 
 type Message = { role: "user" | "ai"; content: string };
@@ -109,6 +110,11 @@ export function AiAssistantSection() {
         linear-gradient(180deg, hsl(200, 15%, 96%) 0%, hsl(200, 18%, 97%) 100%)
       `
     }}>
+      <PulseRings origins={[
+        { x: "15%", y: "25%", color: "rgba(16, 185, 171, 0.25)", delay: 0, size: 400, count: 3 },
+        { x: "85%", y: "75%", color: "rgba(94, 234, 212, 0.2)", delay: 1.7, size: 380, count: 3 },
+        { x: "50%", y: "50%", color: "rgba(197, 165, 114, 0.15)", delay: 0.8, size: 550, count: 4 },
+      ]} />
       <div className="max-w-5xl mx-auto px-6 md:px-8 relative z-10">
         <FadeIn className="text-center mb-12">
           <h2 className="text-3xl md:text-5xl font-display font-bold flex items-center justify-center gap-3 mb-4 text-foreground text-glow-white">

@@ -3,6 +3,7 @@ import { FadeIn } from "../animations/FadeIn";
 import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { SectionBg } from "../SectionBg";
+import { PulseRings } from "../PulseRings";
 
 const metrics = [
   { label: "Fasting Glucose", improvement: 21, unit: "mg/dL", before: "112", after: "88", color: "from-primary to-primary/60" },
@@ -82,6 +83,10 @@ export function BeforeAfterSection() {
   return (
     <section id="results" className="py-24 relative z-10 overflow-hidden">
       <SectionBg variant="results" />
+      <PulseRings origins={[
+        { x: "20%", y: "30%", color: "rgba(34, 197, 94, 0.28)", delay: 0, size: 420, count: 3 },
+        { x: "80%", y: "70%", color: "rgba(16, 185, 171, 0.25)", delay: 1.5, size: 380, count: 3 },
+      ]} />
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8">
         <FadeIn className="mb-14">
           <span className="inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.2em] uppercase text-primary border border-primary/25 bg-primary/8 px-3 py-1.5 rounded-full mb-5">

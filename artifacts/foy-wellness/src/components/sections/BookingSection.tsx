@@ -7,6 +7,7 @@ import { useCreateBooking, useServices, bookingSchema, type BookingInput } from 
 import { Shield, Award, Stethoscope, Lock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { SectionBg } from "../SectionBg";
+import { PulseRings } from "../PulseRings";
 
 const inputClass =
   "w-full bg-white border border-border rounded-xl px-4 py-3 text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/30 transition-all text-sm";
@@ -50,6 +51,10 @@ export function BookingSection() {
   return (
     <section id="booking" className="py-24 relative z-10 overflow-hidden border-t border-border">
       <SectionBg variant="booking" />
+      <PulseRings origins={[
+        { x: "15%", y: "30%", color: "rgba(16, 185, 171, 0.26)", delay: 0, size: 440, count: 3 },
+        { x: "85%", y: "70%", color: "rgba(197, 165, 114, 0.22)", delay: 1.6, size: 380, count: 3 },
+      ]} />
       <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <FadeIn>

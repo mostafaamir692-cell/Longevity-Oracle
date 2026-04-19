@@ -2,6 +2,7 @@ import { FadeIn } from "../animations/FadeIn";
 import { useEffect, useState, useRef } from "react";
 import { ArrowUpRight, Dna, Brain, Zap } from "lucide-react";
 import { SectionBg } from "../SectionBg";
+import { PulseRings } from "../PulseRings";
 
 function Counter({ end, suffix = "", duration = 2000 }: { end: number; suffix?: string; duration?: number }) {
   const [count, setCount] = useState(0);
@@ -42,6 +43,10 @@ export function TransformationSection() {
   return (
     <section className="py-24 relative z-10 overflow-hidden">
       <SectionBg variant="transformation" />
+      <PulseRings origins={[
+        { x: "25%", y: "40%", color: "rgba(34, 197, 94, 0.25)", delay: 0, size: 340, count: 3 },
+        { x: "75%", y: "60%", color: "rgba(16, 185, 171, 0.28)", delay: 1.2, size: 380, count: 3 },
+      ]} />
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8">
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-5">

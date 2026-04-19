@@ -3,6 +3,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { ArrowUpRight, Award, GraduationCap, Microscope, Globe } from "lucide-react";
 import { SectionBg } from "../SectionBg";
+import { PulseRings } from "../PulseRings";
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -26,6 +27,10 @@ export function FounderSection() {
   return (
     <section className="py-24 relative z-10 overflow-hidden">
       <SectionBg variant="founder" />
+      <PulseRings origins={[
+        { x: "30%", y: "60%", color: "rgba(197, 165, 114, 0.32)", delay: 0, size: 460, count: 3 },
+        { x: "85%", y: "30%", color: "rgba(197, 165, 114, 0.22)", delay: 1.5, size: 360, count: 3 },
+      ]} />
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8">
 
         <FadeIn className="mb-14">

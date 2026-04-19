@@ -2,6 +2,7 @@ import { FadeIn } from "../animations/FadeIn";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { SectionBg } from "../SectionBg";
+import { PulseRings } from "../PulseRings";
 
 const steps = [
   {
@@ -67,6 +68,11 @@ export function FoySystemSection() {
   return (
     <section id="system" className="py-24 relative z-10 overflow-hidden">
       <SectionBg variant="system" />
+      <PulseRings origins={[
+        { x: "50%", y: "50%", color: "rgba(16, 185, 171, 0.3)", delay: 0, size: 700, count: 5 },
+        { x: "20%", y: "85%", color: "rgba(197, 165, 114, 0.2)", delay: 2, size: 280, count: 3 },
+        { x: "80%", y: "15%", color: "rgba(94, 234, 212, 0.22)", delay: 1, size: 320, count: 3 },
+      ]} />
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8">
         <FadeIn className="mb-16 max-w-xl">
           <span className="inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.2em] uppercase text-primary border border-primary/25 bg-primary/8 px-3 py-1.5 rounded-full mb-5">
