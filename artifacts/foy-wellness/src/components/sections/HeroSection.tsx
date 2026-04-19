@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { PremiumButton } from "../ui/PremiumButton";
-import { ChevronDown, ShieldCheck } from "lucide-react";
+import { ChevronDown, Stethoscope, FlaskConical, Users } from "lucide-react";
 import { DnaTreeCanvas } from "../DnaTreeCanvas";
 import { FloatingOrbs } from "../FloatingOrbs";
 import { ParticleField } from "../ParticleField";
@@ -144,9 +144,9 @@ export function HeroSection() {
 
           <div className="flex flex-wrap items-center justify-center gap-3 text-sm font-medium">
             {[
-              { icon: <ShieldCheck className="w-4 h-4 text-primary" />, label: "Physician-Led Care" },
-              { icon: <ShieldCheck className="w-4 h-4 text-primary" />, label: "Evidence-Based Protocols" },
-              { icon: <ShieldCheck className="w-4 h-4 text-secondary" />, label: "10,000+ Patients" },
+              { icon: <Stethoscope className="w-4 h-4 text-primary" />, label: "Board-Certified Physicians" },
+              { icon: <FlaskConical className="w-4 h-4 text-secondary" />, label: "Precision Lab Diagnostics" },
+              { icon: <Users className="w-4 h-4 text-primary" />, label: "10,000+ Patients Treated" },
             ].map((badge, i) => (
               <span
                 key={i}
