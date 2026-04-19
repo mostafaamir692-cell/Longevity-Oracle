@@ -165,25 +165,25 @@ const presets = {
         className="absolute inset-0"
         style={{
           background: `
-            radial-gradient(ellipse 80% 60% at 50% 0%, rgba(16,185,171,0.20) 0%, transparent 60%),
-            radial-gradient(ellipse 60% 50% at 20% 80%, rgba(16,185,171,0.12) 0%, transparent 55%),
-            radial-gradient(ellipse 50% 40% at 90% 60%, rgba(197,165,114,0.08) 0%, transparent 50%),
-            linear-gradient(180deg, #0a1a1f 0%, #0d2025 40%, #091820 100%)
+            radial-gradient(ellipse 80% 60% at 50% 0%, rgba(16,185,171,0.26) 0%, transparent 60%),
+            radial-gradient(ellipse 60% 50% at 20% 80%, rgba(16,185,171,0.20) 0%, transparent 55%),
+            radial-gradient(ellipse 50% 40% at 90% 60%, rgba(197,165,114,0.22) 0%, transparent 50%),
+            linear-gradient(180deg, hsl(174, 38%, 92%) 0%, hsl(178, 32%, 89%) 50%, hsl(43, 32%, 92%) 100%)
           `,
         }}
       />
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          backgroundImage: `radial-gradient(circle 1px, rgba(67,168,163,0.08) 100%, transparent 100%)`,
+          backgroundImage: `radial-gradient(circle 1px, rgba(16,185,171,0.14) 100%, transparent 100%)`,
           backgroundSize: "30px 30px",
         }}
       />
-      <NoiseOverlay opacity={0.04} />
+      <NoiseOverlay opacity={0.025} />
       <BokehLayer dots={[
-        { size: 300, x: "50%", y: "10%", color: "rgba(16,185,171,0.10)", delay: 0, duration: 20 },
-        { size: 200, x: "10%", y: "70%", color: "rgba(16,185,171,0.06)", delay: 3, duration: 16 },
-        { size: 180, x: "85%", y: "50%", color: "rgba(197,165,114,0.05)", delay: 5, duration: 22 },
+        { size: 300, x: "50%", y: "10%", color: "rgba(16,185,171,0.20)", delay: 0, duration: 20 },
+        { size: 220, x: "10%", y: "70%", color: "rgba(16,185,171,0.16)", delay: 3, duration: 16 },
+        { size: 200, x: "85%", y: "50%", color: "rgba(197,165,114,0.18)", delay: 5, duration: 22 },
       ]} />
     </>
   ),

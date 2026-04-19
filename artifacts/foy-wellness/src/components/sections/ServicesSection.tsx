@@ -42,18 +42,18 @@ export function ServicesSection() {
   const secondary = programs.slice(1);
 
   return (
-    <section id="services" className="py-24 relative z-10 overflow-hidden services-dark">
+    <section id="services" className="py-24 relative z-10 overflow-hidden">
       <SectionBg variant="services" />
       <ParticleField
-        density={70}
-        color="rgba(94, 234, 212, 0.7)"
-        lineColor="rgba(94, 234, 212, 0.2)"
+        density={55}
+        color="rgba(16, 185, 171, 0.55)"
+        lineColor="rgba(16, 185, 171, 0.16)"
         maxDistance={150}
         speed={0.3}
       />
       <PulseRings origins={[
-        { x: "15%", y: "30%", color: "rgba(94, 234, 212, 0.35)", delay: 0, size: 500, count: 3 },
-        { x: "85%", y: "70%", color: "rgba(197, 165, 114, 0.3)", delay: 2, size: 450, count: 3 },
+        { x: "15%", y: "30%", color: "rgba(16, 185, 171, 0.30)", delay: 0, size: 500, count: 3 },
+        { x: "85%", y: "70%", color: "rgba(197, 165, 114, 0.28)", delay: 2, size: 450, count: 3 },
       ]} />
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8">
 
