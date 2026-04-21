@@ -5,6 +5,7 @@ import { ProblemSection } from "@/components/sections/ProblemSection";
 import { TransformationSection } from "@/components/sections/TransformationSection";
 import { FoySystemSection } from "@/components/sections/FoySystemSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
+import { ManifestoSection } from "@/components/sections/ManifestoSection";
 import { AiAssistantSection } from "@/components/sections/AiAssistantSection";
 import { BeforeAfterSection } from "@/components/sections/BeforeAfterSection";
 import { LifestyleSection } from "@/components/sections/LifestyleSection";
@@ -44,7 +45,8 @@ export default function Home() {
         <SectionSeparator />
         
         <ServicesSection />
-        <SectionSeparator />
+
+        <ManifestoSection />
 
         <FounderSection />
         <SectionSeparator />
